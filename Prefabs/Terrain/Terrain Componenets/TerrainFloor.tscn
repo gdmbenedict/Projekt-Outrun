@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs21jrogohafe"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kd11c"]
+size = Vector2(200, 200)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_joy4b"]
+
+[node name="Terrain Floor" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_kd11c")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(200, 0, 0, 0, 0.01, 0, 0, 0, 200, 0, 0, 0)
+shape = SubResource("BoxShape3D_joy4b")
