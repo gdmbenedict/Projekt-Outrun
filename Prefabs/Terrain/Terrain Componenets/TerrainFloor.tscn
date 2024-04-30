@@ -1,4 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bs21jrogohafe"]
+[gd_scene load_steps=5 format=3 uid="uid://bs21jrogohafe"]
+
+[ext_resource type="Shader" path="res://Prefabs/Shaders/Grid.gdshader" id="1_auo6d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7xgv5"]
+render_priority = 0
+shader = ExtResource("1_auo6d")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kd11c"]
 size = Vector2(200, 200)
@@ -8,6 +14,7 @@ size = Vector2(200, 200)
 [node name="Terrain Floor" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_overlay = SubResource("ShaderMaterial_7xgv5")
 mesh = SubResource("PlaneMesh_kd11c")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
