@@ -3,3 +3,8 @@ res://Prefabs/Terrain/Terrain Componenets/SimpleCylinder.tscn
 res://Prefabs/Terrain/Terrain Componenets/SimpleSphere.tscn
 res://Prefabs/Terrain/Terrain Componenets/SimpleSquare.tscn
 res://Prefabs/Terrain/ForestTile.tscn
+res://Prefabs/Terrain/Structures/giant_tree.tscn
+res://Materials/SimpleMaterials/White.tres
+res://Prefabs/Terrain/Structures/tree_2.tscn
+res://Scripts/test.gd
+res://Prefabs/Terrain/Structures/tree_3.tscn
