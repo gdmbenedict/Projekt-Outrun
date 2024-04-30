@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://da6ycxfcpesar"]
+
+[ext_resource type="PackedScene" uid="uid://bs21jrogohafe" path="res://Prefabs/Terrain/Terrain Componenets/TerrainFloor.tscn" id="1_wcxqi"]
+[ext_resource type="PackedScene" uid="uid://da5vpty2xda7u" path="res://Prefabs/Terrain/Structures/giant_tree.tscn" id="2_n74rn"]
+
+[node name="ForestTile" type="Node3D"]
+
+[node name="Terrain Floor" parent="." instance=ExtResource("1_wcxqi")]
+
+[node name="GiantTree" parent="." instance=ExtResource("2_n74rn")]

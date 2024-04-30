@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmwm0gmusvfoy"]
+
+[ext_resource type="PackedScene" uid="uid://dxnvmve6r8vfe" path="res://Prefabs/Terrain/Terrain Componenets/SimpleCylinder.tscn" id="1_kt86l"]
+[ext_resource type="PackedScene" uid="uid://bgii05ssodyvp" path="res://Prefabs/Terrain/Terrain Componenets/SimpleSphere.tscn" id="2_ywf7p"]
+
+[node name="Tree1" type="Node3D"]
+
+[node name="Trunk" parent="." instance=ExtResource("1_kt86l")]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="SimpleSphere" parent="." instance=ExtResource("2_ywf7p")]
+transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 4, 0, 6.34018, 0)
+
+[node name="SimpleSphere2" parent="." instance=ExtResource("2_ywf7p")]
+transform = Transform3D(2.5, 0, 0, 0, 1.5, 0, 0, 0, 2.5, -0.908807, 5.85306, 1.11609)
+
+[node name="Branch" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, 1)
+
+[node name="SimpleCylinder" parent="Branch" instance=ExtResource("1_kt86l")]
+transform = Transform3D(0.310345, -0.423032, 0.21862, 0.330754, 0.477131, 0.0767781, -0.210446, 0.126053, 0.443069, 0.155283, -0.0256186, -0.102761)
+
+[node name="SimpleCylinder2" parent="Branch" instance=ExtResource("1_kt86l")]
+transform = Transform3D(-0.295022, 0.179228, 0.379414, 0.229974, 0.57671, 0.0176214, -0.331775, 0.24038, -0.325169, 0.792944, 0.0562816, 0.0965811)
+
+[node name="SimpleCylinder3" parent="Branch" instance=ExtResource("1_kt86l")]
+transform = Transform3D(-0.0816952, -0.115907, 0.626994, 0.563588, 0.223412, 0.143231, -0.313359, 0.432033, 0.0941441, 0.693841, -0.570577, -0.507481)
+
+[node name="Branch2" type="Node3D" parent="."]
+transform = Transform3D(-0.483695, 0, 0.875237, 0, 1, 0, -0.875237, 0, -0.483695, 1.15602, 3.40362, 0.11891)
+
+[node name="SimpleCylinder" parent="Branch2" instance=ExtResource("1_kt86l")]
+transform = Transform3D(0.310345, -0.423032, 0.21862, 0.330754, 0.477131, 0.0767781, -0.210446, 0.126053, 0.443069, 0.155283, -0.0256186, -0.102761)
+
+[node name="SimpleCylinder2" parent="Branch2" instance=ExtResource("1_kt86l")]
+transform = Transform3D(-0.295022, 0.179228, 0.379414, 0.229974, 0.57671, 0.0176214, -0.331775, 0.24038, -0.325169, 0.792944, 0.0562816, 0.0965811)
+
+[node name="SimpleCylinder3" parent="Branch2" instance=ExtResource("1_kt86l")]
+transform = Transform3D(-0.0816952, -0.115907, 0.626994, 0.563588, 0.223412, 0.143231, -0.313359, 0.432033, 0.0941441, 0.693841, -0.570577, -0.507481)
+
+[node name="Foliage" parent="Branch2" instance=ExtResource("2_ywf7p")]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, -0.12645, 0.462965, -0.0698817)
+
+[node name="Foliage2" parent="Branch2" instance=ExtResource("2_ywf7p")]
+transform = Transform3D(2, 0, -7.94729e-08, 0, 1.25, 0, 7.94729e-08, 0, 2, 1.03736, 0.912067, 0.270606)
