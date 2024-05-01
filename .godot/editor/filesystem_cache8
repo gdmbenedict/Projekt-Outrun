@@ -1,24 +1,16 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1714588713
-icon.svg::CompressedTexture2D::9196642671929223196::1714397808::1714397814::1::::<><>::
-::res://Materials/::1714488215
-::res://Materials/SimpleMaterials/::1714501806
-MediumGrey.tres::StandardMaterial3D::183255946039302613::1714488580::0::1::::<><>::
-White.tres::StandardMaterial3D::6242565467169898284::1714501806::0::1::::<><>::
-::res://Prefabs/::1714416996
-::res://Prefabs/Terrain/::1714588713
-ForestTile1.tscn::PackedScene::7224719756741530473::1714588461::0::1::::<><>::uid://bs21jrogohafe::::res://Prefabs/Terrain/Terrain Componenets/TerrainFloor.tscn<>uid://da5vpty2xda7u::::res://Prefabs/Terrain/Structures/giant_tree.tscn<>uid://ccko2d7m74n62::::res://Prefabs/Terrain/Structures/tree_2.tscn<>uid://cmwm0gmusvfoy::::res://Prefabs/Terrain/Structures/tree_1.tscn<>uid://blda2hlpxcnay::::res://Prefabs/Terrain/Structures/tree_3.tscn
-::res://Prefabs/Terrain/Forest/::1714488766
-::res://Prefabs/Terrain/Structures/::1714503845
-giant_tree.tscn::PackedScene::7222496263734335548::1714501720::0::1::::<><>::uid://dxnvmve6r8vfe::::res://Prefabs/Terrain/Terrain Componenets/SimpleCylinder.tscn<>uid://bgii05ssodyvp::::res://Prefabs/Terrain/Terrain Componenets/SimpleSphere.tscn
-tree_1.tscn::PackedScene::5661297385004073808::1714492132::0::1::::<><>::uid://dxnvmve6r8vfe::::res://Prefabs/Terrain/Terrain Componenets/SimpleCylinder.tscn<>uid://bgii05ssodyvp::::res://Prefabs/Terrain/Terrain Componenets/SimpleSphere.tscn
-tree_2.tscn::PackedScene::4934761294129962837::1714503454::0::1::::<><>::uid://dxnvmve6r8vfe::::res://Prefabs/Terrain/Terrain Componenets/SimpleCylinder.tscn<>uid://bgii05ssodyvp::::res://Prefabs/Terrain/Terrain Componenets/SimpleSphere.tscn
-tree_3.tscn::PackedScene::3164739698777729132::1714503845::0::1::::<><>::uid://dxnvmve6r8vfe::::res://Prefabs/Terrain/Terrain Componenets/SimpleCylinder.tscn<>uid://bgii05ssodyvp::::res://Prefabs/Terrain/Terrain Componenets/SimpleSphere.tscn
-::res://Prefabs/Terrain/Terrain Componenets/::1714501806
-SimpleCylinder.tscn::PackedScene::8801739962533887610::1714488688::0::1::::<><>::uid://cu1g0wa24lpt::::res://Materials/SimpleMaterials/MediumGrey.tres
-SimpleSphere.tscn::PackedScene::2824600752687204209::1714501806::0::1::::<><>::uid://cu67e2hqx7dou::::res://Materials/SimpleMaterials/White.tres
-SimpleSphereGrey.tscn::PackedScene::7983434937405996197::1714501785::0::1::::<><>::uid://cu1g0wa24lpt::::res://Materials/SimpleMaterials/MediumGrey.tres
-SimpleSquare.tscn::PackedScene::1043302836140318955::1714488739::0::1::::<><>::uid://cu1g0wa24lpt::::res://Materials/SimpleMaterials/MediumGrey.tres
-TerrainFloor.tscn::PackedScene::3707153697310180870::1714487053::0::1::::<><>::
-::res://Scripts/::1714503194
-test.gd::GDScript::-1::1714503194::0::1::::<>Node<>::
+::res://::1714564235
+icon.svg::CompressedTexture2D::9196642671929223196::1714401287::1714401287::1::::<><>::
+::res://Prefabs/::1714499670
+::res://Prefabs/Models/::1714564811
+Finished_Car_Model.fbx::PackedScene::5216820515783679149::1714499670::1714499670::1::::<><>::
+Projekt_Outrun_Player_Car.fbx::PackedScene::7502849381135111963::1714141085::1714565079::1::::<><>::
+::res://Prefabs/Shaders/::1714510855
+Grid.gdshader::Shader::-1::1714510855::0::1::::<><>::
+::res://Prefabs/Terrain/::1714499605
+::res://Prefabs/Terrain/Terrain Componenets/::1714510855
+Grid.tscn::PackedScene::8021534562081720210::1714502422::0::1::::<><>::
+SimpleCylinder.tscn::PackedScene::8801739962533887610::1714499605::0::1::::<><>::
+SimpleSphere.tscn::PackedScene::2824600752687204209::1714499605::0::1::::<><>::
+SimpleSquare.tscn::PackedScene::1043302836140318955::1714499605::0::1::::<><>::
+TerrainFloor.tscn::PackedScene::3707153697310180870::1714510855::0::1::::<><>::res://Prefabs/Shaders/Grid.gdshader
