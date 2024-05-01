@@ -8,3 +8,4 @@ res://Materials/SimpleMaterials/White.tres
 res://Prefabs/Terrain/Structures/tree_2.tscn
 res://Scripts/test.gd
 res://Prefabs/Terrain/Structures/tree_3.tscn
+res://Prefabs/Terrain/Forest/ForestTile1.tscn
