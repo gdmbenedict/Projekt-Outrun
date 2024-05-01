@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs21jrogohafe"]
+[gd_scene load_steps=9 format=3 uid="uid://bs21jrogohafe"]
 
 [ext_resource type="Shader" path="res://Prefabs/Shaders/Grid.gdshader" id="1_auo6d"]
-[ext_resource type="PackedScene" uid="uid://de5o3ldh8klwd" path="res://Prefabs/Models/Projekt_Outrun_Player_Car.fbx" id="2_nkwro"]
+[ext_resource type="Shader" path="res://Prefabs/Shaders/Sky_Shader.gdshader" id="2_iqiv4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7xgv5"]
 render_priority = 0
@@ -16,6 +16,22 @@ size = Vector2(200, 200)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_joy4b"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0tbg1"]
+shader = ExtResource("2_iqiv4")
+shader_parameter/skyColor = Color(0.0705882, 0, 0.196078, 1)
+shader_parameter/horizonColor = Color(0.0196078, 0.113725, 0.227451, 1)
+
+[sub_resource type="Sky" id="Sky_u2cyn"]
+sky_material = SubResource("ShaderMaterial_0tbg1")
+
+[sub_resource type="Environment" id="Environment_54ev0"]
+background_mode = 2
+background_color = Color(0.0196078, 0.121569, 0.227451, 1)
+background_energy_multiplier = 1.61
+sky = SubResource("Sky_u2cyn")
+ambient_light_source = 3
+volumetric_fog_density = 0.0
+
 [node name="Terrain Floor" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -29,5 +45,5 @@ mesh = SubResource("PlaneMesh_kd11c")
 transform = Transform3D(200, 0, 0, 0, 0.01, 0, 0, 0, 200, 0, 0, 0)
 shape = SubResource("BoxShape3D_joy4b")
 
-[node name="Root Scene2" parent="." instance=ExtResource("2_nkwro")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.655, 104.575, -82.5611)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_54ev0")
