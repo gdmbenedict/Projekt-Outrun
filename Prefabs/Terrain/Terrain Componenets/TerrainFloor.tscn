@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bs21jrogohafe"]
+[gd_scene load_steps=6 format=3 uid="uid://bs21jrogohafe"]
 
 [ext_resource type="Shader" path="res://Prefabs/Shaders/Grid.gdshader" id="1_auo6d"]
+[ext_resource type="PackedScene" uid="uid://de5o3ldh8klwd" path="res://Prefabs/Models/Projekt_Outrun_Player_Car.fbx" id="2_nkwro"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7xgv5"]
 render_priority = 0
@@ -27,3 +28,6 @@ mesh = SubResource("PlaneMesh_kd11c")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(200, 0, 0, 0, 0.01, 0, 0, 0, 200, 0, 0, 0)
 shape = SubResource("BoxShape3D_joy4b")
+
+[node name="Root Scene2" parent="." instance=ExtResource("2_nkwro")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.655, 104.575, -82.5611)
