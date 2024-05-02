@@ -1,18 +1,18 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1714566562
+::res://::1714652479
 icon.svg::CompressedTexture2D::9196642671929223196::1714401287::1714401287::1::::<><>::
 ::res://FBX2glTF-windows-x86_64/::1714565519
 FBX2glTF-License.txt::TextFile::-1::1714565519::0::1::::<><>::
 ::res://Prefabs/::1714565519
-::res://Prefabs/Models/::1714565623
-Finished_Car_Model.fbx::PackedScene::5216820515783679149::1714565519::1714565519::1::::<><>::
-Projekt_Outrun_Player_Car.fbx::PackedScene::7502849381135111963::1714565519::1714565623::1::::<><>::
-::res://Prefabs/Shaders/::1714565560
-Grid.gdshader::Shader::-1::1714565560::0::1::::<><>::
+::res://Prefabs/Models/::1714653305
+Car_Model.fbx::PackedScene::16142025359084606::1714653305::1714653345::1::::<><>::
+::res://Prefabs/Shaders/::1714653114
+Grid.gdshader::Shader::-1::1714653114::0::1::::<><>::
+Sky_Shader.gdshader::Shader::-1::1714653114::0::1::::<><>::
 ::res://Prefabs/Terrain/::1714499605
-::res://Prefabs/Terrain/Terrain Componenets/::1714565560
-Grid.tscn::PackedScene::8021534562081720210::1714565560::0::1::::<><>::
+::res://Prefabs/Terrain/Terrain Componenets/::1714653114
+Grid.tscn::PackedScene::8021534562081720210::1714653114::0::1::::<><>::
 SimpleCylinder.tscn::PackedScene::8801739962533887610::1714565560::0::1::::<><>::
 SimpleSphere.tscn::PackedScene::2824600752687204209::1714565560::0::1::::<><>::
 SimpleSquare.tscn::PackedScene::1043302836140318955::1714565560::0::1::::<><>::
-TerrainFloor.tscn::PackedScene::3707153697310180870::1714565560::0::1::::<><>::res://Prefabs/Shaders/Grid.gdshader<>uid://de5o3ldh8klwd::::res://Prefabs/Models/Projekt_Outrun_Player_Car.fbx
+TerrainFloor.tscn::PackedScene::3707153697310180870::1714575695::0::1::::<><>::res://Prefabs/Shaders/Grid.gdshader<>res://Prefabs/Shaders/Sky_Shader.gdshader

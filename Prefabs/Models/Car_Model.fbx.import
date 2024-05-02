@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cglcjidhdrhq0"
-path="res://.godot/imported/Finished_Car_Model.fbx-56358ca6690485aa5515e7dafc2117c7.scn"
+uid="uid://h24epvy1vus"
+path="res://.godot/imported/Car_Model.fbx-bd85e3c86b5760b2ae3971e97519f787.scn"
 
 [deps]
 
-source_file="res://Prefabs/Models/Finished_Car_Model.fbx"
-dest_files=["res://.godot/imported/Finished_Car_Model.fbx-56358ca6690485aa5515e7dafc2117c7.scn"]
+source_file="res://Prefabs/Models/Car_Model.fbx"
+dest_files=["res://.godot/imported/Car_Model.fbx-bd85e3c86b5760b2ae3971e97519f787.scn"]
 
 [params]
 
