@@ -1,2 +1,5 @@
-res://Prefabs/Terrain/Terrain Componenets/TerrainFloor.tscn
-res://Prefabs/Shaders/Grid.gdshader
+res://Materials/SimpleMaterials/White.tres
+res://Prefabs/Terrain/Game_Scene.tscn
+res://Prefabs/Terrain/Forest/Forest Tile 3.tscn
+res://Prefabs/Terrain/Forest/ForestTile2.tscn
+res://Prefabs/Terrain/Forest/ForestTile1.tscn
