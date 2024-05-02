@@ -1,9 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgii05ssodyvp"]
+[gd_scene load_steps=4 format=3 uid="uid://dl0iaiedjjegr"]
 
-[ext_resource type="Material" uid="uid://cu67e2hqx7dou" path="res://Materials/SimpleMaterials/White.tres" id="1_tec2h"]
+[ext_resource type="Material" uid="uid://cu1g0wa24lpt" path="res://Materials/SimpleMaterials/MediumGrey.tres" id="1_j5qxb"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_aarre"]
-material = ExtResource("1_tec2h")
+material = ExtResource("1_j5qxb")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lapu1"]
 

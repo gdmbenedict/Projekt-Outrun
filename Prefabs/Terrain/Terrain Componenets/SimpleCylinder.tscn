@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxnvmve6r8vfe"]
+[gd_scene load_steps=4 format=3 uid="uid://dxnvmve6r8vfe"]
+
+[ext_resource type="Material" uid="uid://cu1g0wa24lpt" path="res://Materials/SimpleMaterials/MediumGrey.tres" id="1_0fl8r"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_hua0t"]
+material = ExtResource("1_0fl8r")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_4270y"]
 

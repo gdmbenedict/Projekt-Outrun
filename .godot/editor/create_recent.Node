@@ -1,5 +1,4 @@
-CharacterBody3D
-WorldEnvironment
+Node3D
 CollisionShape3D
 StaticBody3D
 MeshInstance3D
