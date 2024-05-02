@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8107erpbuw1w"]
+[gd_scene load_steps=9 format=3 uid="uid://c8107erpbuw1w"]
 
 [ext_resource type="PackedScene" uid="uid://da6ycxfcpesar" path="res://Prefabs/Terrain/Forest/ForestTile1.tscn" id="1_efj8q"]
+[ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_uturd"]
+[ext_resource type="Script" path="res://Scripts/Gear.gd" id="2_qbm70"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r5ish"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -30,8 +32,10 @@ environment = SubResource("Environment_sxfrh")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Player" type="CharacterBody3D" parent="."]
+[node name="Player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("gears")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 71.9194)
+script = ExtResource("1_uturd")
+gears = [NodePath("Gears/Gear1"), NodePath("Gears/Gear2"), NodePath("Gears/Gear3"), NodePath("Gears/Gear4"), NodePath("Gears/Gear5")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("CapsuleShape3D_wq8g1")
@@ -42,5 +46,41 @@ skeleton = NodePath("../CollisionShape3D")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2, 4)
+
+[node name="Gears" type="Node3D" parent="Player"]
+
+[node name="Gear1" type="Node" parent="Player/Gears"]
+script = ExtResource("2_qbm70")
+maxSpeed = 55.0
+timeShift = 0.1
+smoothingFactor = 5.0
+
+[node name="Gear2" type="Node" parent="Player/Gears"]
+script = ExtResource("2_qbm70")
+maxSpeed = 85.0
+minSpeed = 53.0
+timeShift = 3.0
+smoothingFactor = 15.0
+
+[node name="Gear3" type="Node" parent="Player/Gears"]
+script = ExtResource("2_qbm70")
+maxSpeed = 125.0
+minSpeed = 81.0
+timeShift = 7.0
+smoothingFactor = 45.0
+
+[node name="Gear4" type="Node" parent="Player/Gears"]
+script = ExtResource("2_qbm70")
+maxSpeed = 165.0
+minSpeed = 119.0
+timeShift = 14.0
+smoothingFactor = 135.0
+
+[node name="Gear5" type="Node" parent="Player/Gears"]
+script = ExtResource("2_qbm70")
+maxSpeed = 215.0
+minSpeed = 158.0
+timeShift = 30.0
+smoothingFactor = 405.0
 
 [node name="ForestTile1" parent="." instance=ExtResource("1_efj8q")]
