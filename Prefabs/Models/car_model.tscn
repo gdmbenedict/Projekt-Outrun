@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsbv4akmas3qk"]
+
+[ext_resource type="PackedScene" uid="uid://h24epvy1vus" path="res://Prefabs/Models/Car_Model.fbx" id="1_5r5ka"]
+
+[node name="Car_Model" type="Node3D"]
+
+[node name="Car" parent="." instance=ExtResource("1_5r5ka")]

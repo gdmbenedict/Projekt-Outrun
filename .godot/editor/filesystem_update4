@@ -1,5 +1,3 @@
 res://Materials/SimpleMaterials/White.tres
-res://GameScenes/TestGameplay.tscn
-res://Scripts/PlayerMovement.gd
-res://Scripts/SharedFunctions.gd
-res://Scripts/Gear.gd
+res://Prefabs/Models/car_model.tscn
+res://Prefabs/Terrain/Game_Scene.tscn
