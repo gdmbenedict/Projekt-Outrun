@@ -33,7 +33,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("gears")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 71.9194)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.1, -71.0022)
 script = ExtResource("1_uturd")
 gears = [NodePath("Gears/Gear1"), NodePath("Gears/Gear2"), NodePath("Gears/Gear3"), NodePath("Gears/Gear4"), NodePath("Gears/Gear5")]
 

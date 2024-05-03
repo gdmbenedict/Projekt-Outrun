@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+@export var horizontalFallOffTime: float = 1
+@export var horizontalMaxSpeed: float = 25
 
 @export var trackedVelocity: Vector3 #variable that stores the velocity of the player
 
@@ -14,9 +16,44 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	HandleHorizontalMovement(delta)
+	
+	#print statement testing trackedVelocity
+	print(trackedVelocity)
+
+func HandleHorizontalMovement(delta: float) -> void:
+	#Horizontal Movement
 	var input_dir := Input.get_vector("move_left", "move_right", "ui_up", "ui_down")
 	
+	#check for horizontal input
+	if(input_dir.x != 0):
+		#Apply acceleration
+		trackedVelocity.x += input_dir.x * horizontalMaxSpeed * delta
+		#clamp to max value
+		if(trackedVelocity.x > horizontalMaxSpeed):
+			trackedVelocity.x = horizontalMaxSpeed
+		#clamp to min value
+		elif(trackedVelocity.x < -horizontalMaxSpeed):
+			trackedVelocity.x = -horizontalMaxSpeed
+	
+	#damp if no input
+	else:
+		StraightenHorizontalMovement(delta)
  
+# Function that damps horizontal movement towards zero
+func StraightenHorizontalMovement(delta: float) -> void:
+	
+	if(trackedVelocity.x > 0):
+		trackedVelocity.x -= horizontalMaxSpeed * delta
+		if (trackedVelocity.x < 0):
+			trackedVelocity.x = 0
+	
+	elif(trackedVelocity.x < 0):
+		trackedVelocity.x += horizontalMaxSpeed * delta
+		if(trackedVelocity.x > 0):
+			trackedVelocity.x = 0
+
+# Function that determines if gear needs to be shifted
 func shiftGear() -> void:
 	
 	#check for shift up
