@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://hxcg2gtcgw28"]
+
+[ext_resource type="Shader" path="res://Prefabs/Shaders/Sky_Shader.gdshader" id="1_21uuc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_07or4"]
+shader = ExtResource("1_21uuc")
+shader_parameter/skyColor = Color(0.298039, 0, 0.466667, 1)
+shader_parameter/horizonColor = Color(0, 0, 0.341176, 1)
+
+[sub_resource type="Sky" id="Sky_xg61i"]
+sky_material = SubResource("ShaderMaterial_07or4")
+
+[sub_resource type="Environment" id="Environment_e5doi"]
+background_mode = 2
+sky = SubResource("Sky_xg61i")
+
+[node name="Environment_Lighting" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_e5doi")
