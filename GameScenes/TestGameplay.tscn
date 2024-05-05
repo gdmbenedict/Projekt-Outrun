@@ -93,4 +93,3 @@ player = NodePath("../Player")
 tileSize = 150.0
 tiles = Array[PackedScene]([ExtResource("1_efj8q"), ExtResource("5_2rmtm"), ExtResource("6_3ajdb")])
 gridSize = Vector2(5, 5)
-startPosOffset = null

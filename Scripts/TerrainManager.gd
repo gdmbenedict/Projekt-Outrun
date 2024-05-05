@@ -12,7 +12,7 @@ extends Node3D
 @export var gridSize: Vector2
 @export var startPosOffset: float
 var generatedTiles = []
-var even: boolean
+var even: bool
 
 #Runtime variables
 var terrainVelocity: Vector3
@@ -31,7 +31,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	MoveTerrain(delta)
-	
+	ProcessTiles()
 
 func _physics_process(delta: float) -> void:
 	ProcessVelocity(player.GetVelocity())
@@ -43,13 +43,46 @@ func MoveTerrain(delta: float) -> void:
 
 #function that gets the velocity of the terrain from an input value
 func ProcessVelocity(velocity: Vector3) -> void:
-	terrainVelocity.x = velocity.x
-	terrainVelocity.z = -velocity.z
-	terrainVelocity.y = velocity.y
+	terrainVelocity.x = velocity.x * 0.277778
+	terrainVelocity.z = -velocity.z * 0.277778
+	terrainVelocity.y = velocity.y * 0.277778
 
-#function that handles spawning and despawning of tiles
+#function that manages spawning and despawning of tiles
 func ProcessTiles() -> void:
-	pass
+	
+	var zBoundry: float
+	var xBoundry: float
+	
+	zBoundry = -tileSize
+	xBoundry = int(gridSize.x/2)
+	
+	if(even):
+		xBoundry -= 0.5
+	
+	xBoundry *= tileSize
+	
+	for tile in generatedTiles:
+		
+		var tilePosition: Vector3
+		tilePosition = tile.position
+		
+		#right border check
+		if(tilePosition.x > xBoundry):
+			print("right border call, "  + str(tile.position))
+			SpawnTile(Vector3((tilePosition.x - gridSize.x*tileSize), tilePosition.y, tilePosition.z))
+			RemoveTile(tile)
+		
+		#left border check
+		elif(tilePosition.x < -xBoundry):
+			print("left border call, "  + str(tile.position))
+			SpawnTile(Vector3((tilePosition.x + gridSize.x*tileSize), tilePosition.y, tilePosition.z))
+			RemoveTile(tile)
+		
+		#back border check
+		elif(tilePosition.z < zBoundry):
+			#print("back border call, " + str(tile.position))
+			SpawnTile(Vector3(tilePosition.x, tilePosition.y, (tilePosition.z + gridSize.y*tileSize)))
+			RemoveTile(tile)
 
 #function that calls the initial generation of the grid
 func InitialGeneration() -> void:
@@ -113,12 +146,14 @@ func EvenInitGeneration() -> void:
 				var posZ: float = playerPos.position.z + tileSize/2 + i*tileSize - startPosOffset
 				spawnedTile.global_position = Vector3(posX, 0.0, posZ)
 
+#function that despawns an input tile
 func RemoveTile(targetTile: Node3D) -> void:
 	
 	#remove from list and de-spawn
 	generatedTiles.remove_at(generatedTiles.find(targetTile))
 	targetTile.queue_free()
 
+#function that spawns a tile at the desired location
 func SpawnTile(spawnPosition: Vector3) -> void:
 	
 	#Instantiate spawned tile

@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 	HandleHorizontalMovement(delta)
 	
 	#print statement testing trackedVelocity
-	print(trackedVelocity)
+	#print(trackedVelocity)
 
 func HandleForwardMovement(delta: float) -> void:
 	
