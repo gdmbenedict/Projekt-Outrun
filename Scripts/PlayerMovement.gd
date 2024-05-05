@@ -1,12 +1,19 @@
 extends CharacterBody3D
 
+class_name PlayerMovement
+
+@export_category("Horizontal Movement")
 @export var horizontalTimeToMax: float = 1
 @export var horizontalMaxSpeed: float = 25
 
-@export var trackedVelocity: Vector3 #variable that stores the velocity of the player
-
+@export_category("Gears")
 @export var gears: Array[Gear] = []
 var activeGear: int
+
+@export var trackedVelocity: Vector3 #variable that stores the velocity of the player
+
+func _init() -> void:
+	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

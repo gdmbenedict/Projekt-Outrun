@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8107erpbuw1w"]
+[gd_scene load_steps=12 format=3 uid="uid://c8107erpbuw1w"]
 
 [ext_resource type="PackedScene" uid="uid://da6ycxfcpesar" path="res://Prefabs/Terrain/Forest/ForestTile1.tscn" id="1_efj8q"]
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_uturd"]
 [ext_resource type="Script" path="res://Scripts/Gear.gd" id="2_qbm70"]
+[ext_resource type="Script" path="res://Scripts/TerrainManager.gd" id="3_3xupl"]
+[ext_resource type="PackedScene" path="res://Prefabs/Terrain/Forest/ForestTile2.tscn" id="5_2rmtm"]
+[ext_resource type="PackedScene" path="res://Prefabs/Terrain/Forest/Forest Tile 3.tscn" id="6_3ajdb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r5ish"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -33,7 +36,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("gears")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.1, -71.0022)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.1, 0)
 script = ExtResource("1_uturd")
 gears = [NodePath("Gears/Gear1"), NodePath("Gears/Gear2"), NodePath("Gears/Gear3"), NodePath("Gears/Gear4"), NodePath("Gears/Gear5")]
 
@@ -83,4 +86,10 @@ minSpeed = 158.0
 timeShift = 30.0
 smoothingFactor = 405.0
 
-[node name="ForestTile1" parent="." instance=ExtResource("1_efj8q")]
+[node name="TerrainController" type="Node3D" parent="." node_paths=PackedStringArray("playerPos", "player")]
+script = ExtResource("3_3xupl")
+playerPos = NodePath("../Player")
+player = NodePath("../Player")
+tileSize = 150.0
+tiles = Array[PackedScene]([ExtResource("1_efj8q"), ExtResource("5_2rmtm"), ExtResource("6_3ajdb")])
+gridSize = Vector2(5, 5)

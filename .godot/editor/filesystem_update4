@@ -3,3 +3,6 @@ res://GameScenes/TestGameplay.tscn
 res://Scripts/PlayerMovement.gd
 res://Scripts/SharedFunctions.gd
 res://Scripts/Gear.gd
+res://Scripts/TerrainManager.gd
+res://Prefabs/Models/car_model.tscn
+res://Prefabs/Terrain/Forest/ForestTile1.tscn
