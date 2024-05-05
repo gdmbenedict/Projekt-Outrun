@@ -81,4 +81,6 @@ func shiftGear() -> void:
 		#check for shift down
 		if(trackedVelocity.z < gears[activeGear].GetMinSpeed()):
 			activeGear -= 1
-	
+
+func GetVelocity() -> Vector3:
+	return trackedVelocity

@@ -12,21 +12,50 @@ extends Node3D
 @export var gridSize: Vector2
 @export var startPosOffset: float
 var generatedTiles = []
+var even: boolean
+
+#Runtime variables
+var terrainVelocity: Vector3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	InitialGeneration()
-
+	terrainVelocity = Vector3(0, 0, 0)
+	
+	if(int(gridSize.x) % 2 == 0):
+		even = true
+	else:
+		even = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	MoveTerrain(delta)
+	
+
+func _physics_process(delta: float) -> void:
+	ProcessVelocity(player.GetVelocity())
+
+#function that movees the terrain
+func MoveTerrain(delta: float) -> void:
+	for tile in generatedTiles:
+		tile.position += terrainVelocity * delta
+
+#function that gets the velocity of the terrain from an input value
+func ProcessVelocity(velocity: Vector3) -> void:
+	terrainVelocity.x = velocity.x
+	terrainVelocity.z = -velocity.z
+	terrainVelocity.y = velocity.y
+
+#function that handles spawning and despawning of tiles
+func ProcessTiles() -> void:
 	pass
 
 #function that calls the initial generation of the grid
 func InitialGeneration() -> void:
 	
 	#check to see if x-axis number of tiles is even or odd
-	if(int(gridSize.x) % 2 == 0):
+	if(even):
 		EvenInitGeneration()
 	else:
 		OddInitGeneration()
@@ -83,3 +112,21 @@ func EvenInitGeneration() -> void:
 				
 				var posZ: float = playerPos.position.z + tileSize/2 + i*tileSize - startPosOffset
 				spawnedTile.global_position = Vector3(posX, 0.0, posZ)
+
+func RemoveTile(targetTile: Node3D) -> void:
+	
+	#remove from list and de-spawn
+	generatedTiles.remove_at(generatedTiles.find(targetTile))
+	targetTile.queue_free()
+
+func SpawnTile(spawnPosition: Vector3) -> void:
+	
+	#Instantiate spawned tile
+	var spawnedTile := tiles.pick_random().instantiate() as Node3D
+	
+	#parent tile and add it to list
+	add_child(spawnedTile)
+	generatedTiles.append(spawnedTile)
+	
+	#setting position of tile
+	spawnedTile.position = spawnPosition
