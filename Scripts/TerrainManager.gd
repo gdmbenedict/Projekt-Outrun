@@ -16,6 +16,8 @@ var even: bool
 
 #Runtime variables
 var terrainVelocity: Vector3
+var zBoundry: float
+var xBoundry: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,6 +29,8 @@ func _ready() -> void:
 		even = true
 	else:
 		even = false
+	
+	CalcBorders()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -47,10 +51,7 @@ func ProcessVelocity(velocity: Vector3) -> void:
 	terrainVelocity.z = -velocity.z * 0.277778
 	terrainVelocity.y = velocity.y * 0.277778
 
-#function that manages spawning and despawning of tiles
-func ProcessTiles() -> void:
-	var zBoundry: float
-	var xBoundry: float
+func CalcBorders() -> void:
 	zBoundry = -tileSize
 	xBoundry = floori(gridSize.x/2.0)
 	
@@ -59,6 +60,11 @@ func ProcessTiles() -> void:
 	
 	xBoundry *= tileSize
 	
+	print("zBoundry = %.2f, \nxBoundry = %.2f" %[zBoundry, xBoundry])
+
+#function that manages spawning and despawning of tiles
+func ProcessTiles() -> void:
+	
 	for tile in generatedTiles:
 		var tilePosition: Vector3
 		tilePosition = tile.position
@@ -66,18 +72,18 @@ func ProcessTiles() -> void:
 		#right border check
 		if(tilePosition.x > xBoundry):
 			print("right border call, (%.2f > %.2f == %s) %s id %d" % [tilePosition.x, xBoundry, tilePosition.x > xBoundry, tile.position,tile.get_instance_id()])
-			SpawnTile(Vector3((tilePosition.x - gridSize.x * (tileSize * 0.5)), tilePosition.y, tilePosition.z))
+			SpawnTile(Vector3((tilePosition.x - (gridSize.x -1) * (tileSize)), tilePosition.y, tilePosition.z))
 			RemoveTile(tile)
 		
 		#left border check
 		elif(tilePosition.x < -xBoundry):
 			print("left border call, (%.2f < %.2f == %s) %s %d" % [tilePosition.x, -xBoundry, tilePosition.x < -xBoundry, tile.position, tile.position,tile.get_instance_id()])
-			SpawnTile(Vector3((tilePosition.x + gridSize.x * (tileSize * 0.5)), tilePosition.y, tilePosition.z))
+			SpawnTile(Vector3((tilePosition.x + (gridSize.x -1) * (tileSize)), tilePosition.y, tilePosition.z))
 			RemoveTile(tile)
 		
 		#back border check
 		elif(tilePosition.z < zBoundry):
-			print("back border call, " + str(tile.position))
+			#print("back border call, " + str(tile.position))
 			SpawnTile(Vector3(tilePosition.x, tilePosition.y, (tilePosition.z + gridSize.y*tileSize)))
 			RemoveTile(tile)
 
