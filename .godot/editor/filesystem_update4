@@ -1,16 +1,5 @@
-res://Prefabs/Shaders/Grid.gdshader
-res://Prefabs/Shaders/Sky_Shader.gdshader
-res://Materials/SimpleMaterials/White.tres
-<<<<<<< HEAD
-res://GameScenes/TestGameplay.tscn
-res://Scripts/PlayerMovement.gd
-res://Scripts/SharedFunctions.gd
-res://Scripts/Gear.gd
-res://Scripts/TerrainManager.gd
-res://Prefabs/Models/car_model.tscn
-res://Prefabs/Terrain/Forest/ForestTile1.tscn
-res://Prefabs/Terrain/Terrain Componenets/SimpleCylinder.tscn
 res://Prefabs/Terrain/Terrain Componenets/TerrainFloor.tscn
-=======
-res://Prefabs/Terrain/environment_lighting.tscn
->>>>>>> main
+res://GameScenes/TestGameplay.tscn
+res://Materials/SimpleMaterials/White.tres
+res://Prefabs/Models/car_model.tscn
+res://Prefabs/Models/car_fixed.tscn

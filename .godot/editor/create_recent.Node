@@ -1,8 +1,8 @@
+MeshInstance3D
 WorldEnvironment
 Node3D
 Gear
 Camera3D
-MeshInstance3D
 MultiMeshInstance3D
 CollisionShape3D
 CharacterBody3D

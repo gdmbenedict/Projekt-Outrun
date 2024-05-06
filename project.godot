@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Projekt Outrun"
+run/main_scene="res://GameScenes/TestGameplay.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

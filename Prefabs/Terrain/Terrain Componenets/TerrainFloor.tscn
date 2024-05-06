@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bs21jrogohafe"]
 
 [ext_resource type="Shader" path="res://Prefabs/Shaders/Grid.gdshader" id="1_auo6d"]
-[ext_resource type="PackedScene" path="res://Prefabs/Models/Projekt_Outrun_Player_Car.fbx" id="2_nkwro"]
+[ext_resource type="PackedScene" uid="uid://xj0j4o821hl7" path="res://Prefabs/Models/car_model.tscn" id="2_nkwro"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7xgv5"]
 render_priority = 0
