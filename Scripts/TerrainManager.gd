@@ -66,13 +66,13 @@ func ProcessTiles() -> void:
 		#right border check
 		if(tilePosition.x > xBoundry):
 			print("right border call, (%.2f > %.2f == %s) %s id %d" % [tilePosition.x, xBoundry, tilePosition.x > xBoundry, tile.position,tile.get_instance_id()])
-			SpawnTile(Vector3((tilePosition.x - gridSize.x*tileSize), tilePosition.y, tilePosition.z))
+			SpawnTile(Vector3((tilePosition.x - gridSize.x * (tileSize * 0.5)), tilePosition.y, tilePosition.z))
 			RemoveTile(tile)
 		
 		#left border check
 		elif(tilePosition.x < -xBoundry):
 			print("left border call, (%.2f < %.2f == %s) %s %d" % [tilePosition.x, -xBoundry, tilePosition.x < -xBoundry, tile.position, tile.position,tile.get_instance_id()])
-			SpawnTile(Vector3((tilePosition.x + gridSize.x*tileSize), tilePosition.y, tilePosition.z))
+			SpawnTile(Vector3((tilePosition.x + gridSize.x * (tileSize * 0.5)), tilePosition.y, tilePosition.z))
 			RemoveTile(tile)
 		
 		#back border check
@@ -146,8 +146,8 @@ func EvenInitGeneration() -> void:
 func RemoveTile(targetTile: Node3D) -> void:
 	#remove from list and de-spawn
 	generatedTiles.erase(targetTile)
+	print("Remove tile instance id %d %s" % [targetTile.get_instance_id(), targetTile.position])
 	targetTile.queue_free()
-	print("Remove tile instance id %d"%get_instance_id())
 
 #function that spawns a tile at the desired location
 func SpawnTile(spawnPosition: Vector3) -> void:
@@ -155,10 +155,11 @@ func SpawnTile(spawnPosition: Vector3) -> void:
 	#Instantiate spawned tile
 	var spawnedTile := tiles.pick_random().instantiate() as Node3D
 	
-	print("Spawned tile instance id %d"%get_instance_id())
 	#parent tile and add it to list
 	add_child(spawnedTile)
 	generatedTiles.append(spawnedTile)
 	
 	#setting position of tile
 	spawnedTile.position = spawnPosition
+	print("Spawned tile instance id %d %s" % [spawnedTile.get_instance_id(),spawnPosition])
+
