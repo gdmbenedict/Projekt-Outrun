@@ -1,5 +1,4 @@
 res://Prefabs/Terrain/Terrain Componenets/TerrainFloor.tscn
+res://Lighting/Shaders/Grid.gdshader
 res://Materials/SimpleMaterials/White.tres
-res://GameScenes/TestGameplay.tscn
-res://Prefabs/Models/car_model.tscn
-res://Prefabs/Terrain/environment_lighting.tscn
+res://Lighting/Shaders/Sky_Shader.gdshader
