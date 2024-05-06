@@ -49,44 +49,40 @@ func ProcessVelocity(velocity: Vector3) -> void:
 
 #function that manages spawning and despawning of tiles
 func ProcessTiles() -> void:
-	
 	var zBoundry: float
 	var xBoundry: float
-	
 	zBoundry = -tileSize
-	xBoundry = int(gridSize.x/2)
+	xBoundry = floori(gridSize.x/2.0)
 	
-	if(even):
+	if(even): 
 		xBoundry -= 0.5
 	
 	xBoundry *= tileSize
 	
 	for tile in generatedTiles:
-		
 		var tilePosition: Vector3
 		tilePosition = tile.position
 		
 		#right border check
 		if(tilePosition.x > xBoundry):
-			print("right border call, "  + str(tile.position))
+			print("right border call, (%.2f > %.2f == %s) %s id %d" % [tilePosition.x, xBoundry, tilePosition.x > xBoundry, tile.position,tile.get_instance_id()])
 			SpawnTile(Vector3((tilePosition.x - gridSize.x*tileSize), tilePosition.y, tilePosition.z))
 			RemoveTile(tile)
 		
 		#left border check
 		elif(tilePosition.x < -xBoundry):
-			print("left border call, "  + str(tile.position))
+			print("left border call, (%.2f < %.2f == %s) %s %d" % [tilePosition.x, -xBoundry, tilePosition.x < -xBoundry, tile.position, tile.position,tile.get_instance_id()])
 			SpawnTile(Vector3((tilePosition.x + gridSize.x*tileSize), tilePosition.y, tilePosition.z))
 			RemoveTile(tile)
 		
 		#back border check
 		elif(tilePosition.z < zBoundry):
-			#print("back border call, " + str(tile.position))
+			print("back border call, " + str(tile.position))
 			SpawnTile(Vector3(tilePosition.x, tilePosition.y, (tilePosition.z + gridSize.y*tileSize)))
 			RemoveTile(tile)
 
 #function that calls the initial generation of the grid
 func InitialGeneration() -> void:
-	
 	#check to see if x-axis number of tiles is even or odd
 	if(even):
 		EvenInitGeneration()
@@ -148,10 +144,10 @@ func EvenInitGeneration() -> void:
 
 #function that despawns an input tile
 func RemoveTile(targetTile: Node3D) -> void:
-	
 	#remove from list and de-spawn
-	generatedTiles.remove_at(generatedTiles.find(targetTile))
+	generatedTiles.erase(targetTile)
 	targetTile.queue_free()
+	print("Remove tile instance id %d"%get_instance_id())
 
 #function that spawns a tile at the desired location
 func SpawnTile(spawnPosition: Vector3) -> void:
@@ -159,6 +155,7 @@ func SpawnTile(spawnPosition: Vector3) -> void:
 	#Instantiate spawned tile
 	var spawnedTile := tiles.pick_random().instantiate() as Node3D
 	
+	print("Spawned tile instance id %d"%get_instance_id())
 	#parent tile and add it to list
 	add_child(spawnedTile)
 	generatedTiles.append(spawnedTile)
