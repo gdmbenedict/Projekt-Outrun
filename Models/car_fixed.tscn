@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://tc3h18hdrntb"]
 
-[ext_resource type="PackedScene" uid="uid://byok4ephwvnvr" path="res://Prefabs/Models/Fixed_Car.fbx" id="1_8sn5a"]
+[ext_resource type="PackedScene" uid="uid://byok4ephwvnvr" path="res://Models/Fixed_Car.fbx" id="1_8sn5a"]
 
 [node name="Car_Model" type="Node3D"]
 

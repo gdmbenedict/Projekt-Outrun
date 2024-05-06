@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://hxcg2gtcgw28"]
 
-[ext_resource type="Shader" path="res://Prefabs/Shaders/Sky_Shader.gdshader" id="1_21uuc"]
+[ext_resource type="Shader" path="res://Lighting/Shaders/Sky_Shader.gdshader" id="1_21uuc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_07or4"]
 shader = ExtResource("1_21uuc")

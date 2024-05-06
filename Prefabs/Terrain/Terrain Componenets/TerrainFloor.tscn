@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs21jrogohafe"]
+[gd_scene load_steps=5 format=3 uid="uid://bs21jrogohafe"]
 
-[ext_resource type="Shader" path="res://Prefabs/Shaders/Grid.gdshader" id="1_auo6d"]
-[ext_resource type="PackedScene" uid="uid://xj0j4o821hl7" path="res://Prefabs/Models/car_model.tscn" id="2_nkwro"]
+[ext_resource type="Shader" path="res://Lighting/Shaders/Grid.gdshader" id="1_auo6d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7xgv5"]
 render_priority = 0
@@ -23,11 +22,9 @@ transform = Transform3D(0.999885, 0, 0, 0, 0.999885, 0, 0, 0, 0.999885, 0, 0, 0)
 material_overlay = SubResource("ShaderMaterial_7xgv5")
 mesh = SubResource("PlaneMesh_kd11c")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+transform = Transform3D(1.00011, 0, 0, 0, 1.00011, 0, 0, 0, 1.00011, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 transform = Transform3D(150, 0, 0, 0, 0.01, 0, 0, 0, 150, 0, 0, 0)
 shape = SubResource("BoxShape3D_joy4b")
-
-[node name="Root Scene2" parent="." instance=ExtResource("2_nkwro")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.655, 104.575, -82.5611)

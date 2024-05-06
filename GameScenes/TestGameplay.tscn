@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://da6ycxfcpesar" path="res://Prefabs/Terrain/Forest/ForestTile1.tscn" id="1_efj8q"]
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_uturd"]
 [ext_resource type="Script" path="res://Scripts/Gear.gd" id="2_qbm70"]
-[ext_resource type="PackedScene" uid="uid://tc3h18hdrntb" path="res://Prefabs/Models/car_fixed.tscn" id="2_wpbyt"]
+[ext_resource type="PackedScene" uid="uid://tc3h18hdrntb" path="res://Models/car_fixed.tscn" id="2_wpbyt"]
 [ext_resource type="Script" path="res://Scripts/TerrainManager.gd" id="3_3xupl"]
 [ext_resource type="PackedScene" uid="uid://cashwdug0ts74" path="res://Prefabs/Terrain/Forest/ForestTile2.tscn" id="5_2rmtm"]
 [ext_resource type="PackedScene" uid="uid://ca2hccuwshn87" path="res://Prefabs/Terrain/Forest/Forest Tile 3.tscn" id="6_3ajdb"]
@@ -21,9 +21,8 @@ sky = SubResource("Sky_fiq6l")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wq8g1"]
-radius = 1.12206
-height = 5.11772
+[sub_resource type="BoxShape3D" id="BoxShape3D_2u2vt"]
+size = Vector3(2.34119, 1.49207, 5.50708)
 
 [node name="TestGameplay" type="Node3D"]
 
@@ -42,8 +41,8 @@ script = ExtResource("1_uturd")
 gears = [NodePath("Gears/Gear1"), NodePath("Gears/Gear2"), NodePath("Gears/Gear3"), NodePath("Gears/Gear4"), NodePath("Gears/Gear5")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(-0.281923, -8.73815e-08, 0.959437, 0.958983, 0.0307479, 0.28179, -0.0295007, 0.999527, -0.00866845, -0.00411683, -0.4126, -2.05822)
-shape = SubResource("CapsuleShape3D_wq8g1")
+transform = Transform3D(1, 1.74846e-07, -1.74846e-07, -1.74845e-07, 1, 1.74846e-07, 1.74846e-07, -1.74845e-07, 1, 0.0446502, -0.58063, -2.09155)
+shape = SubResource("BoxShape3D_2u2vt")
 
 [node name="Car_Model" parent="Player" instance=ExtResource("2_wpbyt")]
 transform = Transform3D(-1.5, 0, 1.31134e-07, 0, 1.5, 0, -1.31134e-07, 0, -1.5, -0.29416, -1.37802, -2.57162e-08)
