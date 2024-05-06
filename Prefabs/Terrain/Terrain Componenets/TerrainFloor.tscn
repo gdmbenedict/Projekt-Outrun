@@ -2,11 +2,11 @@
 
 [ext_resource type="Shader" path="res://Lighting/Shaders/Grid.gdshader" id="1_auo6d"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_oqmik"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7xgv5"]
 render_priority = 0
 shader = ExtResource("1_auo6d")
-shader_parameter/resolution = Vector2(100, 100)
-shader_parameter/line_color = Color(1, 0.15, 3, 1)
+shader_parameter/resolution = Vector2(600, 400)
+shader_parameter/line_color = Color(0.9, 0.3, 1, 1)
 shader_parameter/zoom = 20.0
 shader_parameter/thickness = 2.0
 
@@ -19,7 +19,7 @@ size = Vector2(150, 150)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.999885, 0, 0, 0, 0.999885, 0, 0, 0, 0.999885, 0, 0, 0)
-material_override = SubResource("ShaderMaterial_oqmik")
+material_overlay = SubResource("ShaderMaterial_7xgv5")
 mesh = SubResource("PlaneMesh_kd11c")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
