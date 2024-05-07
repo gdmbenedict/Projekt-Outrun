@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://c8107erpbuw1w"]
 
-[ext_resource type="PackedScene" uid="uid://da6ycxfcpesar" path="res://Prefabs/Terrain/Forest/ForestTile1.tscn" id="1_efj8q"]
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_uturd"]
 [ext_resource type="Script" path="res://Scripts/Gear.gd" id="2_qbm70"]
-[ext_resource type="PackedScene" uid="uid://cwffcysmxjgam" path="res://Models/Fixed_Car.tscn" id="2_yopmy"]
+[ext_resource type="PackedScene" uid="uid://tc3h18hdrntb" path="res://Models/car_fixed.tscn" id="2_wpbyt"]
 [ext_resource type="Script" path="res://Scripts/TerrainManager.gd" id="3_3xupl"]
-[ext_resource type="PackedScene" uid="uid://cashwdug0ts74" path="res://Prefabs/Terrain/Forest/ForestTile2.tscn" id="5_2rmtm"]
-[ext_resource type="PackedScene" uid="uid://ca2hccuwshn87" path="res://Prefabs/Terrain/Forest/Forest Tile 3.tscn" id="6_3ajdb"]
+[ext_resource type="PackedScene" uid="uid://dlp1ohptppxq6" path="res://Prefabs/Terrain/Tiles/MazeTile1.tscn" id="5_54cwb"]
+[ext_resource type="PackedScene" uid="uid://i5qjy5kftere" path="res://Prefabs/Terrain/Tiles/PillarsTile1.tscn" id="6_1q83a"]
+[ext_resource type="PackedScene" uid="uid://jenac1xrysbx" path="res://Prefabs/Terrain/Tiles/WallsTile1.tscn" id="7_57bnl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r5ish"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -21,7 +21,8 @@ sky = SubResource("Sky_fiq6l")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_g8bti"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_2u2vt"]
+size = Vector3(2.41962, 1.49207, 5.50708)
 
 [node name="TestGameplay" type="Node3D"]
 
@@ -40,13 +41,11 @@ script = ExtResource("1_uturd")
 gears = [NodePath("Gears/Gear1"), NodePath("Gears/Gear2"), NodePath("Gears/Gear3"), NodePath("Gears/Gear4"), NodePath("Gears/Gear5")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.483948, 0)
-visible = false
-shape = SubResource("SphereShape3D_g8bti")
-disabled = true
+transform = Transform3D(1, 1.74846e-07, -1.74846e-07, -1.74845e-07, 1, 1.74846e-07, 1.74846e-07, -1.74845e-07, 1, 0.00543595, -0.58063, -2.09155)
+shape = SubResource("BoxShape3D_2u2vt")
 
-[node name="Car_Node" parent="Player" instance=ExtResource("2_yopmy")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.2, 0)
+[node name="Car_Model" parent="Player" instance=ExtResource("2_wpbyt")]
+transform = Transform3D(-1.5, 0, 1.31134e-07, 0, 1.5, 0, -1.31134e-07, 0, -1.5, -0.29416, -1.37802, -2.57162e-08)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2, 4)
@@ -92,5 +91,5 @@ script = ExtResource("3_3xupl")
 playerPos = NodePath("../Player")
 player = NodePath("../Player")
 tileSize = 150.0
-tiles = Array[PackedScene]([ExtResource("1_efj8q"), ExtResource("5_2rmtm"), ExtResource("6_3ajdb")])
+tiles = Array[PackedScene]([ExtResource("5_54cwb"), ExtResource("6_1q83a"), ExtResource("7_57bnl")])
 gridSize = Vector2(5, 5)

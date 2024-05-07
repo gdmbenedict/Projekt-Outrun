@@ -1,0 +1,109 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlp1ohptppxq6"]
+
+[ext_resource type="PackedScene" uid="uid://bs21jrogohafe" path="res://Prefabs/Terrain/Terrain Componenets/TerrainFloor.tscn" id="1_g5xaj"]
+[ext_resource type="PackedScene" uid="uid://cmw64owf3rwnw" path="res://Prefabs/Terrain/Structures/wall.tscn" id="2_iwmwa"]
+
+[node name="Tile1" type="Node3D"]
+
+[node name="Terrain Floor" parent="." instance=ExtResource("1_g5xaj")]
+
+[node name="Cooridor" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)
+
+[node name="Wall2" parent="Cooridor" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+
+[node name="Wall" parent="Cooridor" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+
+[node name="Wall3" parent="Cooridor" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+
+[node name="Wall4" parent="Cooridor" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 13, 20, 0, -13)
+
+[node name="Wall5" parent="Cooridor" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 13, 20, 0, 13)
+
+[node name="Wall8" parent="Cooridor" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 13, -20, 0, -13)
+
+[node name="Wall9" parent="Cooridor" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 13, -20, 0, 13)
+
+[node name="Wall6" parent="Cooridor" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 27, 40, 0, 6)
+
+[node name="Wall7" parent="Cooridor" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 27, -40, 0, -6)
+
+[node name="Cooridor3" type="Node3D" parent="."]
+
+[node name="Wall2" parent="Cooridor3" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+
+[node name="Wall" parent="Cooridor3" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+
+[node name="Wall3" parent="Cooridor3" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+
+[node name="Wall7" parent="Cooridor3" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 20, -40, 0, 0)
+
+[node name="Wall10" parent="Cooridor3" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 20, 40, 0, 0)
+
+[node name="Wall4" parent="Cooridor3" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 13, 20, 0, -13)
+
+[node name="Wall5" parent="Cooridor3" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 13, 20, 0, 13)
+
+[node name="Wall8" parent="Cooridor3" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 13, -20, 0, -13)
+
+[node name="Wall9" parent="Cooridor3" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 13, -20, 0, 13)
+
+[node name="Cooridor2" type="Node3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 2, 50)
+
+[node name="Wall2" parent="Cooridor2" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+
+[node name="Wall" parent="Cooridor2" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+
+[node name="Wall3" parent="Cooridor2" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+
+[node name="Wall4" parent="Cooridor2" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 13, 20, 0, -13)
+
+[node name="Wall5" parent="Cooridor2" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 13, 20, 0, 13)
+
+[node name="Wall8" parent="Cooridor2" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 13, -20, 0, -13)
+
+[node name="Wall9" parent="Cooridor2" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 13, -20, 0, 13)
+
+[node name="Wall6" parent="Cooridor2" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 27, 40, 0, 6)
+
+[node name="Wall7" parent="Cooridor2" instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 27, -40, 0, -6)
+
+[node name="ConnectingWall" parent="." instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 10, 49.5, 0, -25)
+
+[node name="ConnectingWall2" parent="." instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 10, -49.5, 0, -25)
+
+[node name="ConnectingWall3" parent="." instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 10, -49.5, 0, 25)
+
+[node name="ConnectingWall4" parent="." instance=ExtResource("2_iwmwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 10, 49.5, 0, 25)
