@@ -13,5 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node) -> void:
 	
-	if("Player" in body.get_groups()):
-		print("player collision detected")
+	if(body is PlayerHealth):
+		#print("collision detected with %d node" %[body.get_instance_id()])
+		body.TakeDamage()
+		get_parent().queue_free()

@@ -82,5 +82,14 @@ func shiftGear() -> void:
 		if(trackedVelocity.z < gears[activeGear].GetMinSpeed()):
 			activeGear -= 1
 
+#Function that returns the Vector3 stored velocity of the vehicle. This is returned in KMH.
 func GetVelocity() -> Vector3:
 	return trackedVelocity
+
+#function that shifts the player down a gear and dramatically reduces their speed.
+func EmergencyShift() -> void:
+	
+	if(activeGear != 0):
+		activeGear -= 1
+	
+	trackedVelocity.z = gears[activeGear].GetMinSpeed()
