@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmw64owf3rwnw"]
+[gd_scene load_steps=5 format=3 uid="uid://cmw64owf3rwnw"]
 
 [ext_resource type="Material" uid="uid://cu1g0wa24lpt" path="res://Materials/SimpleMaterials/MediumGrey.tres" id="1_s7o6g"]
+[ext_resource type="Script" path="res://Scripts/Collide-W-Player.gd" id="2_70siw"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3jsvx"]
 material = ExtResource("1_s7o6g")
@@ -16,7 +17,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("BoxMesh_3jsvx")
 
 [node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("2_70siw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_f7c7s")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
