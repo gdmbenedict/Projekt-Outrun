@@ -14,12 +14,12 @@ scale = Vector2(0.14661, 0.147561)
 texture = ExtResource("1_g7b5w")
 
 [node name="FuelGauge" type="Sprite2D" parent="."]
-position = Vector2(376, 80.5)
-scale = Vector2(0.102772, 0.101615)
+position = Vector2(354, 73)
+scale = Vector2(0.0906018, 0.0888291)
 texture = ExtResource("2_g1y4y")
 
 [node name="GaugeNeedle2" type="Sprite2D" parent="."]
-position = Vector2(391, 81)
+position = Vector2(370, 76)
 rotation = -3.00022
 scale = Vector2(0.109187, 0.108478)
 texture = ExtResource("3_acimd")
