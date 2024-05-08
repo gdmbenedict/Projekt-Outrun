@@ -22,7 +22,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2u2vt"]
-size = Vector3(2.41962, 1.49207, 5.50708)
+size = Vector3(2.04118, 1.25528, 4.48685)
 
 [node name="TestGameplay" type="Node3D"]
 
@@ -35,20 +35,32 @@ environment = SubResource("Environment_sxfrh")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Player" type="CharacterBody3D" parent="." node_paths=PackedStringArray("gears")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.1, 0)
+[node name="TerrainController" type="Node3D" parent="." node_paths=PackedStringArray("playerPos", "player")]
+script = ExtResource("3_3xupl")
+playerPos = NodePath("../Player")
+player = NodePath("../Player")
+tileSize = 150.0
+tiles = Array[PackedScene]([ExtResource("5_54cwb"), ExtResource("6_1q83a"), ExtResource("7_57bnl")])
+gridSize = Vector2(5, 5)
+
+[node name="Player" type="Node3D" parent="." node_paths=PackedStringArray("gears")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.4, 0)
 script = ExtResource("1_uturd")
+horizontalTimeToMax = 0.5
+horizontalMaxSpeed = 75.0
 gears = [NodePath("Gears/Gear1"), NodePath("Gears/Gear2"), NodePath("Gears/Gear3"), NodePath("Gears/Gear4"), NodePath("Gears/Gear5")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 1.74846e-07, -1.74846e-07, -1.74845e-07, 1, 1.74846e-07, 1.74846e-07, -1.74845e-07, 1, 0.00543595, -0.58063, -2.09155)
+[node name="PlayerCollider" type="CharacterBody3D" parent="Player"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/PlayerCollider"]
+transform = Transform3D(1, 1.74846e-07, -1.74846e-07, -1.74845e-07, 1, 1.74846e-07, 1.74846e-07, -1.74845e-07, 1, -0.041843, -0.729877, -1.7046)
 shape = SubResource("BoxShape3D_2u2vt")
 
 [node name="Car_Model" parent="Player" instance=ExtResource("2_wpbyt")]
-transform = Transform3D(-1.5, 0, 1.31134e-07, 0, 1.5, 0, -1.31134e-07, 0, -1.5, -0.29416, -1.37802, -2.57162e-08)
+transform = Transform3D(-1.25, 0, 1.88745e-07, 0, 1.25, 0, -1.88745e-07, 0, -1.25, -0.29416, -1.37802, -2.57162e-08)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2, 4)
+transform = Transform3D(1, 0, 7.10543e-15, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2, 4)
 
 [node name="Gears" type="Node3D" parent="Player"]
 
@@ -85,11 +97,3 @@ maxSpeed = 215.0
 minSpeed = 158.0
 timeShift = 30.0
 smoothingFactor = 405.0
-
-[node name="TerrainController" type="Node3D" parent="." node_paths=PackedStringArray("playerPos", "player")]
-script = ExtResource("3_3xupl")
-playerPos = NodePath("../Player")
-player = NodePath("../Player")
-tileSize = 150.0
-tiles = Array[PackedScene]([ExtResource("5_54cwb"), ExtResource("6_1q83a"), ExtResource("7_57bnl")])
-gridSize = Vector2(5, 5)
