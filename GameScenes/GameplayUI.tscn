@@ -1,8 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpddkxwm3rs3y"]
+[gd_scene load_steps=8 format=3 uid="uid://dpddkxwm3rs3y"]
 
 [ext_resource type="Script" path="res://Scripts/GameplayUI.gd" id="1_0rayq"]
 [ext_resource type="Texture2D" uid="uid://cm4toyyt841kw" path="res://Sprites/Speedometer.png" id="1_ada34"]
 [ext_resource type="Texture2D" uid="uid://dwf5u8usnjvq7" path="res://Sprites/Gauge needle.png" id="2_x52sf"]
+[ext_resource type="FontFile" uid="uid://dxjbcrcc72sb" path="res://Fonts/fs-sevegment.ttf" id="4_incck"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4lx20"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_anuyv"]
+font = ExtResource("4_incck")
+font_size = 42
 
 [sub_resource type="LabelSettings" id="LabelSettings_3xhna"]
 font_size = 50
@@ -11,7 +18,7 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 10
 shadow_color = Color(0, 0, 0, 0.32549)
 
-[node name="GameplayUI" type="Control" node_paths=PackedStringArray("speedometerNeedle", "scoreText")]
+[node name="GameplayUI" type="Control" node_paths=PackedStringArray("speedometerNeedle", "speedometerReading", "scoreText")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,6 +27,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0rayq")
 speedometerNeedle = NodePath("MarginContainer/Speedometer/SpeedometerNeedle")
+speedometerReading = NodePath("MarginContainer/Speedometer/SpeedLabel")
 scoreText = NodePath("MarginContainer2/Label")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -55,6 +63,36 @@ rotation = -0.174533
 pivot_offset = Vector2(141, 39)
 texture = ExtResource("2_x52sf")
 expand_mode = 1
+
+[node name="UnitsLabel" type="Label" parent="MarginContainer/Speedometer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.75
+anchor_right = 0.5
+anchor_bottom = 0.75
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "KMH:"
+label_settings = SubResource("LabelSettings_4lx20")
+
+[node name="SpeedLabel" type="Label" parent="MarginContainer/Speedometer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.85
+anchor_right = 0.5
+anchor_bottom = 0.9
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "000"
+label_settings = SubResource("LabelSettings_anuyv")
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 1

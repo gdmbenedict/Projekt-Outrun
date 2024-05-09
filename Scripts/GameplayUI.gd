@@ -6,6 +6,7 @@ extends Control
 
 @export_category("Gameplay UI Elements")
 @export var speedometerNeedle: TextureRect
+@export var speedometerReading: Label
 @export var scoreText: Label
 
 # Called when the node enters the scene tree for the first time.
@@ -16,4 +17,5 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	speedometerNeedle.rotation_degrees = -10 + (player.GetSpeed()/player.GetMaxSpeed())*278 #278 is degrees between max and min speeds
-	scoreText.text = "Score: %.0f" % [score.GetScore()]
+	speedometerReading.text = "%3.f" % player.GetSpeed()
+	scoreText.text = "Score: %.0f" % score.GetScore()
