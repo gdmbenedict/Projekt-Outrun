@@ -90,6 +90,9 @@ func GetVelocity() -> Vector3:
 func GetSpeed() -> float:
 	return trackedVelocity.z
 
+func GetMaxSpeed() -> float:
+	return gears[gears.size()-1].GetMaxSpeed()
+
 #function that shifts the player down a gear and dramatically reduces their speed.
 func EmergencyShift() -> void:
 	

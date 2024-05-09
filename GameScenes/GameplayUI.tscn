@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpddkxwm3rs3y"]
+
+[ext_resource type="Script" path="res://Scripts/GameplayUI.gd" id="1_0rayq"]
+[ext_resource type="Texture2D" uid="uid://cm4toyyt841kw" path="res://Sprites/Speedometer.png" id="1_ada34"]
+[ext_resource type="Texture2D" uid="uid://dwf5u8usnjvq7" path="res://Sprites/Gauge needle.png" id="2_x52sf"]
+
+[node name="GameplayUI" type="Control" node_paths=PackedStringArray("speedometerNeedle")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0rayq")
+speedometerNeedle = NodePath("Speedometer/SpeedometerNeedle")
+
+[node name="Speedometer" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.403922)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.2
+anchor_bottom = 0.35
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ada34")
+expand_mode = 1
+
+[node name="SpeedometerNeedle" type="TextureRect" parent="Speedometer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.0
+offset_top = -39.0
+offset_right = 43.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.174533
+pivot_offset = Vector2(141, 39)
+texture = ExtResource("2_x52sf")
+expand_mode = 1
