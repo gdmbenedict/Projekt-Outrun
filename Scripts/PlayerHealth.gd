@@ -5,6 +5,7 @@ class_name PlayerHealth
 @export_category("Player References")
 @export var playerMovement: PlayerMovement
 @export var carStates: Array[Node3D]
+@export var activeModel: Node3D
 
 @export_category("Player Health Variables")
 @export var health : int = 3
@@ -20,4 +21,15 @@ func _process(delta: float) -> void:
 
 #function called to damage  the vehicle
 func TakeDamage() -> void:
+	
+	health -= 1
 	playerMovement.EmergencyShift()
+	SwitchModel()
+
+func SwitchModel() -> void:
+	
+	if(health > 0 && health <= carStates.size()):
+		
+		activeModel.visible = false
+		activeModel = carStates[health-1]
+		activeModel.visible = true
