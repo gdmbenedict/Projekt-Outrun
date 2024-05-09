@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dlggq0km1tht8"]
+
+[resource]
+resource_name = "blinn2"
+albedo_color = Color(0.665185, 0.665185, 0.665185, 1)
+metallic = 0.4
+roughness = 0.490532

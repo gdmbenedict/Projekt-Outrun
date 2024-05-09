@@ -1,16 +1,16 @@
 [gd_scene load_steps=16 format=3 uid="uid://c8107erpbuw1w"]
 
-[ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_uturd"]
-[ext_resource type="Script" path="res://Scripts/Gear.gd" id="2_qbm70"]
-[ext_resource type="PackedScene" uid="uid://p21xl5algexm" path="res://Models/Fixed_Car.tscn" id="2_wpbyt"]
-[ext_resource type="Script" path="res://Scripts/TerrainManager.gd" id="3_3xupl"]
-[ext_resource type="PackedScene" uid="uid://dlp1ohptppxq6" path="res://Prefabs/Terrain/Tiles/MazeTile1.tscn" id="5_54cwb"]
-[ext_resource type="PackedScene" uid="uid://i5qjy5kftere" path="res://Prefabs/Terrain/Tiles/PillarsTile1.tscn" id="6_1q83a"]
-[ext_resource type="PackedScene" uid="uid://jjeiaf4j1l5g" path="res://Models/Heavily_Damaged.tscn" id="7_18u6h"]
-[ext_resource type="PackedScene" uid="uid://jenac1xrysbx" path="res://Prefabs/Terrain/Tiles/WallsTile1.tscn" id="7_57bnl"]
-[ext_resource type="PackedScene" path="res://GameScenes/Gameplay_HUD.tscn" id="8_fncoc"]
-[ext_resource type="Script" path="res://Scripts/PlayerHealth.gd" id="8_gbd3h"]
-[ext_resource type="PackedScene" uid="uid://ctsvrpyajup4m" path="res://Models/Lightly_Damaged.tscn" id="10_bbu6v"]
+[ext_resource type="Script" path="res://Scripts/TerrainManager.gd" id="1_bterj"]
+[ext_resource type="PackedScene" uid="uid://dlp1ohptppxq6" path="res://Prefabs/Terrain/Tiles/MazeTile1.tscn" id="2_kaawv"]
+[ext_resource type="PackedScene" uid="uid://i5qjy5kftere" path="res://Prefabs/Terrain/Tiles/PillarsTile1.tscn" id="3_umxao"]
+[ext_resource type="PackedScene" uid="uid://jenac1xrysbx" path="res://Prefabs/Terrain/Tiles/WallsTile1.tscn" id="4_mfqud"]
+[ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="5_r1plx"]
+[ext_resource type="Script" path="res://Scripts/PlayerHealth.gd" id="6_p1waj"]
+[ext_resource type="Script" path="res://Scripts/Gear.gd" id="7_wi400"]
+[ext_resource type="PackedScene" uid="uid://c1upovjuhi0ox" path="res://GameScenes/Gameplay_HUD.tscn" id="8_cfwq0"]
+[ext_resource type="PackedScene" uid="uid://p21xl5algexm" path="res://Models/Fixed_Car.tscn" id="9_2062x"]
+[ext_resource type="PackedScene" uid="uid://ctsvrpyajup4m" path="res://Models/Lightly_Damaged.tscn" id="10_yl8ri"]
+[ext_resource type="PackedScene" uid="uid://jjeiaf4j1l5g" path="res://Models/Heavily_Damaged.tscn" id="11_7y705"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r5ish"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -40,22 +40,22 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="TerrainController" type="Node3D" parent="." node_paths=PackedStringArray("playerPos", "player")]
-script = ExtResource("3_3xupl")
+script = ExtResource("1_bterj")
 playerPos = NodePath("../Player")
 player = NodePath("../Player")
 tileSize = 150.0
-tiles = Array[PackedScene]([ExtResource("5_54cwb"), ExtResource("6_1q83a"), ExtResource("7_57bnl")])
+tiles = Array[PackedScene]([ExtResource("2_kaawv"), ExtResource("3_umxao"), ExtResource("4_mfqud")])
 gridSize = Vector2(5, 5)
 
 [node name="Player" type="Node3D" parent="." node_paths=PackedStringArray("gears")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.4, 0)
-script = ExtResource("1_uturd")
+script = ExtResource("5_r1plx")
 horizontalTimeToMax = 0.5
 horizontalMaxSpeed = 75.0
 gears = [NodePath("Gears/Gear1"), NodePath("Gears/Gear2"), NodePath("Gears/Gear3"), NodePath("Gears/Gear4"), NodePath("Gears/Gear5")]
 
 [node name="PlayerCollider" type="CharacterBody3D" parent="Player" node_paths=PackedStringArray("playerMovement", "carStates", "activeModel")]
-script = ExtResource("8_gbd3h")
+script = ExtResource("6_p1waj")
 playerMovement = NodePath("..")
 carStates = [NodePath("../HeavilyDamaged"), NodePath("../LightlyDamaged"), NodePath("../CarModel")]
 activeModel = NodePath("../CarModel")
@@ -71,48 +71,48 @@ current = true
 [node name="Gears" type="Node3D" parent="Player"]
 
 [node name="Gear1" type="Node" parent="Player/Gears"]
-script = ExtResource("2_qbm70")
+script = ExtResource("7_wi400")
 maxSpeed = 55.0
 timeShift = 0.1
 smoothingFactor = 5.0
 
 [node name="Gear2" type="Node" parent="Player/Gears"]
-script = ExtResource("2_qbm70")
+script = ExtResource("7_wi400")
 maxSpeed = 85.0
 minSpeed = 53.0
 timeShift = 3.0
 smoothingFactor = 15.0
 
 [node name="Gear3" type="Node" parent="Player/Gears"]
-script = ExtResource("2_qbm70")
+script = ExtResource("7_wi400")
 maxSpeed = 125.0
 minSpeed = 81.0
 timeShift = 7.0
 smoothingFactor = 45.0
 
 [node name="Gear4" type="Node" parent="Player/Gears"]
-script = ExtResource("2_qbm70")
+script = ExtResource("7_wi400")
 maxSpeed = 165.0
 minSpeed = 119.0
 timeShift = 14.0
 smoothingFactor = 135.0
 
 [node name="Gear5" type="Node" parent="Player/Gears"]
-script = ExtResource("2_qbm70")
+script = ExtResource("7_wi400")
 maxSpeed = 215.0
 minSpeed = 158.0
 timeShift = 30.0
 smoothingFactor = 405.0
 
-[node name="CanvasLayer" parent="Player" instance=ExtResource("8_fncoc")]
+[node name="CanvasLayer" parent="Player" instance=ExtResource("8_cfwq0")]
 
-[node name="CarModel" parent="Player" instance=ExtResource("2_wpbyt")]
+[node name="CarModel" parent="Player" instance=ExtResource("9_2062x")]
 transform = Transform3D(-1.25, 0, 1.09278e-07, 0, 1.25, 0, -1.09278e-07, 0, -1.25, 0.05, -1.375, -1.75)
 
-[node name="LightlyDamaged" parent="Player" instance=ExtResource("10_bbu6v")]
+[node name="LightlyDamaged" parent="Player" instance=ExtResource("10_yl8ri")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.05, -1.375, -1.785)
 visible = false
 
-[node name="HeavilyDamaged" parent="Player" instance=ExtResource("7_18u6h")]
+[node name="HeavilyDamaged" parent="Player" instance=ExtResource("11_7y705")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.05, -1.375, -1.75)
 visible = false
