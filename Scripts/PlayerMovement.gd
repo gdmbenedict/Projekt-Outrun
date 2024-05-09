@@ -86,6 +86,10 @@ func shiftGear() -> void:
 func GetVelocity() -> Vector3:
 	return trackedVelocity
 
+#Function that returns the speed of the player along the z-axis in KMH
+func GetSpeed() -> float:
+	return trackedVelocity.z
+
 #function that shifts the player down a gear and dramatically reduces their speed.
 func EmergencyShift() -> void:
 	

@@ -5,7 +5,9 @@ class_name PlayerHealth
 @export_category("Player References")
 @export var playerMovement: PlayerMovement
 @export var carStates: Array[Node3D]
-@export var activeModel: Node3D
+@export var score: Score
+
+var activeModel: Node3D
 
 @export_category("Player Health Variables")
 @export var health : int = 3
@@ -13,7 +15,7 @@ class_name PlayerHealth
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	activeModel = carStates[health-1]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -25,6 +27,8 @@ func TakeDamage() -> void:
 	health -= 1
 	playerMovement.EmergencyShift()
 	SwitchModel()
+	
+	score.ResetFlawless()
 
 func SwitchModel() -> void:
 	

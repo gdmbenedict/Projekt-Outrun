@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c8107erpbuw1w"]
+[gd_scene load_steps=17 format=3 uid="uid://c8107erpbuw1w"]
 
 [ext_resource type="Script" path="res://Scripts/TerrainManager.gd" id="1_bterj"]
 [ext_resource type="PackedScene" uid="uid://dlp1ohptppxq6" path="res://Prefabs/Terrain/Tiles/MazeTile1.tscn" id="2_kaawv"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://p21xl5algexm" path="res://Models/Fixed_Car.tscn" id="9_2062x"]
 [ext_resource type="PackedScene" uid="uid://ctsvrpyajup4m" path="res://Models/Lightly_Damaged.tscn" id="10_yl8ri"]
 [ext_resource type="PackedScene" uid="uid://jjeiaf4j1l5g" path="res://Models/Heavily_Damaged.tscn" id="11_7y705"]
+[ext_resource type="Script" path="res://Scripts/Score.gd" id="11_i4kts"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r5ish"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -54,11 +55,11 @@ horizontalTimeToMax = 0.5
 horizontalMaxSpeed = 75.0
 gears = [NodePath("Gears/Gear1"), NodePath("Gears/Gear2"), NodePath("Gears/Gear3"), NodePath("Gears/Gear4"), NodePath("Gears/Gear5")]
 
-[node name="PlayerCollider" type="CharacterBody3D" parent="Player" node_paths=PackedStringArray("playerMovement", "carStates", "activeModel")]
+[node name="PlayerCollider" type="CharacterBody3D" parent="Player" node_paths=PackedStringArray("playerMovement", "carStates", "score")]
 script = ExtResource("6_p1waj")
 playerMovement = NodePath("..")
-carStates = [NodePath("../HeavilyDamaged"), NodePath("../LightlyDamaged"), NodePath("../CarModel")]
-activeModel = NodePath("../CarModel")
+carStates = [NodePath("../CarModels/HeavilyDamaged"), NodePath("../CarModels/LightlyDamaged"), NodePath("../CarModels/CarModel")]
+score = NodePath("../Node")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/PlayerCollider"]
 transform = Transform3D(1, 1.74846e-07, -1.74846e-07, -1.74845e-07, 1, 1.74846e-07, 1.74846e-07, -1.74845e-07, 1, -0.041843, -0.729877, -1.73133)
@@ -104,15 +105,21 @@ minSpeed = 158.0
 timeShift = 30.0
 smoothingFactor = 405.0
 
-[node name="CanvasLayer" parent="Player" instance=ExtResource("8_cfwq0")]
+[node name="CarModels" type="Node3D" parent="Player"]
 
-[node name="CarModel" parent="Player" instance=ExtResource("9_2062x")]
+[node name="CarModel" parent="Player/CarModels" instance=ExtResource("9_2062x")]
 transform = Transform3D(-1.25, 0, 1.09278e-07, 0, 1.25, 0, -1.09278e-07, 0, -1.25, 0.05, -1.375, -1.75)
 
-[node name="LightlyDamaged" parent="Player" instance=ExtResource("10_yl8ri")]
+[node name="LightlyDamaged" parent="Player/CarModels" instance=ExtResource("10_yl8ri")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.05, -1.375, -1.785)
 visible = false
 
-[node name="HeavilyDamaged" parent="Player" instance=ExtResource("11_7y705")]
+[node name="HeavilyDamaged" parent="Player/CarModels" instance=ExtResource("11_7y705")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.05, -1.375, -1.75)
 visible = false
+
+[node name="Node" type="Node" parent="Player" node_paths=PackedStringArray("player")]
+script = ExtResource("11_i4kts")
+player = NodePath("..")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("8_cfwq0")]
