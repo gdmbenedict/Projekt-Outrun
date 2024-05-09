@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c8107erpbuw1w"]
+[gd_scene load_steps=17 format=3 uid="uid://c8107erpbuw1w"]
 
 [ext_resource type="Script" path="res://Scripts/TerrainManager.gd" id="1_bterj"]
 [ext_resource type="PackedScene" uid="uid://dlp1ohptppxq6" path="res://Prefabs/Terrain/Tiles/MazeTile1.tscn" id="2_kaawv"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="5_r1plx"]
 [ext_resource type="Script" path="res://Scripts/PlayerHealth.gd" id="6_p1waj"]
 [ext_resource type="Script" path="res://Scripts/Gear.gd" id="7_wi400"]
-[ext_resource type="PackedScene" uid="uid://yai5qikgpg85" path="res://GameScenes/Gameplay_HUD.tscn" id="8_cfwq0"]
 [ext_resource type="PackedScene" uid="uid://p21xl5algexm" path="res://Models/Fixed_Car.tscn" id="9_2062x"]
 [ext_resource type="PackedScene" uid="uid://ctsvrpyajup4m" path="res://Models/Lightly_Damaged.tscn" id="10_yl8ri"]
 [ext_resource type="PackedScene" uid="uid://jjeiaf4j1l5g" path="res://Models/Heavily_Damaged.tscn" id="11_7y705"]
@@ -122,8 +121,6 @@ visible = false
 [node name="Score" type="Node" parent="Player" node_paths=PackedStringArray("player")]
 script = ExtResource("11_i4kts")
 player = NodePath("..")
-
-[node name="CanvasLayer" parent="." instance=ExtResource("8_cfwq0")]
 
 [node name="GameplayUI" parent="." node_paths=PackedStringArray("player", "score") instance=ExtResource("13_4nkkg")]
 player = NodePath("../Player")
