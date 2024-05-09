@@ -1,8 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://p21xl5algexm"]
-
-[ext_resource type="Script" path="res://Scripts/CarRigidbody.gd" id="1_8bupa"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_covqa"]
+[gd_scene load_steps=15 format=3 uid="uid://cwffcysmxjgam"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hxqe0"]
 resource_name = "blinn2"
@@ -173,14 +169,7 @@ _data = {
 "Take 001": SubResource("Animation_dhwmh")
 }
 
-[node name="Car_Node" type="RigidBody3D"]
-mass = 0.01
-gravity_scale = 0.0
-script = ExtResource("1_8bupa")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_covqa")
-disabled = true
+[node name="Car_Node" type="Node3D"]
 
 [node name="Car_Mesh" type="Node3D" parent="."]
 
