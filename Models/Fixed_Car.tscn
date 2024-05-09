@@ -1,4 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://p21xl5algexm"]
+[gd_scene load_steps=16 format=3 uid="uid://cwffcysmxjgam"]
+
+[ext_resource type="Material" uid="uid://cu67e2hqx7dou" path="res://Materials/SimpleMaterials/White.tres" id="1_oi71i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hxqe0"]
 resource_name = "blinn2"
@@ -170,7 +172,6 @@ _data = {
 }
 
 [node name="Car_Node" type="Node3D"]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 
 [node name="Car_Mesh" type="Node3D" parent="."]
 
@@ -179,18 +180,22 @@ transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 [node name="Car" type="Node3D" parent="Car_Mesh"]
 
 [node name="Car_Body" type="MeshInstance3D" parent="Car_Mesh/Car"]
+material_override = ExtResource("1_oi71i")
 mesh = SubResource("ArrayMesh_t2881")
 skeleton = NodePath("")
 
 [node name="Front_Left_Tire1" type="MeshInstance3D" parent="Car_Mesh/Car"]
+material_override = ExtResource("1_oi71i")
 mesh = SubResource("ArrayMesh_mv1kc")
 skeleton = NodePath("")
 
 [node name="Front_Right_Tire1" type="MeshInstance3D" parent="Car_Mesh/Car"]
+material_override = ExtResource("1_oi71i")
 mesh = SubResource("ArrayMesh_a4u1u")
 skeleton = NodePath("")
 
 [node name="Rear_Wheels2" type="MeshInstance3D" parent="Car_Mesh/Car"]
+material_override = ExtResource("1_oi71i")
 mesh = SubResource("ArrayMesh_hcrnm")
 skeleton = NodePath("")
 
