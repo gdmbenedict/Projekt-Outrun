@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://ci1fxqv3hw0vy"]
+[gd_scene load_steps=13 format=3 uid="uid://ci1fxqv3hw0vy"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hapxc"]
+[ext_resource type="Material" uid="uid://cu67e2hqx7dou" path="res://Materials/SimpleMaterials/White.tres" id="1_2ceyo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcp5m"]
 resource_name = "standardSurface1"
-albedo_color = Color(1, 1, 1, 1)
 roughness = 0.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0uq1a"]
@@ -41,8 +40,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0uq1a")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqmcd"]
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_vb02x"]
 _surfaces = [{
 "aabb": AABB(-0.765876, 0.00959571, -1.20574, 1.58171, 0.438741, 0.438741),
@@ -77,8 +74,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_vb02x")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65icx"]
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_p0r8y"]
 _surfaces = [{
 "aabb": AABB(-0.765876, 0.00959571, 0.870848, 0.170528, 0.438741, 0.438741),
@@ -112,8 +107,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_p0r8y")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80uf7"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_pwh0j"]
 _surfaces = [{
@@ -164,23 +157,23 @@ _data = {
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 
 [node name="Car_Body_Damaged1" type="MeshInstance3D" parent="RootNode"]
-material_override = SubResource("StandardMaterial3D_hapxc")
+material_override = ExtResource("1_2ceyo")
 mesh = SubResource("ArrayMesh_106wu")
 skeleton = NodePath("")
 
 [node name="Rear_Tires" type="MeshInstance3D" parent="RootNode"]
-material_override = SubResource("StandardMaterial3D_tqmcd")
+material_override = ExtResource("1_2ceyo")
 mesh = SubResource("ArrayMesh_my5cb")
 skeleton = NodePath("")
 
 [node name="Front_Right_Tire2" type="MeshInstance3D" parent="RootNode"]
-material_override = SubResource("StandardMaterial3D_65icx")
+material_override = ExtResource("1_2ceyo")
 mesh = SubResource("ArrayMesh_m2ljq")
 skeleton = NodePath("")
 
 [node name="Front_Left_Tire4" type="MeshInstance3D" parent="RootNode"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11022e-14, 0, 0)
-material_override = SubResource("StandardMaterial3D_80uf7")
+material_override = ExtResource("1_2ceyo")
 mesh = SubResource("ArrayMesh_xcssr")
 skeleton = NodePath("")
 

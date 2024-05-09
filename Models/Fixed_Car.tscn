@@ -1,6 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://cwffcysmxjgam"]
+[gd_scene load_steps=16 format=3 uid="uid://cwffcysmxjgam"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5ag8"]
+[ext_resource type="Material" uid="uid://cu67e2hqx7dou" path="res://Materials/SimpleMaterials/White.tres" id="1_oi71i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hxqe0"]
 resource_name = "blinn2"
@@ -42,8 +42,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yowud")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptq0m"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fa7r1"]
 resource_name = "blinn1"
 albedo_color = Color(0.665185, 0.665185, 0.665185, 1)
@@ -84,8 +82,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_o2n5m")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yc8gt"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4qsbk"]
 resource_name = "lambert2"
 albedo_color = Color(0.665185, 0.665185, 0.665185, 1)
@@ -125,8 +121,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_gsnpb")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4vppm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k8xpu"]
 resource_name = "lambert3"
@@ -186,22 +180,22 @@ _data = {
 [node name="Car" type="Node3D" parent="Car_Mesh"]
 
 [node name="Car_Body" type="MeshInstance3D" parent="Car_Mesh/Car"]
-material_override = SubResource("StandardMaterial3D_m5ag8")
+material_override = ExtResource("1_oi71i")
 mesh = SubResource("ArrayMesh_t2881")
 skeleton = NodePath("")
 
 [node name="Front_Left_Tire1" type="MeshInstance3D" parent="Car_Mesh/Car"]
-material_override = SubResource("StandardMaterial3D_ptq0m")
+material_override = ExtResource("1_oi71i")
 mesh = SubResource("ArrayMesh_mv1kc")
 skeleton = NodePath("")
 
 [node name="Front_Right_Tire1" type="MeshInstance3D" parent="Car_Mesh/Car"]
-material_override = SubResource("StandardMaterial3D_yc8gt")
+material_override = ExtResource("1_oi71i")
 mesh = SubResource("ArrayMesh_a4u1u")
 skeleton = NodePath("")
 
 [node name="Rear_Wheels2" type="MeshInstance3D" parent="Car_Mesh/Car"]
-material_override = SubResource("StandardMaterial3D_4vppm")
+material_override = ExtResource("1_oi71i")
 mesh = SubResource("ArrayMesh_hcrnm")
 skeleton = NodePath("")
 
