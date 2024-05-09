@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://chu68pyhefmnx"]
+
+[ext_resource type="PackedScene" uid="uid://cxtruev0fvp42" path="res://Models/Lightly_Damaged_Car.fbx" id="1_ikhmr"]
+
+[node name="Root Scene" instance=ExtResource("1_ikhmr")]
+
+[node name="RootNode" parent="." index="0"]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)

@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_uturd"]
 [ext_resource type="Script" path="res://Scripts/Gear.gd" id="2_qbm70"]
-[ext_resource type="PackedScene" uid="uid://tc3h18hdrntb" path="res://Models/car_fixed.tscn" id="2_wpbyt"]
+[ext_resource type="PackedScene" uid="uid://cwffcysmxjgam" path="res://Models/Fixed_Car.tscn" id="2_wpbyt"]
 [ext_resource type="Script" path="res://Scripts/TerrainManager.gd" id="3_3xupl"]
 [ext_resource type="PackedScene" uid="uid://dlp1ohptppxq6" path="res://Prefabs/Terrain/Tiles/MazeTile1.tscn" id="5_54cwb"]
 [ext_resource type="PackedScene" uid="uid://i5qjy5kftere" path="res://Prefabs/Terrain/Tiles/PillarsTile1.tscn" id="6_1q83a"]
 [ext_resource type="PackedScene" uid="uid://jenac1xrysbx" path="res://Prefabs/Terrain/Tiles/WallsTile1.tscn" id="7_57bnl"]
-[ext_resource type="Script" path="res://Scripts/PlayerHealth.gd" id="8_gbd3h"]
+[ext_resource type="PackedScene" uid="uid://c1upovjuhi0ox" path="res://GameScenes/Gameplay_HUD.tscn" id="8_fncoc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r5ish"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -44,15 +44,21 @@ tileSize = 150.0
 tiles = Array[PackedScene]([ExtResource("5_54cwb"), ExtResource("6_1q83a"), ExtResource("7_57bnl")])
 gridSize = Vector2(5, 5)
 
-[node name="Player" type="Node3D" parent="." node_paths=PackedStringArray("gears") groups=["Player"]]
+[node name="Player" type="Node3D" parent="." node_paths=PackedStringArray("gears")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.4, 0)
 script = ExtResource("1_uturd")
 horizontalTimeToMax = 0.5
 horizontalMaxSpeed = 75.0
 gears = [NodePath("Gears/Gear1"), NodePath("Gears/Gear2"), NodePath("Gears/Gear3"), NodePath("Gears/Gear4"), NodePath("Gears/Gear5")]
 
+[node name="PlayerCollider" type="CharacterBody3D" parent="Player"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/PlayerCollider"]
+transform = Transform3D(1, 1.74846e-07, -1.74846e-07, -1.74845e-07, 1, 1.74846e-07, 1.74846e-07, -1.74845e-07, 1, -0.041843, -0.729877, -1.7046)
+shape = SubResource("BoxShape3D_2u2vt")
+
 [node name="Car_Model" parent="Player" instance=ExtResource("2_wpbyt")]
-transform = Transform3D(-1.25, 0, 1.88745e-07, 0, 1.25, 0, -1.88745e-07, 0, -1.25, -0.29416, -1.37802, -2.57162e-08)
+transform = Transform3D(-1.25, 0, 1.88745e-07, 0, 1.25, 0, -1.88745e-07, 0, -1.25, -0.29416, -0.103054, -2.57162e-08)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 7.10543e-15, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2, 4)
@@ -93,10 +99,4 @@ minSpeed = 158.0
 timeShift = 30.0
 smoothingFactor = 405.0
 
-[node name="PlayerCollider" type="CharacterBody3D" parent="Player" node_paths=PackedStringArray("playerMovement") groups=["Player"]]
-script = ExtResource("8_gbd3h")
-playerMovement = NodePath("..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/PlayerCollider"]
-transform = Transform3D(1, 1.74846e-07, -1.74846e-07, -1.74845e-07, 1, 1.74846e-07, 1.74846e-07, -1.74845e-07, 1, -0.041843, -0.729877, -1.7046)
-shape = SubResource("BoxShape3D_2u2vt")
+[node name="CanvasLayer" parent="Player" instance=ExtResource("8_fncoc")]
