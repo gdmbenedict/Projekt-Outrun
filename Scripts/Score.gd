@@ -47,3 +47,6 @@ func CalcScoreMult() -> void:
 #Function that resets the flawless timer
 func ResetFlawless() -> void:
 	flawlessTimer = 0
+
+func GetScore() -> float:
+	return score

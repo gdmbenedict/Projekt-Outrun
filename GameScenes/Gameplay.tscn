@@ -60,7 +60,7 @@ gears = [NodePath("Gears/Gear1"), NodePath("Gears/Gear2"), NodePath("Gears/Gear3
 script = ExtResource("6_p1waj")
 playerMovement = NodePath("..")
 carStates = [NodePath("../CarModels/HeavilyDamaged"), NodePath("../CarModels/LightlyDamaged"), NodePath("../CarModels/CarModel")]
-score = NodePath("../Node")
+score = NodePath("../Score")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/PlayerCollider"]
 transform = Transform3D(1, 1.74846e-07, -1.74846e-07, -1.74845e-07, 1, 1.74846e-07, 1.74846e-07, -1.74845e-07, 1, -0.041843, -0.729877, -1.73133)
@@ -119,11 +119,12 @@ visible = false
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.05, -1.375, -1.75)
 visible = false
 
-[node name="Node" type="Node" parent="Player" node_paths=PackedStringArray("player")]
+[node name="Score" type="Node" parent="Player" node_paths=PackedStringArray("player")]
 script = ExtResource("11_i4kts")
 player = NodePath("..")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("8_cfwq0")]
 
-[node name="GameplayUI" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_4nkkg")]
+[node name="GameplayUI" parent="." node_paths=PackedStringArray("player", "score") instance=ExtResource("13_4nkkg")]
 player = NodePath("../Player")
+score = NodePath("../Player/Score")
