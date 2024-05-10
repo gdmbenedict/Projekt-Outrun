@@ -12,9 +12,6 @@ var flawlessTimer: float
 @export var baseSpeed: float = 100
 @export var baseFlawless: float = 30
 
-@export_category("Player References")
-@export var player: PlayerMovement
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -33,10 +30,11 @@ func _process(delta: float) -> void:
 	score += 1 * delta * scoreMult
 	
 	#updating values
-	playerSpeed = player.GetSpeed()
+	playerSpeed = GameManager.playerSpeed
 	flawlessTimer += delta
 	CalcScoreMult()
 	
+	GameManager.playerScore = GetScore()
 	#debug
 	#print("%.2f" % score)
 

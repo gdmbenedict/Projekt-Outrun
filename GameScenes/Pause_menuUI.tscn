@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cptl7bbp1paly"]
+[gd_scene format=3 uid="uid://cptl7bbp1paly"]
 
-[ext_resource type="FontFile" uid="uid://cmhvmc4abe65k" path="res://Fonts/barcade.ttf" id="1_rp6ch"]
-[ext_resource type="FontFile" uid="uid://d1nhjp27ut4cm" path="res://Fonts/Retrolight.ttf" id="2_j87mm"]
-
-[node name="PauseMenu" type="Control"]
+[node name="PauseMenu" type="Control" groups=["GameplayUI"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,9 +9,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1151.0
-offset_bottom = 646.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.121569, 0.121569, 0.121569, 0.396078)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -37,7 +37,6 @@ theme_override_constants/separation = 30
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_rp6ch")
 theme_override_font_sizes/font_size = 60
 text = "Paused"
 
@@ -47,14 +46,12 @@ theme_override_constants/separation = 15
 
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_j87mm")
 theme_override_font_sizes/font_size = 45
 text = "Resume
 "
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_j87mm")
 theme_override_font_sizes/font_size = 45
 text = "Quit
 "

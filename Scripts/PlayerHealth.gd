@@ -29,6 +29,9 @@ func TakeDamage() -> void:
 	SwitchModel()
 	
 	score.ResetFlawless()
+	
+	if(health <= 0):
+		GameManager.EndGame()
 
 func SwitchModel() -> void:
 	

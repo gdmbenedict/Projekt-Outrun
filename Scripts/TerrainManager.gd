@@ -2,7 +2,6 @@ extends Node3D
 
 @export_category("Player")
 @export var playerPos: Node3D
-@export var player: PlayerMovement
 
 @export_category("Tiles")
 @export var tileSize: float
@@ -38,7 +37,7 @@ func _process(delta: float) -> void:
 	ProcessTiles()
 
 func _physics_process(delta: float) -> void:
-	ProcessVelocity(player.GetVelocity())
+	ProcessVelocity(GameManager.playerVelocity)
 
 #function that movees the terrain
 func MoveTerrain(delta: float) -> void:

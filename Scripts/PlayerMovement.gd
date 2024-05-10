@@ -26,6 +26,9 @@ func _process(delta: float) -> void:
 	HandleForwardMovement(delta)
 	HandleHorizontalMovement(delta)
 	
+	GameManager.playerSpeed = GetSpeed()
+	GameManager.playerMaxSpeed = GetMaxSpeed()
+	GameManager.playerVelocity = GetVelocity()
 	#print statement testing trackedVelocity
 	#print(trackedVelocity)
 
