@@ -39,10 +39,9 @@ environment = SubResource("Environment_sxfrh")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="TerrainController" type="Node3D" parent="." node_paths=PackedStringArray("playerPos", "player")]
+[node name="TerrainController" type="Node3D" parent="." node_paths=PackedStringArray("playerPos")]
 script = ExtResource("1_bterj")
 playerPos = NodePath("../Player")
-player = NodePath("../Player")
 tileSize = 150.0
 tiles = Array[PackedScene]([ExtResource("2_kaawv"), ExtResource("3_umxao"), ExtResource("4_mfqud")])
 gridSize = Vector2(5, 5)
@@ -117,6 +116,5 @@ visible = false
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.05, -1.375, -1.75)
 visible = false
 
-[node name="Score" type="Node" parent="Player" node_paths=PackedStringArray("player")]
+[node name="Score" type="Node" parent="Player"]
 script = ExtResource("11_i4kts")
-player = NodePath("..")

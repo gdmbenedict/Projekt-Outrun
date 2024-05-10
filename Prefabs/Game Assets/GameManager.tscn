@@ -1,16 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxxcr4qor0cj8"]
+[gd_scene load_steps=8 format=3 uid="uid://cxxcr4qor0cj8"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_6jheb"]
-[ext_resource type="PackedScene" uid="uid://cal078sjyucu" path="res://GameScenes/MainMenu.tscn" id="2_ik0go"]
+[ext_resource type="PackedScene" uid="uid://bipgokxl5soxl" path="res://GameScenes/MainMenu2.tscn" id="2_hfws8"]
 [ext_resource type="PackedScene" uid="uid://c8107erpbuw1w" path="res://GameScenes/Gameplay.tscn" id="3_iauc0"]
 [ext_resource type="PackedScene" uid="uid://dign1e8xa20o1" path="res://GameScenes/Main_menuUI.tscn" id="4_ivrp6"]
+[ext_resource type="PackedScene" uid="uid://dw2qk1lmc7pl3" path="res://GameScenes/Game_overUI.tscn" id="5_m0vnt"]
 [ext_resource type="PackedScene" uid="uid://cptl7bbp1paly" path="res://GameScenes/Pause_menuUI.tscn" id="5_o8oxu"]
+[ext_resource type="PackedScene" uid="uid://dpddkxwm3rs3y" path="res://GameScenes/GameplayUI.tscn" id="6_01en3"]
 
-[node name="GameManager" type="Node"]
+[node name="GameManager" type="Node" node_paths=PackedStringArray("mainMenuUI", "pauseUI", "gameOverUI", "GameplayUI")]
 process_mode = 3
 script = ExtResource("1_6jheb")
-mainMenu = ExtResource("2_ik0go")
+mainMenu = ExtResource("2_hfws8")
 gamePlay = ExtResource("3_iauc0")
-mainMenuUI = ExtResource("4_ivrp6")
-pauseUI = ExtResource("5_o8oxu")
-gameOverUI = ExtResource("2_ik0go")
+mainMenuUI = NodePath("MainMenu")
+pauseUI = NodePath("PauseMenu")
+gameOverUI = NodePath("GameOver")
+GameplayUI = NodePath("GameplayUI")
+
+[node name="GameplayUI" parent="." instance=ExtResource("6_01en3")]
+process_mode = 4
+visible = false
+
+[node name="GameOver" parent="." instance=ExtResource("5_m0vnt")]
+process_mode = 4
+visible = false
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_o8oxu")]
+process_mode = 4
+visible = false
+
+[node name="MainMenu" parent="." instance=ExtResource("4_ivrp6")]
+process_mode = 4
+visible = false

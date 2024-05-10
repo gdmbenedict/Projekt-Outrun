@@ -4,14 +4,14 @@ extends Node
 @export_category("Game Scenes")
 @export var mainMenu: PackedScene
 @export var gamePlay: PackedScene
-var loadedScene
+var isInGameplay: bool
 
 #UI varaibles
 @export_category("UI Scenes")
-@export var mainMenuUI: PackedScene
-@export var pauseUI: PackedScene
-@export var gameOverUI: PackedScene
-@export var GameplayUI: PackedScene
+@export var mainMenuUI: Control
+@export var pauseUI: Control
+@export var gameOverUI: Control
+@export var GameplayUI: Control
 var activeUI: Control
 
 #Player Variables
@@ -22,8 +22,10 @@ var playerScore: float = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	loadedScene = mainMenu
-	activeUI = mainMenuUI.instantiate() as Control
+	isInGameplay = false
+	activeUI = mainMenuUI
+	activeUI.process_mode = Node.PROCESS_MODE_INHERIT
+	activeUI.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -32,11 +34,12 @@ func _process(delta: float) -> void:
 		Pause()
 
 func StartGame() -> void:
+	isInGameplay = true
 	LoadScene(gamePlay)
 
 func Pause() -> void:
 	
-	if(loadedScene.is_in_group("GameplayScene")):
+	if(isInGameplay):
 		if get_tree().paused != true:
 			get_tree().paused = true
 			ChangeUI(pauseUI)
@@ -46,25 +49,32 @@ func Pause() -> void:
 
 func EndGame() -> void:
 	
+	isInGameplay = false
 	get_tree().paused = true
 	ChangeUI(gameOverUI)
 
 func ReturnToMainMenu() -> void:
+	isInGameplay = false
 	LoadScene(mainMenu)
 
 func ExitGame() -> void:
 	get_tree().quit()
 
 func LoadScene(sceneToLoad: PackedScene) -> void:
+	get_tree().paused = false
 	get_tree().change_scene_to_packed(sceneToLoad)
-	loadedScene = sceneToLoad
 	
-	if(loadedScene.is_in_group("GameplayScene")):
+	if(isInGameplay):
 		ChangeUI(GameplayUI)
 	else:
 		ChangeUI(mainMenuUI)
 
-func ChangeUI(newUI: PackedScene) -> void:
-	activeUI.queue_free()
-	activeUI = newUI.instantiate() as Control
+func ChangeUI(newUI: Control) -> void:
+	activeUI.process_mode = Node.PROCESS_MODE_DISABLED
+	activeUI.visible = false
+	
+	activeUI = newUI
+	
+	activeUI.process_mode = Node.PROCESS_MODE_INHERIT
+	activeUI.visible = true
 

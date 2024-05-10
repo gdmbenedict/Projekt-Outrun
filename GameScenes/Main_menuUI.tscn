@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dign1e8xa20o1"]
+[gd_scene load_steps=4 format=3 uid="uid://dign1e8xa20o1"]
 
-[ext_resource type="FontFile" uid="uid://rkqodqs3sgh8" path="res://Fonts/NeonSans-GOgRg.ttf" id="1_g81ek"]
+[ext_resource type="FontFile" uid="uid://rkqodqs3sgh8" path="res://Fonts/NeonSans-GOgRg.ttf" id="1_3hfvm"]
+[ext_resource type="Script" path="res://Scripts/UIElementScripts/PlayButton.gd" id="2_0v1tx"]
+[ext_resource type="Script" path="res://Scripts/UIElementScripts/QuitButton.gd" id="3_e3g7x"]
 
 [node name="MainMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,7 +45,7 @@ theme_override_constants/separation = 65
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("1_g81ek")
+theme_override_fonts/font = ExtResource("1_3hfvm")
 theme_override_font_sizes/font_size = 65
 text = "Projekt: Outrun
 "
@@ -55,14 +58,19 @@ theme_override_constants/separation = 15
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_g81ek")
+theme_override_fonts/font = ExtResource("1_3hfvm")
 theme_override_font_sizes/font_size = 45
 text = "Play
 "
+script = ExtResource("2_0v1tx")
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_g81ek")
+theme_override_fonts/font = ExtResource("1_3hfvm")
 theme_override_font_sizes/font_size = 45
 text = "Quit
 "
+script = ExtResource("3_e3g7x")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Play" to="MarginContainer/VBoxContainer/VBoxContainer/Play" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Quit" to="MarginContainer/VBoxContainer/VBoxContainer/Quit" method="_on_pressed"]

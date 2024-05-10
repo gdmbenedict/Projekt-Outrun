@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="Projekt Outrun"
-run/main_scene="res://GameScenes/Gameplay.tscn"
+run/main_scene="res://GameScenes/MainMenu2.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameManager="*res://Prefabs/Game Assets/GameManager.tscn"
+PauseUi="*res://Scripts/ButtonScripts/PauseUI.gd"
+PlayButton="*res://Scripts/UIElementScripts/PlayButton.gd"
+QuitButton="*res://Scripts/UIElementScripts/QuitButton.gd"
+MainMenuButton="*res://Scripts/UIElementScripts/MainMenuButton.gd"
+ResumeButton="*res://Scripts/UIElementScripts/ResumeButton.gd"
 
 [display]
 

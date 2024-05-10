@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dpddkxwm3rs3y"]
+[gd_scene load_steps=9 format=3 uid="uid://dpddkxwm3rs3y"]
 
 [ext_resource type="Script" path="res://Scripts/GameplayUI.gd" id="1_0rayq"]
 [ext_resource type="Texture2D" uid="uid://cm4toyyt841kw" path="res://Sprites/Speedometer.png" id="1_ada34"]
 [ext_resource type="Texture2D" uid="uid://dwf5u8usnjvq7" path="res://Sprites/Gauge needle.png" id="2_x52sf"]
 [ext_resource type="FontFile" uid="uid://dxjbcrcc72sb" path="res://Fonts/fs-sevegment.ttf" id="4_incck"]
+[ext_resource type="FontFile" uid="uid://rkqodqs3sgh8" path="res://Fonts/NeonSans-GOgRg.ttf" id="5_yfeha"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4lx20"]
 
@@ -12,6 +13,7 @@ font = ExtResource("4_incck")
 font_size = 42
 
 [sub_resource type="LabelSettings" id="LabelSettings_3xhna"]
+font = ExtResource("5_yfeha")
 font_size = 50
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
@@ -28,7 +30,7 @@ grow_vertical = 2
 script = ExtResource("1_0rayq")
 speedometerNeedle = NodePath("MarginContainer/Speedometer/SpeedometerNeedle")
 speedometerReading = NodePath("MarginContainer/Speedometer/SpeedLabel")
-scoreText = NodePath("MarginContainer2/Label")
+scoreText = NodePath("MarginContainer2/Score")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -104,7 +106,7 @@ offset_right = 20.0
 offset_bottom = 40.0
 grow_horizontal = 2
 
-[node name="Label" type="Label" parent="MarginContainer2"]
+[node name="Score" type="Label" parent="MarginContainer2"]
 layout_mode = 2
 text = "Score:"
 label_settings = SubResource("LabelSettings_3xhna")
