@@ -24,6 +24,15 @@ background_mode = 2
 sky = SubResource("Sky_fiq6l")
 tonemap_mode = 2
 glow_enabled = true
+glow_levels/1 = 1.4
+glow_levels/2 = 4.5
+glow_levels/3 = 0.85
+glow_intensity = 5.5
+glow_strength = 0.6
+glow_bloom = 0.03
+glow_blend_mode = 0
+glow_hdr_threshold = 1.85
+glow_hdr_scale = 1.65
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2u2vt"]
 size = Vector3(2.04118, 1.25528, 4.5403)
@@ -37,7 +46,10 @@ environment = SubResource("Environment_sxfrh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.588235, 0.588235, 0.588235, 1)
 shadow_enabled = true
+shadow_reverse_cull_face = true
+shadow_blur = 0.0
 
 [node name="TerrainController" type="Node3D" parent="." node_paths=PackedStringArray("playerPos")]
 script = ExtResource("1_bterj")

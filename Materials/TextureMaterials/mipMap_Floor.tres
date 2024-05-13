@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bx1hkp0ljr1s5"]
+
+[ext_resource type="Texture2D" uid="uid://cevri5fiv7l18" path="res://Materials/Textures/ground_texture.png" id="1_1axqy"]
+
+[resource]
+albedo_texture = ExtResource("1_1axqy")
+emission_enabled = true
+emission_energy_multiplier = 2.25
+emission_texture = ExtResource("1_1axqy")
+uv1_triplanar = true

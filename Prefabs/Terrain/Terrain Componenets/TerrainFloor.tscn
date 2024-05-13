@@ -1,14 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bs21jrogohafe"]
+[gd_scene load_steps=4 format=3 uid="uid://bs21jrogohafe"]
 
-[ext_resource type="Shader" path="res://Lighting/Shaders/Grid.gdshader" id="1_auo6d"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_oqmik"]
-render_priority = 0
-shader = ExtResource("1_auo6d")
-shader_parameter/resolution = Vector2(600, 600)
-shader_parameter/line_color = Color(1, 0.15, 3, 1)
-shader_parameter/zoom = 150.0
-shader_parameter/thickness = 0.1
+[ext_resource type="Material" uid="uid://bx1hkp0ljr1s5" path="res://Materials/TextureMaterials/mipMap_Floor.tres" id="1_8ahgy"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kd11c"]
 size = Vector2(150, 150)
@@ -19,7 +11,7 @@ size = Vector2(150, 150)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.999885, 0, 0, 0, 0.999885, 0, 0, 0, 0.999885, 0, 0, 0)
-material_override = SubResource("ShaderMaterial_oqmik")
+material_override = ExtResource("1_8ahgy")
 mesh = SubResource("PlaneMesh_kd11c")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
