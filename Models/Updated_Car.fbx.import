@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c838oa3n44sap"
-path="res://.godot/imported/Refuel_Pickup.fbx-592d4af60c5cf3dcaeee8927f776d6ef.scn"
+uid="uid://clyk58ackii2b"
+path="res://.godot/imported/Updated_Car.fbx-41b6e441a921e9a5789b6cce64ecfc4f.scn"
 
 [deps]
 
-source_file="res://Models/Refuel_Pickup.fbx"
-dest_files=["res://.godot/imported/Refuel_Pickup.fbx-592d4af60c5cf3dcaeee8927f776d6ef.scn"]
+source_file="res://Models/Updated_Car.fbx"
+dest_files=["res://.godot/imported/Updated_Car.fbx-41b6e441a921e9a5789b6cce64ecfc4f.scn"]
 
 [params]
 

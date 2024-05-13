@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b77104ci7sryi"
-path="res://.godot/imported/Coin_Pickup.fbx-dda8eead717694320b181aab77e7b99d.scn"
+uid="uid://c838oa3n44sap"
+path="res://.godot/imported/Refuel_Pickup.fbx-525e87680042eb52ed499aa10af4c5d3.scn"
 
 [deps]
 
-source_file="res://Models/Coin_Pickup.fbx"
-dest_files=["res://.godot/imported/Coin_Pickup.fbx-dda8eead717694320b181aab77e7b99d.scn"]
+source_file="res://Models/PickUps/Refuel_Pickup.fbx"
+dest_files=["res://.godot/imported/Refuel_Pickup.fbx-525e87680042eb52ed499aa10af4c5d3.scn"]
 
 [params]
 

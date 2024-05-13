@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ddyn33jfjxa6j"
-path="res://.godot/imported/Repair_Pickup.fbx-82453bcdb520a31956cbf2c5e8134380.scn"
+path="res://.godot/imported/Repair_Pickup.fbx-9adffc2b9382377c2c41c74b0a58e993.scn"
 
 [deps]
 
-source_file="res://Models/Repair_Pickup.fbx"
-dest_files=["res://.godot/imported/Repair_Pickup.fbx-82453bcdb520a31956cbf2c5e8134380.scn"]
+source_file="res://Models/PickUps/Repair_Pickup.fbx"
+dest_files=["res://.godot/imported/Repair_Pickup.fbx-9adffc2b9382377c2c41c74b0a58e993.scn"]
 
 [params]
 
