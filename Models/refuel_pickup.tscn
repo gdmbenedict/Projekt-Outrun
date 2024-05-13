@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjraj464re4lh"]
+
+[ext_resource type="PackedScene" uid="uid://c838oa3n44sap" path="res://Models/Refuel_Pickup.fbx" id="1_7ljvp"]
+
+[node name="Refuel Pickup" instance=ExtResource("1_7ljvp")]

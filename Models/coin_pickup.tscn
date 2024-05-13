@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bime8amqkws1o"]
+
+[ext_resource type="PackedScene" uid="uid://b77104ci7sryi" path="res://Models/Coin_Pickup.fbx" id="1_eaxkb"]
+
+[node name="Coin Pickup" instance=ExtResource("1_eaxkb")]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bou3nv6bvk7el"]
+
+[ext_resource type="PackedScene" uid="uid://ddyn33jfjxa6j" path="res://Models/Repair_Pickup.fbx" id="1_51ocd"]
+
+[node name="Repair Pickup" instance=ExtResource("1_51ocd")]
