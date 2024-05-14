@@ -44,6 +44,9 @@ func _process(delta: float) -> void:
 func CalcScoreMult() -> void:
 	scoreMult = (playerSpeed/baseSpeed) + (flawlessTimer/baseFlawless)
 
+func AddScore(scoreAdd: int) -> void:
+	score += scoreAdd * scoreMult
+
 #Function that resets the flawless timer
 func ResetFlawless() -> void:
 	flawlessTimer = 0
