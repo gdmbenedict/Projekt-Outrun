@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bme2lmrgfovu7"]
+[gd_scene load_steps=12 format=3 uid="uid://bvi2q0y8p1nns"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_23kri"]
 resource_name = "standardSurface1"
