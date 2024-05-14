@@ -7,9 +7,9 @@
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="5_r1plx"]
 [ext_resource type="Script" path="res://Scripts/PlayerHealth.gd" id="6_p1waj"]
 [ext_resource type="Script" path="res://Scripts/Gear.gd" id="7_wi400"]
-[ext_resource type="PackedScene" uid="uid://p21xl5algexm" path="res://Models/Fixed_Car.tscn" id="9_2062x"]
-[ext_resource type="PackedScene" uid="uid://ctsvrpyajup4m" path="res://Models/Lightly_Damaged.tscn" id="10_yl8ri"]
-[ext_resource type="PackedScene" uid="uid://jjeiaf4j1l5g" path="res://Models/Heavily_Damaged.tscn" id="11_7y705"]
+[ext_resource type="PackedScene" uid="uid://cdg6jjq05c4be" path="res://Models/updated_car.tscn" id="8_vi4vn"]
+[ext_resource type="PackedScene" uid="uid://bme2lmrgfovu7" path="res://Models/new_heavily_damaged.tscn" id="9_j1xe7"]
+[ext_resource type="PackedScene" uid="uid://x5pl607uv6xn" path="res://Models/updated_lightly_damaged.tscn" id="10_g27qc"]
 [ext_resource type="Script" path="res://Scripts/Score.gd" id="11_i4kts"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r5ish"]
@@ -68,7 +68,7 @@ gears = [NodePath("Gears/Gear1"), NodePath("Gears/Gear2"), NodePath("Gears/Gear3
 [node name="PlayerCollider" type="CharacterBody3D" parent="Player" node_paths=PackedStringArray("playerMovement", "carStates", "score")]
 script = ExtResource("6_p1waj")
 playerMovement = NodePath("..")
-carStates = [NodePath("../CarModels/HeavilyDamaged"), NodePath("../CarModels/LightlyDamaged"), NodePath("../CarModels/CarModel")]
+carStates = [NodePath("../CarModels/Updated Car"), NodePath("../CarModels/Updated_Lightly_Damaged"), NodePath("../CarModels/New Heavily Damaged")]
 score = NodePath("../Score")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/PlayerCollider"]
@@ -117,15 +117,15 @@ smoothingFactor = 405.0
 
 [node name="CarModels" type="Node3D" parent="Player"]
 
-[node name="CarModel" parent="Player/CarModels" instance=ExtResource("9_2062x")]
-transform = Transform3D(-1.25, 0, 1.09278e-07, 0, 1.25, 0, -1.09278e-07, 0, -1.25, 0.05, -1.375, -1.75)
+[node name="Updated Car" parent="Player/CarModels" instance=ExtResource("8_vi4vn")]
+transform = Transform3D(-1.25, 0, -1.09278e-07, 0, 1.25, 0, 1.09278e-07, 0, -1.25, -0.11018, -1.37224, -2.19657)
 
-[node name="LightlyDamaged" parent="Player/CarModels" instance=ExtResource("10_yl8ri")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.05, -1.375, -1.785)
+[node name="Updated_Lightly_Damaged" parent="Player/CarModels" instance=ExtResource("10_g27qc")]
+transform = Transform3D(-1.25, 0, -1.09278e-07, 0, 1.25, 0, 1.09278e-07, 0, -1.25, -0.0245734, -1.372, -2.20729)
 visible = false
 
-[node name="HeavilyDamaged" parent="Player/CarModels" instance=ExtResource("11_7y705")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.05, -1.375, -1.75)
+[node name="New Heavily Damaged" parent="Player/CarModels" instance=ExtResource("9_j1xe7")]
+transform = Transform3D(-1.25, 0, -1.09278e-07, 0, 1.25, 0, 1.09278e-07, 0, -1.25, -0.11063, -1.372, -2.12056)
 visible = false
 
 [node name="Score" type="Node" parent="Player"]

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://0b4kvngwo5c8"
-path="res://.godot/imported/Heavily_Damaged_Car.fbx-055015028eb2c7a5cb4b4907ad7e41bd.scn"
+uid="uid://ddyn33jfjxa6j"
+path="res://.godot/imported/Repair_Pickup.fbx-9adffc2b9382377c2c41c74b0a58e993.scn"
 
 [deps]
 
-source_file="res://Models/Heavily_Damaged_Car.fbx"
-dest_files=["res://.godot/imported/Heavily_Damaged_Car.fbx-055015028eb2c7a5cb4b4907ad7e41bd.scn"]
+source_file="res://Models/PickUps/Repair_Pickup.fbx"
+dest_files=["res://.godot/imported/Repair_Pickup.fbx-9adffc2b9382377c2c41c74b0a58e993.scn"]
 
 [params]
 
