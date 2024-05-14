@@ -1,48 +1,35 @@
-[gd_scene load_steps=16 format=3 uid="uid://c8107erpbuw1w"]
+[gd_scene load_steps=17 format=3 uid="uid://c8107erpbuw1w"]
 
 [ext_resource type="Script" path="res://Scripts/TerrainManager.gd" id="1_bterj"]
 [ext_resource type="PackedScene" uid="uid://dlp1ohptppxq6" path="res://Prefabs/Terrain/Tiles/MazeTile1.tscn" id="2_kaawv"]
+[ext_resource type="Environment" uid="uid://d3b0qeu3n11g0" path="res://WorldEnvironment.tres" id="3_k1s0m"]
 [ext_resource type="PackedScene" uid="uid://i5qjy5kftere" path="res://Prefabs/Terrain/Tiles/PillarsTile1.tscn" id="3_umxao"]
 [ext_resource type="PackedScene" uid="uid://jenac1xrysbx" path="res://Prefabs/Terrain/Tiles/WallsTile1.tscn" id="4_mfqud"]
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="5_r1plx"]
 [ext_resource type="Script" path="res://Scripts/PlayerHealth.gd" id="6_p1waj"]
 [ext_resource type="Script" path="res://Scripts/Gear.gd" id="7_wi400"]
-[ext_resource type="PackedScene" uid="uid://clyk58ackii2b" path="res://Models/Updated_Car.fbx" id="8_ngm67"]
-[ext_resource type="PackedScene" path="res://Models/updated_lightly_damaged.tscn" id="9_8ilfi"]
-[ext_resource type="PackedScene" path="res://Models/new_heavily_damaged.tscn" id="10_kwo6t"]
+[ext_resource type="PackedScene" uid="uid://cdg6jjq05c4be" path="res://Models/updated_car.tscn" id="8_0kh5f"]
+[ext_resource type="PackedScene" uid="uid://x5pl607uv6xn" path="res://Models/updated_lightly_damaged.tscn" id="9_8ilfi"]
+[ext_resource type="PackedScene" uid="uid://bvi2q0y8p1nns" path="res://Models/new_heavily_damaged.tscn" id="10_kwo6t"]
 [ext_resource type="Script" path="res://Scripts/Score.gd" id="11_i4kts"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r5ish"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_fiq6l"]
-sky_material = SubResource("ProceduralSkyMaterial_r5ish")
-
-[sub_resource type="Environment" id="Environment_sxfrh"]
-background_mode = 2
-sky = SubResource("Sky_fiq6l")
-tonemap_mode = 2
-glow_enabled = true
-glow_levels/1 = 1.4
-glow_levels/2 = 4.5
-glow_levels/3 = 0.85
-glow_intensity = 5.5
-glow_strength = 0.6
-glow_bloom = 0.03
-glow_blend_mode = 0
-glow_hdr_threshold = 1.85
-glow_hdr_scale = 1.65
+[ext_resource type="Shader" path="res://GameScenes/sunshader.gdshader" id="15_sr4vy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2u2vt"]
 size = Vector3(2.04118, 1.25528, 4.5403)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ca6qj"]
+render_priority = 0
+shader = ExtResource("15_sr4vy")
+shader_parameter/color_top = Color(1, 0.6, 0.254902, 1)
+shader_parameter/color_bottom = Color(0.458824, 0.137255, 0.0666667, 1)
+shader_parameter/y_multiplier = 2.81
+shader_parameter/opacity = 0.165
+
+[sub_resource type="SphereMesh" id="SphereMesh_vret4"]
+
 [node name="TestGameplay" type="Node3D" groups=["GameplayScene"]]
 
 [node name="Lighting" type="Node3D" parent="."]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
-environment = SubResource("Environment_sxfrh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -75,6 +62,7 @@ shape = SubResource("BoxShape3D_2u2vt")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 7.10543e-15, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 2, 4)
+environment = ExtResource("3_k1s0m")
 current = true
 
 [node name="Gears" type="Node3D" parent="Player"]
@@ -114,16 +102,24 @@ timeShift = 30.0
 smoothingFactor = 405.0
 
 [node name="CarModels" type="Node3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.45)
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08026e-07, 0, -1.68567)
 
-[node name="FixedCarModel" parent="Player/CarModels" instance=ExtResource("8_ngm67")]
-transform = Transform3D(-1.25, 0, 1.09278e-07, 0, 1.25, 0, -1.09278e-07, 0, -1.25, -0.1, -1.375, -1.75)
+[node name="FixedCarModel" parent="Player/CarModels" instance=ExtResource("8_0kh5f")]
+transform = Transform3D(-1.25, 0, -1.88745e-07, 0, 1.25, 0, 1.88745e-07, 0, -1.25, -0.1, -1.375, -0.507129)
 
 [node name="Updated_Lightly_Damaged" parent="Player/CarModels" instance=ExtResource("9_8ilfi")]
-transform = Transform3D(-1.25, 0, 1.09278e-07, 0, 1.25, 0, -1.09278e-07, 0, -1.25, -0.0170144, -1.375, -1.75)
+transform = Transform3D(-1.25, 0, 1.09278e-07, 0, 1.25, 0, -1.09278e-07, 0, -1.25, -0.0170145, -1.375, -0.507129)
+visible = false
 
 [node name="New Heavily Damaged" parent="Player/CarModels" instance=ExtResource("10_kwo6t")]
-transform = Transform3D(-1.25, 0, 1.88745e-07, 0, 1.25, 0, -1.88745e-07, 0, -1.25, -0.100485, -1.375, -1.67767)
+transform = Transform3D(-1.25, 0, 1.88745e-07, 0, 1.25, 0, -1.88745e-07, 0, -1.25, -0.100485, -1.375, -0.434799)
+visible = false
 
 [node name="Score" type="Node" parent="Player"]
 script = ExtResource("11_i4kts")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 1, 0, -14.14, 900)
+material_override = SubResource("ShaderMaterial_ca6qj")
+mesh = SubResource("SphereMesh_vret4")

@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://bipgokxl5soxl"]
+[gd_scene load_steps=2 format=3 uid="uid://bipgokxl5soxl"]
+
+[sub_resource type="Environment" id="Environment_ndoil"]
+background_mode = 3
+glow_enabled = true
+glow_levels/1 = 2.31
+glow_levels/2 = 0.96
+glow_intensity = 4.85
+glow_strength = 0.52
+glow_bloom = 0.08
+glow_blend_mode = 0
 
 [node name="MainMenu2" type="Node"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ndoil")

@@ -9,6 +9,7 @@ class_name PlayerMovement
 @export_category("Gears")
 @export var gears: Array[Gear] = []
 var activeGear: int
+@onready var camera_3d = $Camera3D
 
 @export var trackedVelocity: Vector3 #variable that stores the velocity of the player
 
@@ -53,11 +54,16 @@ func HandleHorizontalMovement(delta: float) -> void:
 		#clamp to min value
 		elif(trackedVelocity.x < -horizontalMaxSpeed):
 			trackedVelocity.x = -horizontalMaxSpeed
-	
 	#damp if no input
 	else:
 		StraightenHorizontalMovement(delta)
- 
+	
+	camera_3d.position = lerp(camera_3d.position,Vector3(-input_dir.x,camera_3d.position.y,camera_3d.position.z),delta * 0.45)
+	
+	car_models.rotation_degrees = lerp(car_models.rotation_degrees,Vector3(0,lerp(18.0,-18.0, inverse_lerp(-1.0,1.0,input_dir.x) ),0),delta * 2.35)
+
+@onready var car_models = %CarModels
+
 # Function that damps horizontal movement towards zero
 func StraightenHorizontalMovement(delta: float) -> void:
 	
