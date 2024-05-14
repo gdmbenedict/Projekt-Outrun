@@ -12,11 +12,12 @@ albedo_texture = ExtResource("1_l4gqt")
 metallic = 1.0
 metallic_texture = ExtResource("4_uk0h4")
 roughness_texture = ExtResource("6_2gs0j")
-emission_enabled = true
 emission_texture = ExtResource("2_hpgsi")
 normal_enabled = true
 normal_texture = ExtResource("5_2s27f")
-heightmap_enabled = true
+rim_enabled = true
+clearcoat_enabled = true
+heightmap_scale = 1.045
 heightmap_texture = ExtResource("3_o6ggq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rymq5"]

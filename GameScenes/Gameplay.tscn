@@ -7,20 +7,27 @@
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="5_r1plx"]
 [ext_resource type="Script" path="res://Scripts/PlayerHealth.gd" id="6_p1waj"]
 [ext_resource type="Script" path="res://Scripts/Gear.gd" id="7_wi400"]
-[ext_resource type="PackedScene" uid="uid://clyk58ackii2b" path="res://Models/Updated_Car.fbx" id="8_ngm67"]
-[ext_resource type="PackedScene" path="res://Models/updated_lightly_damaged.tscn" id="9_8ilfi"]
-[ext_resource type="PackedScene" path="res://Models/new_heavily_damaged.tscn" id="10_kwo6t"]
+[ext_resource type="PackedScene" uid="uid://cdg6jjq05c4be" path="res://Models/updated_car.tscn" id="8_dynyi"]
+[ext_resource type="PackedScene" uid="uid://uj0s6088jcfm" path="res://Models/Lightly_Damaged_Car.tscn" id="9_k1cxj"]
+[ext_resource type="PackedScene" uid="uid://cv3sjshm81ms8" path="res://Models/Heavily_Damaged_Car.tscn" id="10_fj4lf"]
 [ext_resource type="Script" path="res://Scripts/Score.gd" id="11_i4kts"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r5ish"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_top_color = Color(0.176471, 0, 0.258824, 1)
+sky_horizon_color = Color(0.886275, 0.423529, 1, 1)
+sky_curve = 0.0549034
+sky_energy_multiplier = 0.5
+sky_cover_modulate = Color(0.470588, 0, 0.372549, 1)
+ground_bottom_color = Color(0.176471, 0, 0.258824, 1)
+ground_horizon_color = Color(0.886275, 0.423529, 1, 1)
+ground_curve = 0.0713154
 
 [sub_resource type="Sky" id="Sky_fiq6l"]
 sky_material = SubResource("ProceduralSkyMaterial_r5ish")
 
 [sub_resource type="Environment" id="Environment_sxfrh"]
 background_mode = 2
+background_energy_multiplier = 0.51
 sky = SubResource("Sky_fiq6l")
 tonemap_mode = 2
 glow_enabled = true
@@ -67,7 +74,7 @@ gears = [NodePath("Gears/Gear1"), NodePath("Gears/Gear2"), NodePath("Gears/Gear3
 
 [node name="PlayerCollider" type="CharacterBody3D" parent="Player" node_paths=PackedStringArray("carStates")]
 script = ExtResource("6_p1waj")
-carStates = [NodePath("../CarModels/New Heavily Damaged"), NodePath("../CarModels/Updated_Lightly_Damaged"), NodePath("../CarModels/FixedCarModel")]
+carStates = [NodePath("../CarModels/Heavily_Damaged_Car"), NodePath("../CarModels/Lightly_Damaged_Car"), NodePath("../CarModels/Updated Car")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/PlayerCollider"]
 transform = Transform3D(1, 1.74846e-07, -1.74846e-07, -1.74845e-07, 1, 1.74846e-07, 1.74846e-07, -1.74845e-07, 1, -0.041843, -0.729877, -1.73133)
@@ -116,14 +123,16 @@ smoothingFactor = 405.0
 [node name="CarModels" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.45)
 
-[node name="FixedCarModel" parent="Player/CarModels" instance=ExtResource("8_ngm67")]
-transform = Transform3D(-1.25, 0, 1.09278e-07, 0, 1.25, 0, -1.09278e-07, 0, -1.25, -0.1, -1.375, -1.75)
+[node name="Updated Car" parent="Player/CarModels" instance=ExtResource("8_dynyi")]
+transform = Transform3D(-1.25, 0, -1.09278e-07, 0, 1.25, 0, 1.09278e-07, 0, -1.25, -0.1, -1.375, -1.75)
 
-[node name="Updated_Lightly_Damaged" parent="Player/CarModels" instance=ExtResource("9_8ilfi")]
-transform = Transform3D(-1.25, 0, 1.09278e-07, 0, 1.25, 0, -1.09278e-07, 0, -1.25, -0.0170144, -1.375, -1.75)
+[node name="Lightly_Damaged_Car" parent="Player/CarModels" instance=ExtResource("9_k1cxj")]
+transform = Transform3D(-1.25, 0, -1.09278e-07, 0, 1.25, 0, 1.09278e-07, 0, -1.25, 0.0357141, -1.375, -1.75)
+visible = false
 
-[node name="New Heavily Damaged" parent="Player/CarModels" instance=ExtResource("10_kwo6t")]
-transform = Transform3D(-1.25, 0, 1.88745e-07, 0, 1.25, 0, -1.88745e-07, 0, -1.25, -0.100485, -1.375, -1.67767)
+[node name="Heavily_Damaged_Car" parent="Player/CarModels" instance=ExtResource("10_fj4lf")]
+transform = Transform3D(-1.25, 0, -1.09278e-07, 0, 1.25, 0, 1.09278e-07, 0, -1.25, -0.1, -1.375, -1.678)
+visible = false
 
 [node name="Score" type="Node" parent="Player"]
 script = ExtResource("11_i4kts")
