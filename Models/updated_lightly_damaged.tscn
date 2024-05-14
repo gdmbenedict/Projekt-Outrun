@@ -1,6 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://x5pl607uv6xn"]
-
-[ext_resource type="Shader" path="res://Lighting/Shaders/updated_car.gdshader" id="1_rjvmu"]
+[gd_scene load_steps=12 format=3 uid="uid://x5pl607uv6xn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_auwbx"]
 resource_name = "standardSurface1"
@@ -108,14 +106,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hls4o")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m7xge"]
-render_priority = 0
-shader = ExtResource("1_rjvmu")
-shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/wire_color = Color(0, 0.2, 2, 0)
-shader_parameter/wire_width = 1.0
-shader_parameter/wire_smoothness = 0.01
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_ndd3v"]
 _surfaces = [{
 "aabb": AABB(-0.949954, 0.170879, -2.19293, 1.87817, 0.904674, 3.63022),
@@ -177,7 +167,6 @@ mesh = SubResource("ArrayMesh_6e8qh")
 skeleton = NodePath("")
 
 [node name="Lightly_Damaged_Car" type="MeshInstance3D" parent="RootNode"]
-material_override = SubResource("ShaderMaterial_m7xge")
 mesh = SubResource("ArrayMesh_3fb3u")
 skeleton = NodePath("")
 

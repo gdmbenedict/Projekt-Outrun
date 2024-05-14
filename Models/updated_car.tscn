@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cdg6jjq05c4be"]
+[gd_scene load_steps=14 format=3 uid="uid://cdg6jjq05c4be"]
 
 [ext_resource type="Shader" path="res://Lighting/Shaders/updated_car.gdshader" id="1_62lxp"]
 
@@ -108,8 +108,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ffwcy")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_v8qxw"]
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rbrmp"]
 render_priority = 0
 shader = ExtResource("1_62lxp")
@@ -182,7 +180,6 @@ skeleton = NodePath("")
 
 [node name="Car_Body1" type="MeshInstance3D" parent="RootNode"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.133264, 0, 0)
-material_override = SubResource("ShaderMaterial_v8qxw")
 material_overlay = SubResource("ShaderMaterial_rbrmp")
 mesh = SubResource("ArrayMesh_s1xyy")
 skeleton = NodePath("")
