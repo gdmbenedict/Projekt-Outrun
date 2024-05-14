@@ -17,6 +17,10 @@ func _init() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	GameManager.playerMovement = self
+	GameManager.movementReady = true
+	
 	activeGear = 0
 	trackedVelocity = Vector3(0,0,0)
 
@@ -26,9 +30,6 @@ func _process(delta: float) -> void:
 	HandleForwardMovement(delta)
 	HandleHorizontalMovement(delta)
 	
-	GameManager.playerSpeed = GetSpeed()
-	GameManager.playerMaxSpeed = GetMaxSpeed()
-	GameManager.playerVelocity = GetVelocity()
 	#print statement testing trackedVelocity
 	#print(trackedVelocity)
 
