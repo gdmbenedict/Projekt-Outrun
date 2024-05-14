@@ -15,10 +15,14 @@ var isInGameplay: bool
 var activeUI: Control
 
 #Player Variables
-var playerVelocity: Vector3 = Vector3(0, 0, 0)
-var playerSpeed: float = 0
-var playerMaxSpeed: float = 0
-var playerScore: float = 0
+var playerMovement: PlayerMovement
+var playerScore: Score
+var playerHealth: PlayerHealth
+
+#Bool for loads
+var movementReady: bool
+var scoreReady: bool
+var healthReady: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,6 +33,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	if(movementReady && scoreReady && healthReady):
+		ReadyToPlay()
 	
 	if Input.is_action_just_pressed("pause"):
 		Pause()
@@ -61,12 +68,9 @@ func ExitGame() -> void:
 	get_tree().quit()
 
 func LoadScene(sceneToLoad: PackedScene) -> void:
-	get_tree().paused = false
 	get_tree().change_scene_to_packed(sceneToLoad)
 	
-	if(isInGameplay):
-		ChangeUI(GameplayUI)
-	else:
+	if(!isInGameplay):
 		ChangeUI(mainMenuUI)
 
 func ChangeUI(newUI: Control) -> void:
@@ -78,3 +82,10 @@ func ChangeUI(newUI: Control) -> void:
 	activeUI.process_mode = Node.PROCESS_MODE_INHERIT
 	activeUI.visible = true
 
+func ReadyToPlay() -> void:
+	
+	ChangeUI(GameplayUI)
+	get_tree().paused = false
+	movementReady = false
+	healthReady = false
+	scoreReady = false

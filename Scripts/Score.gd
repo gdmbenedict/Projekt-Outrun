@@ -15,6 +15,9 @@ var flawlessTimer: float
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
+	GameManager.playerScore = self
+	GameManager.scoreReady = true
+	
 	#setting score values to zero
 	score = 0
 	scoreMult = 0
@@ -30,17 +33,19 @@ func _process(delta: float) -> void:
 	score += 1 * delta * scoreMult
 	
 	#updating values
-	playerSpeed = GameManager.playerSpeed
+	playerSpeed = GameManager.playerMovement.GetSpeed()
 	flawlessTimer += delta
 	CalcScoreMult()
 	
-	GameManager.playerScore = GetScore()
 	#debug
 	#print("%.2f" % score)
 
 #Function that calculates the score multiplier
 func CalcScoreMult() -> void:
 	scoreMult = (playerSpeed/baseSpeed) + (flawlessTimer/baseFlawless)
+
+func AddScore(scoreAdd: int) -> void:
+	score += scoreAdd * scoreMult
 
 #Function that resets the flawless timer
 func ResetFlawless() -> void:

@@ -21,6 +21,7 @@ shadow_size = 10
 shadow_color = Color(0, 0, 0, 0.32549)
 
 [node name="GameplayUI" type="Control" node_paths=PackedStringArray("speedometerNeedle", "speedometerReading", "scoreText")]
+process_mode = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

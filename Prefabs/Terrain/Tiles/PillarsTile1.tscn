@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://i5qjy5kftere"]
 
 [ext_resource type="PackedScene" uid="uid://bs21jrogohafe" path="res://Prefabs/Terrain/Terrain Componenets/TerrainFloor.tscn" id="1_bhvv2"]
-[ext_resource type="PackedScene" uid="uid://cmw64owf3rwnw" path="res://Prefabs/Terrain/Structures/wall.tscn" id="2_w5acy"]
+[ext_resource type="PackedScene" uid="uid://cmw64owf3rwnw" path="res://Prefabs/Terrain/Terrain Componenets/wall.tscn" id="2_w5acy"]
 
 [node name="PillarsTile1" type="Node3D"]
 

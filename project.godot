@@ -18,11 +18,11 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://Prefabs/Game Assets/GameManager.tscn"
-PauseUi="*res://Scripts/ButtonScripts/PauseUI.gd"
-PlayButton="*res://Scripts/UIElementScripts/PlayButton.gd"
-QuitButton="*res://Scripts/UIElementScripts/QuitButton.gd"
-MainMenuButton="*res://Scripts/UIElementScripts/MainMenuButton.gd"
-ResumeButton="*res://Scripts/UIElementScripts/ResumeButton.gd"
+PauseUi="res://Scripts/ButtonScripts/PauseUI.gd"
+PlayButton="res://Scripts/UIElementScripts/PlayButton.gd"
+QuitButton="res://Scripts/UIElementScripts/QuitButton.gd"
+MainMenuButton="res://Scripts/UIElementScripts/MainMenuButton.gd"
+ResumeButton="res://Scripts/UIElementScripts/ResumeButton.gd"
 
 [display]
 
@@ -53,4 +53,5 @@ pause={
 
 [rendering]
 
+textures/default_filters/anisotropic_filtering_level=4
 anti_aliasing/quality/msaa_3d=3

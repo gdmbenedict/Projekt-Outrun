@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 	ProcessTiles()
 
 func _physics_process(delta: float) -> void:
-	ProcessVelocity(GameManager.playerVelocity)
+	ProcessVelocity(GameManager.playerMovement.GetVelocity())
 
 #function that movees the terrain
 func MoveTerrain(delta: float) -> void:
