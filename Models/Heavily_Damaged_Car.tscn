@@ -1,13 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://cv3sjshm81ms8"]
+[gd_scene load_steps=13 format=3 uid="uid://cv3sjshm81ms8"]
 
-[ext_resource type="Texture2D" uid="uid://ctdwquffowrym" path="res://Materials/Texture Maps/Updated_Car_BaseColor.png" id="1_5jbut"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q42ww"]
-albedo_texture = ExtResource("1_5jbut")
+[ext_resource type="Material" uid="uid://xv3evol8i4bw" path="res://Materials/SimpleMaterials/Undamaged_Car.tres" id="1_g5kbo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qqen"]
 resource_name = "standardSurface1"
-albedo_color = Color(1, 1, 1, 1)
 roughness = 0.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_8aadk"]
@@ -160,22 +156,22 @@ _data = {
 [node name="RootNode" type="Node3D" parent="."]
 
 [node name="Front_Left_Tire3" type="MeshInstance3D" parent="RootNode"]
-material_override = SubResource("StandardMaterial3D_q42ww")
+material_override = ExtResource("1_g5kbo")
 mesh = SubResource("ArrayMesh_apmxb")
 skeleton = NodePath("")
 
 [node name="Front_Right_Tire2" type="MeshInstance3D" parent="RootNode"]
-material_override = SubResource("StandardMaterial3D_q42ww")
+material_override = ExtResource("1_g5kbo")
 mesh = SubResource("ArrayMesh_10b0i")
 skeleton = NodePath("")
 
 [node name="Front_Left_Tire4" type="MeshInstance3D" parent="RootNode"]
-material_override = SubResource("StandardMaterial3D_q42ww")
+material_override = ExtResource("1_g5kbo")
 mesh = SubResource("ArrayMesh_jobuc")
 skeleton = NodePath("")
 
 [node name="Heavily_Damaged_Car" type="MeshInstance3D" parent="RootNode"]
-material_override = SubResource("StandardMaterial3D_q42ww")
+material_override = ExtResource("1_g5kbo")
 mesh = SubResource("ArrayMesh_tv1vm")
 skeleton = NodePath("")
 

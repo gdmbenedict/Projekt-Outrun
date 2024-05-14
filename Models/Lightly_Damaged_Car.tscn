@@ -1,13 +1,23 @@
-[gd_scene load_steps=14 format=3 uid="uid://uj0s6088jcfm"]
+[gd_scene load_steps=18 format=3 uid="uid://uj0s6088jcfm"]
 
 [ext_resource type="Texture2D" uid="uid://ctdwquffowrym" path="res://Materials/Texture Maps/Updated_Car_BaseColor.png" id="1_rjsce"]
+[ext_resource type="Texture2D" uid="uid://vo3hrn1n4ncn" path="res://Materials/Texture Maps/Updated_Car_Emissive.png" id="2_ih132"]
+[ext_resource type="Texture2D" uid="uid://drkp5p8p1n48x" path="res://Materials/Texture Maps/Updated_Car_Metallic.png" id="3_xwhi1"]
+[ext_resource type="Texture2D" uid="uid://blw2g2h1jwepg" path="res://Materials/Texture Maps/Updated_Car_Normal.png" id="4_esnfy"]
+[ext_resource type="Texture2D" uid="uid://bc7l0k3d3eq8p" path="res://Materials/Texture Maps/Updated_Car_Roughness.png" id="5_w125y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vis76"]
 albedo_texture = ExtResource("1_rjsce")
+metallic = 1.0
+metallic_texture = ExtResource("3_xwhi1")
+roughness_texture = ExtResource("5_w125y")
+emission_enabled = true
+emission_texture = ExtResource("2_ih132")
+normal_enabled = true
+normal_texture = ExtResource("4_esnfy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_douw6"]
 resource_name = "standardSurface1"
-albedo_color = Color(1, 1, 1, 1)
 roughness = 0.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_s505t"]

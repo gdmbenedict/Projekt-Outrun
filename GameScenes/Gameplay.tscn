@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="5_r1plx"]
 [ext_resource type="Script" path="res://Scripts/PlayerHealth.gd" id="6_p1waj"]
 [ext_resource type="Script" path="res://Scripts/Gear.gd" id="7_wi400"]
-[ext_resource type="PackedScene" uid="uid://cdg6jjq05c4be" path="res://Models/updated_car.tscn" id="8_dynyi"]
+[ext_resource type="PackedScene" uid="uid://cdg6jjq05c4be" path="res://Models/Undamaged_Car.tscn" id="8_bp5bg"]
 [ext_resource type="PackedScene" uid="uid://uj0s6088jcfm" path="res://Models/Lightly_Damaged_Car.tscn" id="9_k1cxj"]
 [ext_resource type="PackedScene" uid="uid://cv3sjshm81ms8" path="res://Models/Heavily_Damaged_Car.tscn" id="10_fj4lf"]
 [ext_resource type="Script" path="res://Scripts/Score.gd" id="11_i4kts"]
@@ -74,7 +74,7 @@ gears = [NodePath("Gears/Gear1"), NodePath("Gears/Gear2"), NodePath("Gears/Gear3
 
 [node name="PlayerCollider" type="CharacterBody3D" parent="Player" node_paths=PackedStringArray("carStates")]
 script = ExtResource("6_p1waj")
-carStates = [NodePath("../CarModels/Heavily_Damaged_Car"), NodePath("../CarModels/Lightly_Damaged_Car"), NodePath("../CarModels/Updated Car")]
+carStates = [NodePath("../CarModels/Heavily_Damaged_Car"), NodePath("../CarModels/Lightly_Damaged_Car"), NodePath("../CarModels/Undamaged_Car")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/PlayerCollider"]
 transform = Transform3D(1, 1.74846e-07, -1.74846e-07, -1.74845e-07, 1, 1.74846e-07, 1.74846e-07, -1.74845e-07, 1, -0.041843, -0.729877, -1.73133)
@@ -123,7 +123,7 @@ smoothingFactor = 405.0
 [node name="CarModels" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.45)
 
-[node name="Updated Car" parent="Player/CarModels" instance=ExtResource("8_dynyi")]
+[node name="Undamaged_Car" parent="Player/CarModels" instance=ExtResource("8_bp5bg")]
 transform = Transform3D(-1.25, 0, -1.09278e-07, 0, 1.25, 0, 1.09278e-07, 0, -1.25, -0.1, -1.375, -1.75)
 
 [node name="Lightly_Damaged_Car" parent="Player/CarModels" instance=ExtResource("9_k1cxj")]
