@@ -153,5 +153,5 @@ visible = false
 script = ExtResource("11_i4kts")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 350.23)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 1, 0, 0, 399.558)
 mesh = SubResource("SphereMesh_qpv3q")
