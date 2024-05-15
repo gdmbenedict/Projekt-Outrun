@@ -1,14 +1,20 @@
 class_name Pickup
 extends Node
 
+@export_category("Rotation")
+@export var xRotationSpeed: float = 0
+@export var yRotationSpeed: float = 0
+@export var zRotationSpeed: float = 0
+
+var parent: Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	parent = get_parent()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	RotatePickup(delta)
 
 func _on_body_entered(body: Node) -> void:
 	
@@ -18,3 +24,7 @@ func _on_body_entered(body: Node) -> void:
 func UsePickup() -> void:
 	pass
 
+func RotatePickup(delta: float) -> void:
+	
+	var rotationVector = Vector3(xRotationSpeed, yRotationSpeed, zRotationSpeed) * delta
+	parent.rotation_degrees += rotationVector

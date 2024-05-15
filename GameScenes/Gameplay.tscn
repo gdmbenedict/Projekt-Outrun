@@ -8,8 +8,8 @@
 [ext_resource type="Script" path="res://Scripts/PlayerHealth.gd" id="6_p1waj"]
 [ext_resource type="Script" path="res://Scripts/Gear.gd" id="7_wi400"]
 [ext_resource type="PackedScene" uid="uid://clyk58ackii2b" path="res://Models/Updated_Car.fbx" id="8_ngm67"]
-[ext_resource type="PackedScene" path="res://Models/updated_lightly_damaged.tscn" id="9_8ilfi"]
-[ext_resource type="PackedScene" path="res://Models/new_heavily_damaged.tscn" id="10_kwo6t"]
+[ext_resource type="PackedScene" uid="uid://dddfwn0ta6cqe" path="res://Models/updated_lightly_damaged.tscn" id="9_8ilfi"]
+[ext_resource type="PackedScene" uid="uid://bvi2q0y8p1nns" path="res://Models/new_heavily_damaged.tscn" id="10_kwo6t"]
 [ext_resource type="Script" path="res://Scripts/Score.gd" id="11_i4kts"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r5ish"]
@@ -46,6 +46,7 @@ environment = SubResource("Environment_sxfrh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+visible = false
 light_color = Color(0.588235, 0.588235, 0.588235, 1)
 shadow_enabled = true
 shadow_reverse_cull_face = true
@@ -121,9 +122,11 @@ transform = Transform3D(-1.25, 0, 1.09278e-07, 0, 1.25, 0, -1.09278e-07, 0, -1.2
 
 [node name="Updated_Lightly_Damaged" parent="Player/CarModels" instance=ExtResource("9_8ilfi")]
 transform = Transform3D(-1.25, 0, 1.09278e-07, 0, 1.25, 0, -1.09278e-07, 0, -1.25, -0.0170144, -1.375, -1.75)
+visible = false
 
 [node name="New Heavily Damaged" parent="Player/CarModels" instance=ExtResource("10_kwo6t")]
 transform = Transform3D(-1.25, 0, 1.88745e-07, 0, 1.25, 0, -1.88745e-07, 0, -1.25, -0.100485, -1.375, -1.67767)
+visible = false
 
 [node name="Score" type="Node" parent="Player"]
 script = ExtResource("11_i4kts")
