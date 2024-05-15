@@ -63,12 +63,13 @@ gridSize = Vector2(5, 5)
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.4, 0)
 script = ExtResource("5_g1cbo")
 horizontalTimeToMax = 0.5
-horizontalMaxSpeed = 75.0
+horizontalMaxSpeed = 55.0
+fuel = 10.0
 gears = [NodePath("Gears/Gear1"), NodePath("Gears/Gear2"), NodePath("Gears/Gear3"), NodePath("Gears/Gear4"), NodePath("Gears/Gear5")]
 
 [node name="PlayerCollider" type="CharacterBody3D" parent="Player" node_paths=PackedStringArray("carStates")]
 script = ExtResource("6_6j2ev")
-carStates = [NodePath("../CarModels/New Heavily Damaged"), NodePath("../CarModels/Updated_Lightly_Damaged"), null]
+carStates = [NodePath("../CarModels/New Heavily Damaged"), NodePath("../CarModels/Updated_Lightly_Damaged"), NodePath("../CarModels/FixedCarModel")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/PlayerCollider"]
 transform = Transform3D(1, 1.74846e-07, -1.74846e-07, -1.74845e-07, 1, 1.74846e-07, 1.74846e-07, -1.74845e-07, 1, -0.041843, -0.729877, -1.73133)

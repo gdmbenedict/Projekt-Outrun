@@ -2,21 +2,35 @@ extends Node3D
 
 class_name PlayerMovement
 
-@export_category("Horizontal Movement")
+@export_category("Movement")
 @export var horizontalTimeToMax: float = 1
 @export var horizontalMaxSpeed: float = 25
+@export var decelerationMin: float = 10
+
+@export_category("Fuel")
+@export var fuelConsumption: float = 10 #percent per minute
+var maxFuel: float = 100
+@export var fuel: float
 
 @export_category("Gears")
 @export var gears: Array[Gear] = []
 var activeGear: int
 
-@export var trackedVelocity: Vector3 #variable that stores the velocity of the player
+var trackedVelocity: Vector3 #variable that stores the velocity of the player
+
+#car variables
+var dragCoe = 0.54
+var carMass = 1225
+var airDensity = 1.293
+var crossSection = 2.266
 
 func _init() -> void:
 	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	#fuel = maxFuel
 	
 	GameManager.playerMovement = self
 	GameManager.movementReady = true
@@ -29,6 +43,7 @@ func _process(delta: float) -> void:
 	
 	HandleForwardMovement(delta)
 	HandleHorizontalMovement(delta)
+	HandleFuel(delta)
 	
 	#print statement testing trackedVelocity
 	#print(trackedVelocity)
@@ -37,7 +52,18 @@ func HandleForwardMovement(delta: float) -> void:
 	
 	shiftGear()
 	
-	trackedVelocity.z += gears[activeGear].IncreaseSpeed(trackedVelocity.z, delta)
+	if(fuel > 0):
+		trackedVelocity.z += gears[activeGear].IncreaseSpeed(trackedVelocity.z, delta)
+	elif(trackedVelocity.z > 0):
+		var airResistance: float = ((0.5 * airDensity * pow(trackedVelocity.z, 2) * dragCoe * crossSection) / carMass) * delta
+		trackedVelocity.z -= (airResistance + decelerationMin*delta)
+	else:
+		trackedVelocity.z = 0
+
+func HandleFuel(delta: float) -> void:
+	
+	if(fuel > 0):
+		fuel -= fuelConsumption * (delta/60)
 
 func HandleHorizontalMovement(delta: float) -> void:
 	#Horizontal Movement

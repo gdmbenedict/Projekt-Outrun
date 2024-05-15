@@ -39,7 +39,7 @@ func TakeDamage() -> void:
 
 func SwitchModel() -> void:
 	
-	if(health > 0 && health <= carStates.size()):
+	if(health > 0 && health < carStates.size()):
 		
 		activeModel.visible = false
 		activeModel = carStates[health-1]
