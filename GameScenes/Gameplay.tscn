@@ -30,6 +30,11 @@ background_mode = 2
 background_energy_multiplier = 0.51
 sky = SubResource("Sky_fiq6l")
 tonemap_mode = 2
+ssr_fade_in = 0.310579
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_bounce_feedback = 0.75
+sdfgi_min_cell_size = 9.76563e-05
 glow_enabled = true
 glow_levels/1 = 1.4
 glow_levels/2 = 4.5
@@ -40,6 +45,14 @@ glow_bloom = 0.03
 glow_blend_mode = 0
 glow_hdr_threshold = 1.85
 glow_hdr_scale = 1.65
+fog_light_color = Color(0.517647, 0.552941, 0.607843, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_emission_energy = 6.28
+volumetric_fog_gi_inject = 0.01
+volumetric_fog_detail_spread = 1.84672
+volumetric_fog_ambient_inject = 3.35
+volumetric_fog_sky_affect = 0.32
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2u2vt"]
 size = Vector3(2.04118, 1.25528, 4.5403)
