@@ -16,7 +16,6 @@ emission_enabled = true
 emission_texture = ExtResource("2_a7fv5")
 normal_enabled = true
 normal_texture = ExtResource("5_pni5x")
-heightmap_enabled = true
 heightmap_texture = ExtResource("3_pc1vq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32vvj"]
