@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cmw64owf3rwnw"]
 
 [ext_resource type="Material" uid="uid://cu1g0wa24lpt" path="res://Materials/SimpleMaterials/MediumGrey.tres" id="1_dmnbh"]
-[ext_resource type="Script" path="res://Scripts/Collide-W-Player.gd" id="2_4s7s8"]
+[ext_resource type="Script" path="res://Scripts/MiscScripts/Collide-W-Player.gd" id="2_f510u"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3jsvx"]
 material = ExtResource("1_dmnbh")
@@ -17,7 +17,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("BoxMesh_3jsvx")
 
 [node name="Area3D" type="Area3D" parent="."]
-script = ExtResource("2_4s7s8")
+script = ExtResource("2_f510u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

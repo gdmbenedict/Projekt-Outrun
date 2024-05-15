@@ -1,16 +1,16 @@
 [gd_scene load_steps=16 format=3 uid="uid://c8107erpbuw1w"]
 
-[ext_resource type="Script" path="res://Scripts/TerrainManager.gd" id="1_bterj"]
+[ext_resource type="Script" path="res://Scripts/ManagerScripts/TerrainManager.gd" id="1_ru1ka"]
 [ext_resource type="PackedScene" uid="uid://dlp1ohptppxq6" path="res://Prefabs/Terrain/Tiles/MazeTile1.tscn" id="2_kaawv"]
 [ext_resource type="PackedScene" uid="uid://i5qjy5kftere" path="res://Prefabs/Terrain/Tiles/PillarsTile1.tscn" id="3_umxao"]
 [ext_resource type="PackedScene" uid="uid://jenac1xrysbx" path="res://Prefabs/Terrain/Tiles/WallsTile1.tscn" id="4_mfqud"]
-[ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="5_r1plx"]
-[ext_resource type="Script" path="res://Scripts/PlayerHealth.gd" id="6_p1waj"]
-[ext_resource type="Script" path="res://Scripts/Gear.gd" id="7_wi400"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerMovement.gd" id="5_g1cbo"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerHealth.gd" id="6_6j2ev"]
+[ext_resource type="Script" path="res://Scripts/MiscScripts/Gear.gd" id="7_ejbwu"]
 [ext_resource type="PackedScene" uid="uid://clyk58ackii2b" path="res://Models/Updated_Car.fbx" id="8_ngm67"]
 [ext_resource type="PackedScene" uid="uid://dddfwn0ta6cqe" path="res://Models/updated_lightly_damaged.tscn" id="9_8ilfi"]
 [ext_resource type="PackedScene" uid="uid://bvi2q0y8p1nns" path="res://Models/new_heavily_damaged.tscn" id="10_kwo6t"]
-[ext_resource type="Script" path="res://Scripts/Score.gd" id="11_i4kts"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/Score.gd" id="11_aklrv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r5ish"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -53,7 +53,7 @@ shadow_reverse_cull_face = true
 shadow_blur = 0.0
 
 [node name="TerrainController" type="Node3D" parent="." node_paths=PackedStringArray("playerPos")]
-script = ExtResource("1_bterj")
+script = ExtResource("1_ru1ka")
 playerPos = NodePath("../Player")
 tileSize = 150.0
 tiles = Array[PackedScene]([ExtResource("2_kaawv"), ExtResource("3_umxao"), ExtResource("4_mfqud")])
@@ -61,13 +61,13 @@ gridSize = Vector2(5, 5)
 
 [node name="Player" type="Node3D" parent="." node_paths=PackedStringArray("gears")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.4, 0)
-script = ExtResource("5_r1plx")
+script = ExtResource("5_g1cbo")
 horizontalTimeToMax = 0.5
 horizontalMaxSpeed = 75.0
 gears = [NodePath("Gears/Gear1"), NodePath("Gears/Gear2"), NodePath("Gears/Gear3"), NodePath("Gears/Gear4"), NodePath("Gears/Gear5")]
 
 [node name="PlayerCollider" type="CharacterBody3D" parent="Player" node_paths=PackedStringArray("carStates")]
-script = ExtResource("6_p1waj")
+script = ExtResource("6_6j2ev")
 carStates = [NodePath("../CarModels/New Heavily Damaged"), NodePath("../CarModels/Updated_Lightly_Damaged"), NodePath("../CarModels/FixedCarModel")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/PlayerCollider"]
@@ -81,34 +81,34 @@ current = true
 [node name="Gears" type="Node3D" parent="Player"]
 
 [node name="Gear1" type="Node" parent="Player/Gears"]
-script = ExtResource("7_wi400")
+script = ExtResource("7_ejbwu")
 maxSpeed = 55.0
 timeShift = 0.1
 smoothingFactor = 5.0
 
 [node name="Gear2" type="Node" parent="Player/Gears"]
-script = ExtResource("7_wi400")
+script = ExtResource("7_ejbwu")
 maxSpeed = 85.0
 minSpeed = 53.0
 timeShift = 3.0
 smoothingFactor = 15.0
 
 [node name="Gear3" type="Node" parent="Player/Gears"]
-script = ExtResource("7_wi400")
+script = ExtResource("7_ejbwu")
 maxSpeed = 125.0
 minSpeed = 81.0
 timeShift = 7.0
 smoothingFactor = 45.0
 
 [node name="Gear4" type="Node" parent="Player/Gears"]
-script = ExtResource("7_wi400")
+script = ExtResource("7_ejbwu")
 maxSpeed = 165.0
 minSpeed = 119.0
 timeShift = 14.0
 smoothingFactor = 135.0
 
 [node name="Gear5" type="Node" parent="Player/Gears"]
-script = ExtResource("7_wi400")
+script = ExtResource("7_ejbwu")
 maxSpeed = 215.0
 minSpeed = 158.0
 timeShift = 30.0
@@ -129,4 +129,4 @@ transform = Transform3D(-1.25, 0, 1.88745e-07, 0, 1.25, 0, -1.88745e-07, 0, -1.2
 visible = false
 
 [node name="Score" type="Node" parent="Player"]
-script = ExtResource("11_i4kts")
+script = ExtResource("11_aklrv")
