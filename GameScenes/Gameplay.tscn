@@ -162,6 +162,6 @@ visible = false
 script = ExtResource("11_i4kts")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1200, 0, 0, 0, 1200, 0, 0, 0, 1, 0, 0, 1915.27)
+transform = Transform3D(1200, 0, 0, 0, 1200, 0, 0, 0, 1, 0, 0, 2154.07)
 material_override = SubResource("ShaderMaterial_nv55u")
 mesh = SubResource("SphereMesh_qpv3q")
