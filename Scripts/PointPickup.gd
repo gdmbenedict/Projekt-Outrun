@@ -6,3 +6,4 @@ extends Pickup
 
 func UsePickup() -> void:
 	GameManager.playerScore.AddScore(points)
+	super.UsePickup()

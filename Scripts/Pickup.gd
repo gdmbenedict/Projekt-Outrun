@@ -22,7 +22,7 @@ func _on_body_entered(body: Node) -> void:
 		UsePickup()
 
 func UsePickup() -> void:
-	pass
+	parent.queue_free()
 
 func RotatePickup(delta: float) -> void:
 	

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://i5qjy5kftere"]
+[gd_scene load_steps=4 format=3 uid="uid://i5qjy5kftere"]
 
 [ext_resource type="PackedScene" uid="uid://bs21jrogohafe" path="res://Prefabs/Terrain/Terrain Componenets/TerrainFloor.tscn" id="1_bhvv2"]
 [ext_resource type="PackedScene" uid="uid://cmw64owf3rwnw" path="res://Prefabs/Terrain/Terrain Componenets/wall.tscn" id="2_w5acy"]
+[ext_resource type="PackedScene" uid="uid://sukrtndahg8y" path="res://Prefabs/Game Assets/PointsPickup.tscn" id="3_qe5rc"]
 
 [node name="PillarsTile1" type="Node3D"]
 
@@ -203,3 +204,67 @@ transform = Transform3D(1.76777, 0, 1.76777, 0, 5, 0, -1.76777, 0, 1.76777, 10.5
 
 [node name="Pillar8" parent="PillarStructure4" instance=ExtResource("2_w5acy")]
 transform = Transform3D(1.76777, 0, 1.76777, 0, 5, 0, -1.76777, 0, 1.76777, -10.5, 0, -10.5)
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="Point Pickups" type="Node3D" parent="Pickups"]
+
+[node name="PointsPickup" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1, -8)
+
+[node name="PointsPickup2" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1, 8)
+
+[node name="PointsPickup3" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 1, 8)
+
+[node name="PointsPickup4" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 1, -8)
+
+[node name="PointsPickup5" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 19)
+
+[node name="PointsPickup6" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -19)
+
+[node name="PointsPickup7" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -19)
+
+[node name="PointsPickup8" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, 19)
+
+[node name="PointsPickup9" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 1, -39)
+
+[node name="PointsPickup10" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 1, -39)
+
+[node name="PointsPickup11" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 1, -51)
+
+[node name="PointsPickup12" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 1, -51)
+
+[node name="PointsPickup13" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 1, 51)
+
+[node name="PointsPickup14" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 1, 51)
+
+[node name="PointsPickup15" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 1, 39)
+
+[node name="PointsPickup16" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 1, 39)
+
+[node name="PointsPickup17" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 1, -39)
+
+[node name="PointsPickup18" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 1, -39)
+
+[node name="PointsPickup19" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 1, -51)
+
+[node name="PointsPickup20" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 1, -51)

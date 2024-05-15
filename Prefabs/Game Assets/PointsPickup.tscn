@@ -4,16 +4,20 @@
 [ext_resource type="Script" path="res://Scripts/PointPickup.gd" id="1_vkr0t"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bv3ip"]
-height = 0.0529719
-radius = 0.175362
+height = 0.177759
+radius = 0.518278
 
 [node name="PointsPickup" type="Node3D"]
 
 [node name="Coin Pickup" parent="." instance=ExtResource("1_58on3")]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="."]
 script = ExtResource("1_vkr0t")
+yRotationSpeed = 45.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 shape = SubResource("CylinderShape3D_bv3ip")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

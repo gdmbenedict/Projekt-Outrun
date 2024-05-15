@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://jenac1xrysbx"]
+[gd_scene load_steps=4 format=3 uid="uid://jenac1xrysbx"]
 
 [ext_resource type="PackedScene" uid="uid://bs21jrogohafe" path="res://Prefabs/Terrain/Terrain Componenets/TerrainFloor.tscn" id="1_3o4i1"]
 [ext_resource type="PackedScene" uid="uid://cmw64owf3rwnw" path="res://Prefabs/Terrain/Terrain Componenets/wall.tscn" id="2_r5e4l"]
+[ext_resource type="PackedScene" uid="uid://sukrtndahg8y" path="res://Prefabs/Game Assets/PointsPickup.tscn" id="3_d8mga"]
 
 [node name="WallsTile1" type="Node3D"]
 
 [node name="Terrain Floor" parent="." instance=ExtResource("1_3o4i1")]
 
 [node name="Diagonal walls" type="Node3D" parent="Terrain Floor"]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Wall" parent="Terrain Floor/Diagonal walls" instance=ExtResource("2_r5e4l")]
 transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 10, 0, 0)
@@ -54,44 +56,8 @@ transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, -60, 0, 0)
 [node name="Wall15" parent="Terrain Floor/Diagonal walls" instance=ExtResource("2_r5e4l")]
 transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, -70, 0, 0)
 
-[node name="Diagonal walls4" type="Node3D" parent="Terrain Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.75, 0, 0, -40)
-
-[node name="Wall" parent="Terrain Floor/Diagonal walls4" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 10, 0, 0)
-
-[node name="Wall3" parent="Terrain Floor/Diagonal walls4" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 20, 0, 0)
-
-[node name="Wall4" parent="Terrain Floor/Diagonal walls4" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 30, 0, 0)
-
-[node name="Wall7" parent="Terrain Floor/Diagonal walls4" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, 40, 0, 0)
-
-[node name="Wall8" parent="Terrain Floor/Diagonal walls4" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, 50, 0, 0)
-
-[node name="Wall2" parent="Terrain Floor/Diagonal walls4" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 0, 0, 0)
-
-[node name="Wall9" parent="Terrain Floor/Diagonal walls4" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -10, 0, 0)
-
-[node name="Wall10" parent="Terrain Floor/Diagonal walls4" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -20, 0, 0)
-
-[node name="Wall11" parent="Terrain Floor/Diagonal walls4" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -30, 0, 0)
-
-[node name="Wall14" parent="Terrain Floor/Diagonal walls4" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, -40, 0, 0)
-
-[node name="Wall15" parent="Terrain Floor/Diagonal walls4" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, -50, 0, 0)
-
 [node name="Diagonal walls5" type="Node3D" parent="Terrain Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.75, 0, 0, 40)
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 0.75, 0, 0, 60)
 
 [node name="Wall" parent="Terrain Floor/Diagonal walls5" instance=ExtResource("2_r5e4l")]
 transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 10, 0, 0)
@@ -99,14 +65,11 @@ transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 10, 0, 0)
 [node name="Wall3" parent="Terrain Floor/Diagonal walls5" instance=ExtResource("2_r5e4l")]
 transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 20, 0, 0)
 
-[node name="Wall4" parent="Terrain Floor/Diagonal walls5" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 30, 0, 0)
-
 [node name="Wall7" parent="Terrain Floor/Diagonal walls5" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, 40, 0, 0)
+transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, 30, 0, 0)
 
 [node name="Wall8" parent="Terrain Floor/Diagonal walls5" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, 50, 0, 0)
+transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, 40, 0, 0)
 
 [node name="Wall2" parent="Terrain Floor/Diagonal walls5" instance=ExtResource("2_r5e4l")]
 transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 0, 0, 0)
@@ -117,110 +80,26 @@ transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -10, 0, 0)
 [node name="Wall10" parent="Terrain Floor/Diagonal walls5" instance=ExtResource("2_r5e4l")]
 transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -20, 0, 0)
 
-[node name="Wall11" parent="Terrain Floor/Diagonal walls5" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -30, 0, 0)
-
 [node name="Wall14" parent="Terrain Floor/Diagonal walls5" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, -40, 0, 0)
+transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, -30, 0, 0)
 
 [node name="Wall15" parent="Terrain Floor/Diagonal walls5" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, -50, 0, 0)
-
-[node name="Diagonal walls2" type="Node3D" parent="Terrain Floor"]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 0.9, 0, 2, 20)
-
-[node name="Wall" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 10, 0, 0)
-
-[node name="Wall3" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 20, 0, 0)
-
-[node name="Wall4" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 30, 0, 0)
-
-[node name="Wall5" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 40, 0, 0)
-
-[node name="Wall7" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, 50, 0, 0)
-
-[node name="Wall8" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, 60, 0, 0)
-
-[node name="Wall2" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 0, 0, 0)
-
-[node name="Wall9" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -10, 0, 0)
-
-[node name="Wall10" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -20, 0, 0)
-
-[node name="Wall11" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -30, 0, 0)
-
-[node name="Wall12" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -40, 0, 0)
-
-[node name="Wall14" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, -50, 0, 0)
-
-[node name="Wall15" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, -60, 0, 0)
-
-[node name="Diagonal walls3" type="Node3D" parent="Terrain Floor"]
-transform = Transform3D(-1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 0, 0, 0.9, 0, 2, -20)
-
-[node name="Wall" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 10, 0, 0)
-
-[node name="Wall3" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 20, 0, 0)
-
-[node name="Wall4" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 30, 0, 0)
-
-[node name="Wall5" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 40, 0, 0)
-
-[node name="Wall7" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, 50, 0, 0)
-
-[node name="Wall8" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, 60, 0, 0)
-
-[node name="Wall2" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 0, 0, 0)
-
-[node name="Wall9" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -10, 0, 0)
-
-[node name="Wall10" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -20, 0, 0)
-
-[node name="Wall11" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -30, 0, 0)
-
-[node name="Wall12" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -40, 0, 0)
-
-[node name="Wall14" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, -50, 0, 0)
-
-[node name="Wall15" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, -60, 0, 0)
+transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, -40, 0, 0)
 
 [node name="Diagonal walls6" type="Node3D" parent="Terrain Floor"]
-transform = Transform3D(-1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 0, 0, 0.5, 0, 2, -60)
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 0.75, 0, 0, -60)
 
 [node name="Wall" parent="Terrain Floor/Diagonal walls6" instance=ExtResource("2_r5e4l")]
 transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 10, 0, 0)
 
+[node name="Wall3" parent="Terrain Floor/Diagonal walls6" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 20, 0, 0)
+
 [node name="Wall7" parent="Terrain Floor/Diagonal walls6" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, 20, 0, 0)
+transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, 30, 0, 0)
 
 [node name="Wall8" parent="Terrain Floor/Diagonal walls6" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, 30, 0, 0)
+transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, 40, 0, 0)
 
 [node name="Wall2" parent="Terrain Floor/Diagonal walls6" instance=ExtResource("2_r5e4l")]
 transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 0, 0, 0)
@@ -228,32 +107,249 @@ transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 0, 0, 0)
 [node name="Wall9" parent="Terrain Floor/Diagonal walls6" instance=ExtResource("2_r5e4l")]
 transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -10, 0, 0)
 
+[node name="Wall10" parent="Terrain Floor/Diagonal walls6" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -20, 0, 0)
+
 [node name="Wall14" parent="Terrain Floor/Diagonal walls6" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, -20, 0, 0)
+transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, -30, 0, 0)
 
 [node name="Wall15" parent="Terrain Floor/Diagonal walls6" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, -30, 0, 0)
+transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, -40, 0, 0)
 
-[node name="Diagonal walls7" type="Node3D" parent="Terrain Floor"]
-transform = Transform3D(-1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 0, 0, 0.5, 0, 2, 60)
+[node name="Diagonal walls2" type="Node3D" parent="Terrain Floor"]
+transform = Transform3D(-1, 4.52987e-07, 0, -1.50996e-07, -3, 0, 0, 0, 0.9, 0, 5, 30)
 
-[node name="Wall" parent="Terrain Floor/Diagonal walls7" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 10, 0, 0)
+[node name="Wall" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 15, 0, 0)
 
-[node name="Wall7" parent="Terrain Floor/Diagonal walls7" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, 20, 0, 0)
+[node name="Wall3" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 25, 0, 0)
 
-[node name="Wall8" parent="Terrain Floor/Diagonal walls7" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, 30, 0, 0)
+[node name="Wall4" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 35, 0, 0)
 
-[node name="Wall2" parent="Terrain Floor/Diagonal walls7" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 0, 0, 0)
+[node name="Wall7" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, 45, 0, 0)
 
-[node name="Wall9" parent="Terrain Floor/Diagonal walls7" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -10, 0, 0)
+[node name="Wall8" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, 55, 0, 0)
 
-[node name="Wall14" parent="Terrain Floor/Diagonal walls7" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, -20, 0, 0)
+[node name="Wall2" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 5, 0, 0)
 
-[node name="Wall15" parent="Terrain Floor/Diagonal walls7" instance=ExtResource("2_r5e4l")]
-transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, -30, 0, 0)
+[node name="Wall9" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -5, 0, 0)
+
+[node name="Wall10" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -15, 0, 0)
+
+[node name="Wall11" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -25, 0, 0)
+
+[node name="Wall12" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -35, 0, 0)
+
+[node name="Wall14" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, -45, 0, 0)
+
+[node name="Wall15" parent="Terrain Floor/Diagonal walls2" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, -55, 0, 0)
+
+[node name="Diagonal walls3" type="Node3D" parent="Terrain Floor"]
+transform = Transform3D(-1, 4.52987e-07, 0, -1.50996e-07, -3, 0, 0, 0, 0.9, 0, 5, -30)
+
+[node name="Wall" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 15, 0, 0)
+
+[node name="Wall3" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 25, 0, 0)
+
+[node name="Wall4" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 35, 0, 0)
+
+[node name="Wall7" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, 45, 0, 0)
+
+[node name="Wall8" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, 55, 0, 0)
+
+[node name="Wall2" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, 5, 0, 0)
+
+[node name="Wall9" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -5, 0, 0)
+
+[node name="Wall10" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -15, 0, 0)
+
+[node name="Wall11" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -25, 0, 0)
+
+[node name="Wall12" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 5, 0, 1, 0, -0.5, 0, 8.66025, -35, 0, 0)
+
+[node name="Wall14" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 3.75, 0, 1, 0, -0.5, 0, 6.49519, -45, 0, 0)
+
+[node name="Wall15" parent="Terrain Floor/Diagonal walls3" instance=ExtResource("2_r5e4l")]
+transform = Transform3D(0.866025, 0, 2.5, 0, 1, 0, -0.5, 0, 4.33013, -55, 0, 0)
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="PointsPickups" type="Node3D" parent="Pickups"]
+
+[node name="PointsPickup" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 0)
+
+[node name="PointsPickup15" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 30)
+
+[node name="PointsPickup20" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 30)
+
+[node name="PointsPickup21" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, 30)
+
+[node name="PointsPickup22" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1, 30)
+
+[node name="PointsPickup23" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 1, 30)
+
+[node name="PointsPickup24" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 1, 30)
+
+[node name="PointsPickup25" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 1, 30)
+
+[node name="PointsPickup16" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, 30)
+
+[node name="PointsPickup17" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1, 30)
+
+[node name="PointsPickup18" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 1, 30)
+
+[node name="PointsPickup19" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 1, 30)
+
+[node name="PointsPickup42" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, -30)
+
+[node name="PointsPickup43" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -30)
+
+[node name="PointsPickup44" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, -30)
+
+[node name="PointsPickup45" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1, -30)
+
+[node name="PointsPickup46" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 1, -30)
+
+[node name="PointsPickup47" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 1, -30)
+
+[node name="PointsPickup48" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 1, -30)
+
+[node name="PointsPickup49" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, -30)
+
+[node name="PointsPickup50" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1, -30)
+
+[node name="PointsPickup51" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 1, -30)
+
+[node name="PointsPickup52" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 1, -30)
+
+[node name="PointsPickup26" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 1, 60)
+
+[node name="PointsPickup27" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, 60)
+
+[node name="PointsPickup28" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, 60)
+
+[node name="PointsPickup29" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 60)
+
+[node name="PointsPickup30" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 60)
+
+[node name="PointsPickup31" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1, 60)
+
+[node name="PointsPickup32" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, 60)
+
+[node name="PointsPickup33" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 1, 60)
+
+[node name="PointsPickup34" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 1, -60)
+
+[node name="PointsPickup35" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -60)
+
+[node name="PointsPickup36" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, -60)
+
+[node name="PointsPickup37" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -60)
+
+[node name="PointsPickup38" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -60)
+
+[node name="PointsPickup39" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1, -60)
+
+[node name="PointsPickup40" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, -60)
+
+[node name="PointsPickup41" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 1, -60)
+
+[node name="PointsPickup6" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0)
+
+[node name="PointsPickup7" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1, 0)
+
+[node name="PointsPickup8" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, 0)
+
+[node name="PointsPickup9" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 1, 0)
+
+[node name="PointsPickup10" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 1, 0)
+
+[node name="PointsPickup11" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 1, 0)
+
+[node name="PointsPickup12" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 1, 0)
+
+[node name="PointsPickup2" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, 0)
+
+[node name="PointsPickup3" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, 0)
+
+[node name="PointsPickup4" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 1, 0)
+
+[node name="PointsPickup5" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 1, 0)
+
+[node name="PointsPickup13" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 1, 0)
+
+[node name="PointsPickup14" parent="Pickups/PointsPickups" instance=ExtResource("3_d8mga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65, 1, 0)
