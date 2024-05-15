@@ -8,7 +8,8 @@ class_name PlayerHealth
 var activeModel: Node3D
 
 @export_category("Player Health Variables")
-@export var health : int = 3
+@export var maxHealth: int = 3
+var health : int
 
 
 # Called when the node enters the scene tree for the first time.
@@ -17,6 +18,7 @@ func _ready() -> void:
 	GameManager.playerHealth = self
 	GameManager.healthReady = true
 	
+	health = maxHealth
 	activeModel = carStates[health-1]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,3 +44,9 @@ func SwitchModel() -> void:
 		activeModel.visible = false
 		activeModel = carStates[health-1]
 		activeModel.visible = true
+
+func Repair(healthOnRepair: int) -> void:
+	
+	if(health < maxHealth):
+		health += healthOnRepair
+		SwitchModel()
