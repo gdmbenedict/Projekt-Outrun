@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c8107erpbuw1w"]
+[gd_scene load_steps=17 format=3 uid="uid://c8107erpbuw1w"]
 
 [ext_resource type="Script" path="res://Scripts/TerrainManager.gd" id="1_bterj"]
 [ext_resource type="PackedScene" uid="uid://dlp1ohptppxq6" path="res://Prefabs/Terrain/Tiles/MazeTile1.tscn" id="2_kaawv"]
@@ -56,6 +56,8 @@ volumetric_fog_sky_affect = 0.32
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2u2vt"]
 size = Vector3(2.04118, 1.25528, 4.5403)
+
+[sub_resource type="SphereMesh" id="SphereMesh_qpv3q"]
 
 [node name="TestGameplay" type="Node3D" groups=["GameplayScene"]]
 
@@ -149,3 +151,7 @@ visible = false
 
 [node name="Score" type="Node" parent="Player"]
 script = ExtResource("11_i4kts")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 350.23)
+mesh = SubResource("SphereMesh_qpv3q")
