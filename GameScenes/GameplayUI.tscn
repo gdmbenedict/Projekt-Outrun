@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dpddkxwm3rs3y"]
 
 [ext_resource type="Script" path="res://Scripts/UIElementScripts/GameplayUI.gd" id="1_0rayq"]
-[ext_resource type="Texture2D" uid="uid://cm4toyyt841kw" path="res://Sprites/Speedometer.png" id="1_ada34"]
+[ext_resource type="Texture2D" uid="uid://cyfb1vbbb3wi0" path="res://Sprites/Updated_Speedometer.png" id="2_uycen"]
 [ext_resource type="Texture2D" uid="uid://dwf5u8usnjvq7" path="res://Sprites/Gauge needle.png" id="2_x52sf"]
 [ext_resource type="FontFile" uid="uid://dxjbcrcc72sb" path="res://Fonts/fs-sevegment.ttf" id="4_incck"]
 [ext_resource type="FontFile" uid="uid://rkqodqs3sgh8" path="res://Fonts/NeonSans-GOgRg.ttf" id="5_yfeha"]
@@ -46,7 +46,7 @@ grow_vertical = 2
 [node name="Speedometer" type="TextureRect" parent="MarginContainer"]
 modulate = Color(1, 1, 1, 0.403922)
 layout_mode = 2
-texture = ExtResource("1_ada34")
+texture = ExtResource("2_uycen")
 expand_mode = 1
 
 [node name="SpeedometerNeedle" type="TextureRect" parent="MarginContainer/Speedometer"]
