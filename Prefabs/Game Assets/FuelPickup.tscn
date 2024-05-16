@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch5pqopou1ynk"]
+
+[ext_resource type="PackedScene" uid="uid://bjraj464re4lh" path="res://Models/PickUps/refuel_pickup.tscn" id="1_307wr"]
+[ext_resource type="Script" path="res://Scripts/PickupScripts/FuelPickup.gd" id="2_3hji7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r4kif"]
+size = Vector3(0.896973, 1, 1)
+
+[node name="FuelPickup" type="Node3D"]
+
+[node name="MeshWrapper" type="Node3D" parent="."]
+transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Refuel Pickup" parent="MeshWrapper" instance=ExtResource("1_307wr")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 0, -0.35, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("2_3hji7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.869333, -0.232937, 0, 0.232937, 0.869333, 0, 0, 0, 0.4, -0.0296694, 0.090795, 0)
+shape = SubResource("BoxShape3D_r4kif")

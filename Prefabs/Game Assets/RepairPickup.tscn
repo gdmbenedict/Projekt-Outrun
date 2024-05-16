@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://btwtixogrspo4"]
+
+[ext_resource type="PackedScene" uid="uid://bou3nv6bvk7el" path="res://Models/PickUps/repair_pickup.tscn" id="1_oq878"]
+[ext_resource type="Script" path="res://Scripts/PickupScripts/RepairPickup.gd" id="2_r1s0o"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2qhl0"]
+height = 1.7055
+radius = 0.911007
+
+[node name="RepairPickup" type="Node3D"]
+
+[node name="Repair Pickup" parent="." instance=ExtResource("1_oq878")]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, -0.3, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("2_r1s0o")
+yRotationSpeed = 45.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -1.09278e-08, -1, 0, 0.25, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_2qhl0")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

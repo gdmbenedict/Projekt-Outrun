@@ -103,14 +103,14 @@ smoothingFactor = 45.0
 
 [node name="Gear4" type="Node" parent="Player/Gears"]
 script = ExtResource("7_ejbwu")
-maxSpeed = 165.0
+maxSpeed = 170.0
 minSpeed = 119.0
 timeShift = 14.0
-smoothingFactor = 135.0
+smoothingFactor = 120.0
 
 [node name="Gear5" type="Node" parent="Player/Gears"]
 script = ExtResource("7_ejbwu")
-maxSpeed = 215.0
+maxSpeed = 220.0
 minSpeed = 158.0
 timeShift = 30.0
 smoothingFactor = 405.0
