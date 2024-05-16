@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dpddkxwm3rs3y"]
 
-[ext_resource type="Script" path="res://Scripts/GameplayUI.gd" id="1_0rayq"]
+[ext_resource type="Script" path="res://Scripts/UIElementScripts/GameplayUI.gd" id="1_0rayq"]
 [ext_resource type="Texture2D" uid="uid://cyfb1vbbb3wi0" path="res://Sprites/Updated_Speedometer.png" id="2_uycen"]
 [ext_resource type="Texture2D" uid="uid://dwf5u8usnjvq7" path="res://Sprites/Gauge needle.png" id="2_x52sf"]
 [ext_resource type="FontFile" uid="uid://dxjbcrcc72sb" path="res://Fonts/fs-sevegment.ttf" id="4_incck"]
