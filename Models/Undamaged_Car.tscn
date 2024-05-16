@@ -1,6 +1,24 @@
-[gd_scene load_steps=14 format=3 uid="uid://cdg6jjq05c4be"]
+[gd_scene load_steps=19 format=3 uid="uid://cdg6jjq05c4be"]
 
-[ext_resource type="Shader" path="res://Lighting/Shaders/updated_car.gdshader" id="1_62lxp"]
+[ext_resource type="Texture2D" uid="uid://ctdwquffowrym" path="res://Materials/Texture Maps/Updated_Car_BaseColor.png" id="1_e7rwh"]
+[ext_resource type="Texture2D" uid="uid://vo3hrn1n4ncn" path="res://Materials/Texture Maps/Updated_Car_Emissive.png" id="2_ciqv0"]
+[ext_resource type="Texture2D" uid="uid://wc3cp5ukmvfg" path="res://Materials/Texture Maps/Updated_Car_Height.png" id="3_11vtr"]
+[ext_resource type="Texture2D" uid="uid://drkp5p8p1n48x" path="res://Materials/Texture Maps/Updated_Car_Metallic.png" id="4_jj4vu"]
+[ext_resource type="Texture2D" uid="uid://blw2g2h1jwepg" path="res://Materials/Texture Maps/Updated_Car_Normal.png" id="5_f6m8k"]
+[ext_resource type="Texture2D" uid="uid://bc7l0k3d3eq8p" path="res://Materials/Texture Maps/Updated_Car_Roughness.png" id="6_ahe5g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cy4tp"]
+albedo_texture = ExtResource("1_e7rwh")
+metallic = 1.0
+metallic_texture = ExtResource("4_jj4vu")
+roughness_texture = ExtResource("6_ahe5g")
+emission_texture = ExtResource("2_ciqv0")
+normal_enabled = true
+normal_texture = ExtResource("5_f6m8k")
+rim_enabled = true
+clearcoat_enabled = true
+heightmap_scale = 1.045
+heightmap_texture = ExtResource("3_11vtr")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rymq5"]
 resource_name = "standardSurface1"
@@ -108,14 +126,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ffwcy")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rbrmp"]
-render_priority = 0
-shader = ExtResource("1_62lxp")
-shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/wire_color = Color(0, 0.2, 2, 0)
-shader_parameter/wire_width = 1.0
-shader_parameter/wire_smoothness = 0.01
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_cy081"]
 _surfaces = [{
 "aabb": AABB(-0.853204, 0.170879, -2.18577, 1.85072, 0.856428, 3.63022),
@@ -165,22 +175,25 @@ _data = {
 
 [node name="Front_Left_Tire1" type="MeshInstance3D" parent="RootNode"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.133264, 0, 0)
+material_override = SubResource("StandardMaterial3D_cy4tp")
 mesh = SubResource("ArrayMesh_20ngx")
 skeleton = NodePath("")
 
 [node name="Front_Right_Tire1" type="MeshInstance3D" parent="RootNode"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.133264, 0, 0)
+material_override = SubResource("StandardMaterial3D_cy4tp")
 mesh = SubResource("ArrayMesh_gofmt")
 skeleton = NodePath("")
 
 [node name="Front_Left_Tire2" type="MeshInstance3D" parent="RootNode"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.133264, 0, 0)
+material_override = SubResource("StandardMaterial3D_cy4tp")
 mesh = SubResource("ArrayMesh_de7bb")
 skeleton = NodePath("")
 
 [node name="Car_Body1" type="MeshInstance3D" parent="RootNode"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.133264, 0, 0)
-material_overlay = SubResource("ShaderMaterial_rbrmp")
+material_override = SubResource("StandardMaterial3D_cy4tp")
 mesh = SubResource("ArrayMesh_s1xyy")
 skeleton = NodePath("")
 

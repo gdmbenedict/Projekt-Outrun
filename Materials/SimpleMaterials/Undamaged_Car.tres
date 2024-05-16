@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://xv3evol8i4bw"]
+
+[ext_resource type="Texture2D" uid="uid://ctdwquffowrym" path="res://Materials/Texture Maps/Updated_Car_BaseColor.png" id="1_tifc4"]
+[ext_resource type="Texture2D" uid="uid://vo3hrn1n4ncn" path="res://Materials/Texture Maps/Updated_Car_Emissive.png" id="2_xpsuq"]
+[ext_resource type="Texture2D" uid="uid://wc3cp5ukmvfg" path="res://Materials/Texture Maps/Updated_Car_Height.png" id="3_8lwos"]
+[ext_resource type="Texture2D" uid="uid://drkp5p8p1n48x" path="res://Materials/Texture Maps/Updated_Car_Metallic.png" id="4_drk26"]
+[ext_resource type="Texture2D" uid="uid://blw2g2h1jwepg" path="res://Materials/Texture Maps/Updated_Car_Normal.png" id="5_4rjce"]
+[ext_resource type="Texture2D" uid="uid://bc7l0k3d3eq8p" path="res://Materials/Texture Maps/Updated_Car_Roughness.png" id="6_yad5u"]
+
+[resource]
+albedo_texture = ExtResource("1_tifc4")
+metallic = 1.0
+metallic_texture = ExtResource("4_drk26")
+roughness_texture = ExtResource("6_yad5u")
+emission_texture = ExtResource("2_xpsuq")
+normal_enabled = true
+normal_texture = ExtResource("5_4rjce")
+rim_enabled = true
+clearcoat_enabled = true
+heightmap_scale = 1.045
+heightmap_texture = ExtResource("3_8lwos")
