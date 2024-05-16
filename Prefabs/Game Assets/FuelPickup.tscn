@@ -16,6 +16,7 @@ transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 0, -0.
 
 [node name="Area3D" type="Area3D" parent="."]
 script = ExtResource("2_3hji7")
+yRotationSpeed = 45.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(0.869333, -0.232937, 0, 0.232937, 0.869333, 0, 0, 0, 0.4, -0.0296694, 0.090795, 0)
