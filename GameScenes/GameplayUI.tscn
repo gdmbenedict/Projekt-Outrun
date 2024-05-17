@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dpddkxwm3rs3y"]
+[gd_scene load_steps=12 format=3 uid="uid://dpddkxwm3rs3y"]
 
 [ext_resource type="Script" path="res://Scripts/UIElementScripts/GameplayUI.gd" id="1_0rayq"]
 [ext_resource type="Texture2D" uid="uid://cyfb1vbbb3wi0" path="res://Sprites/Updated_Speedometer.png" id="2_uycen"]
 [ext_resource type="Texture2D" uid="uid://dwf5u8usnjvq7" path="res://Sprites/Gauge needle.png" id="2_x52sf"]
 [ext_resource type="FontFile" uid="uid://dxjbcrcc72sb" path="res://Fonts/fs-sevegment.ttf" id="4_incck"]
 [ext_resource type="FontFile" uid="uid://rkqodqs3sgh8" path="res://Fonts/NeonSans-GOgRg.ttf" id="5_yfeha"]
+[ext_resource type="Texture2D" uid="uid://7rbp2t3ssmqk" path="res://Sprites/Fuel_Gauge.png" id="6_ktwcv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4lx20"]
 
@@ -20,7 +21,14 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 10
 shadow_color = Color(0, 0, 0, 0.32549)
 
-[node name="GameplayUI" type="Control" node_paths=PackedStringArray("speedometerNeedle", "speedometerReading", "scoreText")]
+[sub_resource type="LabelSettings" id="LabelSettings_yo6vv"]
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_s68ej"]
+font = ExtResource("4_incck")
+font_size = 12
+
+[node name="GameplayUI" type="Control" node_paths=PackedStringArray("scoreText", "speedometerNeedle", "speedometerReading", "fuelGaugeNeedle", "fuelGaugeReading")]
 process_mode = 1
 layout_mode = 3
 anchors_preset = 15
@@ -29,9 +37,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0rayq")
+scoreText = NodePath("MarginContainer2/Score")
 speedometerNeedle = NodePath("MarginContainer/Speedometer/SpeedometerNeedle")
 speedometerReading = NodePath("MarginContainer/Speedometer/SpeedLabel")
-scoreText = NodePath("MarginContainer2/Score")
+fuelGaugeNeedle = NodePath("MarginContainer3/FuelGauge/GaugeNeedle")
+fuelGaugeReading = NodePath("MarginContainer3/FuelGauge/TimeRemaining")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -111,3 +121,51 @@ grow_horizontal = 2
 layout_mode = 2
 text = "Score:"
 label_settings = SubResource("LabelSettings_3xhna")
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.153
+anchor_right = 0.205
+anchor_bottom = 0.09
+offset_left = 0.0799866
+offset_right = 0.600006
+offset_bottom = -0.200005
+
+[node name="FuelGauge" type="TextureRect" parent="MarginContainer3"]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 2
+texture = ExtResource("6_ktwcv")
+expand_mode = 1
+
+[node name="GaugeNeedle" type="TextureRect" parent="MarginContainer3/FuelGauge"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 44.0
+offset_right = 59.0
+offset_bottom = 78.0
+rotation = 1.13446
+pivot_offset = Vector2(30, 8)
+texture = ExtResource("2_x52sf")
+expand_mode = 1
+
+[node name="TimeUnits" type="Label" parent="MarginContainer3/FuelGauge"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.41
+anchor_top = 0.619
+anchor_right = 0.58
+anchor_bottom = 0.742
+offset_top = -0.0430031
+offset_bottom = 0.0259933
+text = "Min:"
+label_settings = SubResource("LabelSettings_yo6vv")
+
+[node name="TimeRemaining" type="Label" parent="MarginContainer3/FuelGauge"]
+layout_mode = 0
+offset_left = 34.16
+offset_top = 71.0
+offset_right = 69.16
+offset_bottom = 94.0
+text = "00:00"
+label_settings = SubResource("LabelSettings_s68ej")

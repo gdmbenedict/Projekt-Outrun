@@ -130,3 +130,17 @@ func EmergencyShift() -> void:
 		activeGear -= 1
 	
 	trackedVelocity.z = gears[activeGear].GetMinSpeed()
+
+func GetFuel() -> float:
+	return fuel
+
+func GetMaxFuel() -> float:
+	return maxFuel
+
+func AddFuel(fuelAdded: float) -> void:
+	fuel += fuelAdded
+	if(fuel > maxFuel):
+		fuel = maxFuel
+
+func GetFuelCon() -> float:
+	return fuelConsumption
