@@ -5,11 +5,13 @@ extends Node3D
 
 @export_category("Tiles")
 @export var tileSize: float
+@export var emptyTile: PackedScene
 @export var tiles: Array[PackedScene]
 
 @export_category("Generation Parameters")
 @export var gridSize: Vector2
 @export var startPosOffset: float
+@export var startTiles: int = 1
 var generatedTiles = []
 var even: bool
 
@@ -106,8 +108,14 @@ func OddInitGeneration() -> void:
 		#generates each tile in row
 		for j in range(-horizontalStep, horizontalStep):
 			
-			#grab tile and instantiate it 
-			var spawnedTile := tiles.pick_random().instantiate() as Node3D
+			var spawnedTile
+			
+			if(i < startTiles):
+				#grab empty tile and instantiate it 
+				spawnedTile = emptyTile.instantiate() as Node3D
+			else:
+				#grab empty tile and instantiate it 
+				spawnedTile = tiles.pick_random().instantiate() as Node3D
 			
 			#parents the object and adds to the list of spawned tiles
 			add_child(spawnedTile)
@@ -129,8 +137,14 @@ func EvenInitGeneration() -> void:
 		#generates each tile in row
 		for j in range(-horizontalStep, horizontalStep):
 			
-			#grab tile and instantiate it 
-			var spawnedTile := tiles.pick_random().instantiate() as Node3D
+			var spawnedTile
+			
+			if(i < startTiles):
+				#grab empty tile and instantiate it 
+				spawnedTile = emptyTile.instantiate() as Node3D
+			else:
+				#grab random tile and instantiate it 
+				spawnedTile = tiles.pick_random().instantiate() as Node3D
 			
 			if( j != 0):
 				#parents the object and adds to the list of spawned tiles
