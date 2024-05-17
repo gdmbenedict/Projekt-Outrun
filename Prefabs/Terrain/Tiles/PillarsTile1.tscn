@@ -257,6 +257,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 1, 39)
 [node name="PointsPickup16" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39, 1, 39)
 
+[node name="PointsPickup21" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 1, 51)
+
+[node name="PointsPickup22" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 1, 51)
+
+[node name="PointsPickup23" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 1, 39)
+
+[node name="PointsPickup24" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 1, 39)
+
 [node name="PointsPickup17" parent="Pickups/Point Pickups" instance=ExtResource("3_qe5rc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 1, -39)
 
