@@ -11,5 +11,7 @@ func _ready() -> void:
 	spawnedPickup.global_position = self.global_position
 	self.get_parent().add_child(spawnedPickup)
 	
+	print("special pickup spawned")
+	
 	#despawn self
-	queue_free()
+	#queue_free()

@@ -1,0 +1,318 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl5l1tu3ps8w7"]
+
+[ext_resource type="PackedScene" uid="uid://bs21jrogohafe" path="res://Prefabs/Terrain/Terrain Componenets/TerrainFloor.tscn" id="1_xqqsg"]
+[ext_resource type="PackedScene" uid="uid://cmw64owf3rwnw" path="res://Prefabs/Terrain/Terrain Componenets/wall.tscn" id="2_bgfha"]
+[ext_resource type="PackedScene" uid="uid://sukrtndahg8y" path="res://Prefabs/Game Assets/PointsPickup.tscn" id="3_ho6es"]
+
+[node name="PillarsTile2" type="Node3D"]
+
+[node name="Terrain" type="Node3D" parent="."]
+
+[node name="Terrain Floor" parent="Terrain" instance=ExtResource("1_xqqsg")]
+
+[node name="Big Pillar" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(5, 0, 0, 0, 10, 0, 0, 0, 5, 50, 0, 0)
+
+[node name="Big Pillar2" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(5, 0, 0, 0, 10, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="Big Pillar4" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(5, 0, 0, 0, 10, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="Big Pillar5" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(5, 0, 0, 0, 10, 0, 0, 0, 5, 0, 0, -25)
+
+[node name="Big Pillar6" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(5, 0, 0, 0, 10, 0, 0, 0, 5, 0, 0, 25)
+
+[node name="Big Pillar3" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(5, 0, 0, 0, 10, 0, 0, 0, 5, -50, 0, 0)
+
+[node name="Pillar" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 25, 0, 0)
+
+[node name="Pillar8" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 25, 0, -10)
+
+[node name="Pillar9" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 25, 0, -20)
+
+[node name="Pillar10" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 25, 0, -30)
+
+[node name="Pillar11" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 25, 0, -40)
+
+[node name="Pillar12" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 25, 0, -50)
+
+[node name="Pillar13" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 25, 0, -60)
+
+[node name="Pillar56" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 50, 0, -20)
+
+[node name="Pillar57" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 50, 0, -30)
+
+[node name="Pillar58" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 50, 0, -40)
+
+[node name="Pillar59" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 50, 0, -50)
+
+[node name="Pillar60" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 50, 0, -60)
+
+[node name="Pillar61" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -50, 0, -20)
+
+[node name="Pillar62" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -50, 0, -30)
+
+[node name="Pillar63" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -50, 0, -40)
+
+[node name="Pillar64" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -50, 0, -50)
+
+[node name="Pillar65" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -50, 0, -60)
+
+[node name="Pillar30" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 0, 0, -40)
+
+[node name="Pillar31" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 0, 0, -50)
+
+[node name="Pillar32" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 0, 0, -60)
+
+[node name="Pillar2" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 25, 0, 10)
+
+[node name="Pillar3" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 25, 0, 20)
+
+[node name="Pillar4" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 25, 0, 30)
+
+[node name="Pillar5" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 25, 0, 40)
+
+[node name="Pillar6" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 25, 0, 50)
+
+[node name="Pillar7" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 25, 0, 60)
+
+[node name="Pillar27" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 0, 0, 40)
+
+[node name="Pillar28" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 0, 0, 50)
+
+[node name="Pillar29" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 0, 0, 60)
+
+[node name="Pillar14" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, 0)
+
+[node name="Pillar15" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, -10)
+
+[node name="Pillar16" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, -20)
+
+[node name="Pillar17" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, -30)
+
+[node name="Pillar18" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, -40)
+
+[node name="Pillar19" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, -50)
+
+[node name="Pillar20" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, -60)
+
+[node name="Pillar21" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, 10)
+
+[node name="Pillar22" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, 20)
+
+[node name="Pillar23" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, 30)
+
+[node name="Pillar24" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, 40)
+
+[node name="Pillar25" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, 50)
+
+[node name="Pillar26" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, 60)
+
+[node name="Pillar33" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, 0)
+
+[node name="Pillar34" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, -10)
+
+[node name="Pillar35" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, -20)
+
+[node name="Pillar36" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, -30)
+
+[node name="Pillar37" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, -40)
+
+[node name="Pillar38" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, -50)
+
+[node name="Pillar39" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, -60)
+
+[node name="Pillar40" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, 10)
+
+[node name="Pillar41" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, 20)
+
+[node name="Pillar42" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, 30)
+
+[node name="Pillar43" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, 40)
+
+[node name="Pillar44" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, 50)
+
+[node name="Pillar45" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -25, 0, 60)
+
+[node name="Pillar46" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -50, 0, 20)
+
+[node name="Pillar47" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -50, 0, 30)
+
+[node name="Pillar48" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -50, 0, 40)
+
+[node name="Pillar49" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -50, 0, 50)
+
+[node name="Pillar50" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, -50, 0, 60)
+
+[node name="Pillar51" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 50, 0, 20)
+
+[node name="Pillar52" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 50, 0, 30)
+
+[node name="Pillar53" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 50, 0, 40)
+
+[node name="Pillar54" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 50, 0, 50)
+
+[node name="Pillar55" parent="Terrain" instance=ExtResource("2_bgfha")]
+transform = Transform3D(2, 0, 0, 0, 5, 0, 0, 0, 2, 50, 0, 60)
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="PointsPickup" type="Node3D" parent="Pickups"]
+
+[node name="PointsPickup" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 12.5)
+
+[node name="PointsPickup6" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -12.5)
+
+[node name="PointsPickup2" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 55)
+
+[node name="PointsPickup7" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 1, 55)
+
+[node name="PointsPickup8" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 1, 35)
+
+[node name="PointsPickup9" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 1, 15)
+
+[node name="PointsPickup10" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 1, -15)
+
+[node name="PointsPickup11" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 1, -35)
+
+[node name="PointsPickup12" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 1, -55)
+
+[node name="PointsPickup13" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 1, 55)
+
+[node name="PointsPickup19" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, 45)
+
+[node name="PointsPickup20" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, 25)
+
+[node name="PointsPickup21" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, 5)
+
+[node name="PointsPickup22" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -5)
+
+[node name="PointsPickup23" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -25)
+
+[node name="PointsPickup24" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -45)
+
+[node name="PointsPickup25" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, 45)
+
+[node name="PointsPickup26" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, 25)
+
+[node name="PointsPickup27" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, 5)
+
+[node name="PointsPickup28" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, -5)
+
+[node name="PointsPickup29" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, -25)
+
+[node name="PointsPickup30" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, -45)
+
+[node name="PointsPickup14" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 1, 35)
+
+[node name="PointsPickup15" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 1, 15)
+
+[node name="PointsPickup16" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 1, -15)
+
+[node name="PointsPickup17" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 1, -35)
+
+[node name="PointsPickup18" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 1, -55)
+
+[node name="PointsPickup5" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -55)
+
+[node name="PointsPickup3" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 35)
+
+[node name="PointsPickup4" parent="Pickups/PointsPickup" instance=ExtResource("3_ho6es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -35)

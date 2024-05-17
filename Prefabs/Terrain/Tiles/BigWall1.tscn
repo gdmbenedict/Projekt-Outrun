@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxcxx5mkwtwqm"]
+
+[ext_resource type="PackedScene" uid="uid://bs21jrogohafe" path="res://Prefabs/Terrain/Terrain Componenets/TerrainFloor.tscn" id="1_i6ogj"]
+[ext_resource type="PackedScene" uid="uid://cmw64owf3rwnw" path="res://Prefabs/Terrain/Terrain Componenets/wall.tscn" id="2_lcdvw"]
+[ext_resource type="PackedScene" uid="uid://sukrtndahg8y" path="res://Prefabs/Game Assets/PointsPickup.tscn" id="3_00rkx"]
+
+[node name="BigWall1" type="Node3D"]
+
+[node name="Terrain Floor" parent="." instance=ExtResource("1_i6ogj")]
+
+[node name="Wall" parent="Terrain Floor" instance=ExtResource("2_lcdvw")]
+transform = Transform3D(65, 0, 0, 0, 3, 0, 0, 0, 1, -45, 0, 0)
+
+[node name="Wall2" parent="Terrain Floor" instance=ExtResource("2_lcdvw")]
+transform = Transform3D(65, 0, 0, 0, 3, 0, 0, 0, 1, 45, 0, 0)
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="PointPickups" type="Node3D" parent="Pickups"]
+
+[node name="PointsPickup" parent="Pickups/PointPickups" instance=ExtResource("3_00rkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="PointsPickup2" parent="Pickups/PointPickups" instance=ExtResource("3_00rkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 15)
+
+[node name="PointsPickup6" parent="Pickups/PointPickups" instance=ExtResource("3_00rkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1, 15)
+
+[node name="PointsPickup7" parent="Pickups/PointPickups" instance=ExtResource("3_00rkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, 15)
+
+[node name="PointsPickup3" parent="Pickups/PointPickups" instance=ExtResource("3_00rkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 30)
+
+[node name="PointsPickup8" parent="Pickups/PointPickups" instance=ExtResource("3_00rkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1, 30)
+
+[node name="PointsPickup9" parent="Pickups/PointPickups" instance=ExtResource("3_00rkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 1, 30)
+
+[node name="PointsPickup4" parent="Pickups/PointPickups" instance=ExtResource("3_00rkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -30)
+
+[node name="PointsPickup10" parent="Pickups/PointPickups" instance=ExtResource("3_00rkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1, -30)
+
+[node name="PointsPickup11" parent="Pickups/PointPickups" instance=ExtResource("3_00rkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 1, -30)
+
+[node name="PointsPickup5" parent="Pickups/PointPickups" instance=ExtResource("3_00rkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -15)
+
+[node name="PointsPickup12" parent="Pickups/PointPickups" instance=ExtResource("3_00rkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, -15)
+
+[node name="PointsPickup13" parent="Pickups/PointPickups" instance=ExtResource("3_00rkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1, -15)
