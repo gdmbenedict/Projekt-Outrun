@@ -188,7 +188,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.4
 script = ExtResource("5_r1plx")
 horizontalTimeToMax = 0.5
 horizontalMaxSpeed = 55.0
-fuel = 100.0
 gears = [NodePath("Gears/Gear1"), NodePath("Gears/Gear2"), NodePath("Gears/Gear3"), NodePath("Gears/Gear4"), NodePath("Gears/Gear5")]
 
 [node name="PlayerCollider" type="CharacterBody3D" parent="Player" node_paths=PackedStringArray("carStates")]
