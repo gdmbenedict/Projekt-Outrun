@@ -171,7 +171,7 @@ shadow_reverse_cull_face = true
 shadow_blur = 0.0
 
 [node name="Stars" type="GPUParticles3D" parent="Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.173, 108.762)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.173, 101.199)
 amount = 250
 process_material = SubResource("ParticleProcessMaterial_76cvo")
 draw_pass_1 = SubResource("QuadMesh_wpt51")
@@ -261,7 +261,6 @@ transparency = 0.81
 amount = 10
 explosiveness = 0.1
 randomness = 0.1
-trail_enabled = true
 process_material = SubResource("ParticleProcessMaterial_7dmu8")
 draw_pass_1 = SubResource("QuadMesh_3ktan")
 
