@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://c8107erpbuw1w"]
+[gd_scene load_steps=20 format=3 uid="uid://c8107erpbuw1w"]
 
 [ext_resource type="Script" path="res://Scripts/ManagerScripts/TerrainManager.gd" id="1_bterj"]
 [ext_resource type="PackedScene" uid="uid://dlp1ohptppxq6" path="res://Prefabs/Terrain/Tiles/MazeTile1.tscn" id="2_kaawv"]
+[ext_resource type="PackedScene" uid="uid://c8jrle8f1jtlf" path="res://Prefabs/Terrain/Tiles/Empty.tscn" id="2_my1ee"]
 [ext_resource type="PackedScene" uid="uid://i5qjy5kftere" path="res://Prefabs/Terrain/Tiles/PillarsTile1.tscn" id="3_umxao"]
 [ext_resource type="PackedScene" uid="uid://jenac1xrysbx" path="res://Prefabs/Terrain/Tiles/WallsTile1.tscn" id="4_mfqud"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerMovement.gd" id="5_r1plx"]
@@ -97,8 +98,10 @@ shadow_blur = 0.0
 script = ExtResource("1_bterj")
 playerPos = NodePath("../Player")
 tileSize = 150.0
+emptyTile = ExtResource("2_my1ee")
 tiles = Array[PackedScene]([ExtResource("2_kaawv"), ExtResource("3_umxao"), ExtResource("4_mfqud")])
 gridSize = Vector2(5, 5)
+startPosOffset = 50.0
 
 [node name="Player" type="Node3D" parent="." node_paths=PackedStringArray("gears")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.4, 0)

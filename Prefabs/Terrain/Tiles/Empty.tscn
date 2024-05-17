@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8jrle8f1jtlf"]
+
+[ext_resource type="PackedScene" uid="uid://bs21jrogohafe" path="res://Prefabs/Terrain/Terrain Componenets/TerrainFloor.tscn" id="1_a6y03"]
+
+[node name="Empty" type="Node3D"]
+
+[node name="Terrain Floor" parent="." instance=ExtResource("1_a6y03")]
