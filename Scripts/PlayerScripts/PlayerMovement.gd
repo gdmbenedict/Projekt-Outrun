@@ -9,8 +9,8 @@ class_name PlayerMovement
 
 @export_category("Fuel")
 @export var fuelConsumption: float = 10 #percent per minute
-var maxFuel: float = 100
-@export var fuel: float
+@export var maxFuel: float = 100
+var fuel: float
 
 @export_category("Gears")
 @export var gears: Array[Gear] = []
@@ -30,7 +30,7 @@ func _init() -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	#fuel = maxFuel
+	fuel = maxFuel
 	
 	GameManager.playerMovement = self
 	GameManager.movementReady = true
@@ -59,6 +59,9 @@ func HandleForwardMovement(delta: float) -> void:
 		trackedVelocity.z -= (airResistance + decelerationMin*delta)
 	else:
 		trackedVelocity.z = 0
+	
+	if (fuel <= 0 && trackedVelocity.z <=0):
+		GameManager.EndGame()
 
 func HandleFuel(delta: float) -> void:
 	
