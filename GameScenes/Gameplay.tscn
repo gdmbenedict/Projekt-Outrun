@@ -150,8 +150,8 @@ size = Vector2(0.3, 0.3)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nv55u"]
 render_priority = 0
 shader = ExtResource("12_vfchc")
-shader_parameter/color_top = Color(0.698039, 0.14902, 0, 1)
-shader_parameter/color_bottom = Color(0.960784, 0.372549, 0, 1)
+shader_parameter/color_top = Color(0.780392, 0, 0.0666667, 1)
+shader_parameter/color_bottom = Color(0.780392, 0.529412, 0, 1)
 shader_parameter/y_multiplier = 1.0
 shader_parameter/opacity = 0.5
 
