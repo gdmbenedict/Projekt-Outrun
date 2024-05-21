@@ -5,10 +5,10 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2hk2m"]
 render_priority = 0
 shader = ExtResource("1_c2xc7")
-shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/wire_color = Color(0, 0.2, 2, 0)
-shader_parameter/wire_width = 1.0
-shader_parameter/wire_smoothness = 0.01
+shader_parameter/albedo = Color(0.792157, 0, 0.294118, 1)
+shader_parameter/wire_color = Color(0.709804, 0.482353, 0, 0)
+shader_parameter/wire_width = 1.875
+shader_parameter/wire_smoothness = 0.032
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mv7og"]
 resource_name = "Refuel1"

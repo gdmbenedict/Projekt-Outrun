@@ -5,8 +5,8 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_roiqv"]
 render_priority = 0
 shader = ExtResource("1_xywtg")
-shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/wire_color = Color(0, 0.2, 2, 0)
+shader_parameter/albedo = Color(0, 0.160784, 0.278431, 1)
+shader_parameter/wire_color = Color(0, 0, 0, 0)
 shader_parameter/wire_width = 1.0
 shader_parameter/wire_smoothness = 0.01
 
