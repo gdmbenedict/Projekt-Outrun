@@ -66,7 +66,7 @@ theme_override_font_sizes/font_size = 40
 text = "Options"
 script = ExtResource("2_or0tp")
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Return to Main" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_2ovhs")
 theme_override_font_sizes/font_size = 40
@@ -76,4 +76,4 @@ script = ExtResource("3_2pjiu")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Resume" to="MarginContainer/VBoxContainer/VBoxContainer/Resume" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Options" to="MarginContainer/VBoxContainer/VBoxContainer/Options" method="_on_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Quit" to="MarginContainer/VBoxContainer/VBoxContainer/Quit" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Return to Main" to="MarginContainer/VBoxContainer/VBoxContainer/Return to Main" method="_on_pressed"]
