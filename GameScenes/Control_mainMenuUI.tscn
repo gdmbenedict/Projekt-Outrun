@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://tgygipnesuw3"]
+
+[ext_resource type="FontFile" uid="uid://rkqodqs3sgh8" path="res://Fonts/NeonSans-GOgRg.ttf" id="1_k3ev3"]
+[ext_resource type="FontFile" uid="uid://bhw6vbrodjc1f" path="res://Fonts/PixelEmulator-xq08.ttf" id="2_famrd"]
+[ext_resource type="Script" path="res://Scripts/UIElementScripts/PlayButton.gd" id="3_dnhvy"]
+[ext_resource type="Script" path="res://Scripts/UIElementScripts/QuitButton.gd" id="4_1lk6i"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -278.5
+offset_top = -156.0
+offset_right = 278.5
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+modulate = Color(1.2, 1, 1, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.266667, 0.403922, 1, 1)
+theme_override_fonts/font = ExtResource("1_k3ev3")
+theme_override_font_sizes/font_size = 70
+text = "Projekt: Outrun
+"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_famrd")
+theme_override_font_sizes/font_size = 40
+text = "Play
+"
+script = ExtResource("3_dnhvy")
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_famrd")
+theme_override_font_sizes/font_size = 40
+text = "Options"
+
+[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_famrd")
+theme_override_font_sizes/font_size = 40
+text = "Credits
+"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_famrd")
+theme_override_font_sizes/font_size = 40
+text = "Quit
+"
+script = ExtResource("4_1lk6i")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Play" to="MarginContainer/VBoxContainer/VBoxContainer2/Play" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Quit" to="MarginContainer/VBoxContainer/VBoxContainer2/Quit" method="_on_pressed"]

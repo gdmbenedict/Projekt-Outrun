@@ -1,12 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://c6q7xvwle6arg"]
+[gd_scene load_steps=15 format=3 uid="uid://c6q7xvwle6arg"]
 
 [ext_resource type="Texture2D" uid="uid://blclc1fu7loa5" path="res://Sprites/kenney_particle_pack/circle_05.png" id="1_04jbh"]
 [ext_resource type="PackedScene" uid="uid://c8jrle8f1jtlf" path="res://Prefabs/Terrain/Tiles/Empty.tscn" id="2_v1wpd"]
 [ext_resource type="Shader" path="res://Lighting/Shaders/sunshader.gdshader" id="3_tjd13"]
-[ext_resource type="FontFile" uid="uid://rkqodqs3sgh8" path="res://Fonts/NeonSans-GOgRg.ttf" id="4_dog5w"]
-[ext_resource type="FontFile" uid="uid://bhw6vbrodjc1f" path="res://Fonts/PixelEmulator-xq08.ttf" id="5_xkigr"]
-[ext_resource type="Script" path="res://Scripts/UIElementScripts/PlayButton.gd" id="6_838ty"]
-[ext_resource type="Script" path="res://Scripts/UIElementScripts/QuitButton.gd" id="7_vn7od"]
+[ext_resource type="PackedScene" uid="uid://tgygipnesuw3" path="res://GameScenes/Control_mainMenuUI.tscn" id="4_40w46"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r5ish"]
 sky_top_color = Color(0.176471, 0, 0.258824, 1)
@@ -131,72 +128,8 @@ transform = Transform3D(-1, 2.26267e-08, -8.44439e-08, 0, 0.965926, 0.258819, 8.
 transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 61.0356, 270.168)
 
 [node name="Sun" type="MeshInstance3D" parent="."]
-transform = Transform3D(1200, 0, 0, 0, 1200, 0, 0, 0, 1, 0, 0, 2154.07)
+transform = Transform3D(1200, 0, 0, 0, 1200, 0, 0, 0, 1, 0, 43.5446, 2154.07)
 material_override = SubResource("ShaderMaterial_nv55u")
 mesh = SubResource("SphereMesh_qpv3q")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -278.5
-offset_top = -156.0
-offset_right = 278.5
-offset_bottom = 156.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 40
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-modulate = Color(1.2, 1, 1, 1)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0.266667, 0.403922, 1, 1)
-theme_override_fonts/font = ExtResource("4_dog5w")
-theme_override_font_sizes/font_size = 70
-text = "Projekt: Outrun
-"
-horizontal_alignment = 1
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/separation = 10
-
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_xkigr")
-theme_override_font_sizes/font_size = 40
-text = "Play
-"
-script = ExtResource("6_838ty")
-
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_xkigr")
-theme_override_font_sizes/font_size = 40
-text = "Options"
-
-[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_xkigr")
-theme_override_font_sizes/font_size = 40
-text = "Credits
-"
-
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_xkigr")
-theme_override_font_sizes/font_size = 40
-text = "Quit
-"
-script = ExtResource("7_vn7od")
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Play" to="MarginContainer/VBoxContainer/VBoxContainer2/Play" method="_on_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Quit" to="MarginContainer/VBoxContainer/VBoxContainer2/Quit" method="_on_pressed"]
+[node name="MainMenu" parent="." instance=ExtResource("4_40w46")]
