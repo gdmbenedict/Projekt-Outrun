@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://tgygipnesuw3"]
+[gd_scene load_steps=8 format=3 uid="uid://tgygipnesuw3"]
 
 [ext_resource type="FontFile" uid="uid://rkqodqs3sgh8" path="res://Fonts/NeonSans-GOgRg.ttf" id="1_k3ev3"]
 [ext_resource type="FontFile" uid="uid://bhw6vbrodjc1f" path="res://Fonts/PixelEmulator-xq08.ttf" id="2_famrd"]
 [ext_resource type="Script" path="res://Scripts/UIElementScripts/PlayButton.gd" id="3_dnhvy"]
 [ext_resource type="Script" path="res://Scripts/UIElementScripts/QuitButton.gd" id="4_1lk6i"]
+[ext_resource type="Script" path="res://Scripts/UIElementScripts/OptionsButton.gd" id="4_to7ci"]
+[ext_resource type="Script" path="res://Scripts/UIElementScripts/ControlsButton.gd" id="5_ycv16"]
+[ext_resource type="Script" path="res://Scripts/UIElementScripts/CreditsButton.gd" id="6_7hfgl"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -61,6 +64,15 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_famrd")
 theme_override_font_sizes/font_size = 40
 text = "Options"
+script = ExtResource("4_to7ci")
+
+[node name="Controls" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_famrd")
+theme_override_font_sizes/font_size = 40
+text = "Controls
+"
+script = ExtResource("5_ycv16")
 
 [node name="Credits" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -68,6 +80,7 @@ theme_override_fonts/font = ExtResource("2_famrd")
 theme_override_font_sizes/font_size = 40
 text = "Credits
 "
+script = ExtResource("6_7hfgl")
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -78,4 +91,7 @@ text = "Quit
 script = ExtResource("4_1lk6i")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Play" to="MarginContainer/VBoxContainer/VBoxContainer2/Play" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Options" to="MarginContainer/VBoxContainer/VBoxContainer2/Options" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Controls" to="MarginContainer/VBoxContainer/VBoxContainer2/Controls" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Credits" to="MarginContainer/VBoxContainer/VBoxContainer2/Credits" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Quit" to="MarginContainer/VBoxContainer/VBoxContainer2/Quit" method="_on_pressed"]

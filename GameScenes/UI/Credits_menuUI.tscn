@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cull7qmfdcn56"]
+[gd_scene load_steps=4 format=3 uid="uid://cull7qmfdcn56"]
 
 [ext_resource type="FontFile" uid="uid://rkqodqs3sgh8" path="res://Fonts/NeonSans-GOgRg.ttf" id="1_1jbrx"]
 [ext_resource type="FontFile" uid="uid://bhw6vbrodjc1f" path="res://Fonts/PixelEmulator-xq08.ttf" id="2_8yww2"]
+[ext_resource type="Script" path="res://Scripts/UIElementScripts/BackButton.gd" id="3_mxkd6"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -56,3 +57,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_8yww2")
 theme_override_font_sizes/font_size = 40
 text = "Back"
+script = ExtResource("3_mxkd6")
+
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/Back" to="ColorRect/MarginContainer/VBoxContainer/VBoxContainer/Back" method="_on_pressed"]

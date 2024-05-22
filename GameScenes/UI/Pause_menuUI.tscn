@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cptl7bbp1paly"]
+[gd_scene load_steps=7 format=3 uid="uid://cptl7bbp1paly"]
 
 [ext_resource type="FontFile" uid="uid://rkqodqs3sgh8" path="res://Fonts/NeonSans-GOgRg.ttf" id="1_x7pl3"]
 [ext_resource type="FontFile" uid="uid://bhw6vbrodjc1f" path="res://Fonts/PixelEmulator-xq08.ttf" id="2_2ovhs"]
 [ext_resource type="Script" path="res://Scripts/UIElementScripts/ResumeButton.gd" id="2_or0tp"]
-[ext_resource type="Script" path="res://Scripts/UIElementScripts/QuitButton.gd" id="3_2pjiu"]
+[ext_resource type="Script" path="res://Scripts/UIElementScripts/OptionsButton.gd" id="4_em7di"]
+[ext_resource type="Script" path="res://Scripts/UIElementScripts/MainMenuButton.gd" id="4_ykgky"]
+[ext_resource type="Script" path="res://Scripts/UIElementScripts/ControlsButton.gd" id="5_481wy"]
 
 [node name="PauseMenu" type="Control" groups=["GameplayUI"]]
 layout_mode = 3
@@ -64,7 +66,15 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_2ovhs")
 theme_override_font_sizes/font_size = 40
 text = "Options"
-script = ExtResource("2_or0tp")
+script = ExtResource("4_em7di")
+
+[node name="Controls" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2ovhs")
+theme_override_font_sizes/font_size = 40
+text = "Controls
+"
+script = ExtResource("5_481wy")
 
 [node name="MainMenu" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -72,8 +82,9 @@ theme_override_fonts/font = ExtResource("2_2ovhs")
 theme_override_font_sizes/font_size = 40
 text = "Main Menu
 "
-script = ExtResource("3_2pjiu")
+script = ExtResource("4_ykgky")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Resume" to="MarginContainer/VBoxContainer/VBoxContainer/Resume" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Options" to="MarginContainer/VBoxContainer/VBoxContainer/Options" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Controls" to="MarginContainer/VBoxContainer/VBoxContainer/Controls" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MainMenu" to="MarginContainer/VBoxContainer/VBoxContainer/MainMenu" method="_on_pressed"]

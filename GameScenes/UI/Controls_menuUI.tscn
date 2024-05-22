@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcyhon3smiykn"]
+[gd_scene load_steps=4 format=3 uid="uid://dcyhon3smiykn"]
 
 [ext_resource type="FontFile" uid="uid://rkqodqs3sgh8" path="res://Fonts/NeonSans-GOgRg.ttf" id="1_j3uf1"]
 [ext_resource type="FontFile" uid="uid://bhw6vbrodjc1f" path="res://Fonts/PixelEmulator-xq08.ttf" id="2_mkubj"]
+[ext_resource type="Script" path="res://Scripts/UIElementScripts/BackButton.gd" id="3_os63i"]
 
 [node name="Controls" type="Control"]
 layout_mode = 3
@@ -62,8 +63,11 @@ ESC - Pauses Game"
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_mkubj")
 theme_override_font_sizes/font_size = 40
 text = "Back"
+script = ExtResource("3_os63i")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/BackButton" to="MarginContainer/VBoxContainer/VBoxContainer/BackButton" method="_on_pressed"]
