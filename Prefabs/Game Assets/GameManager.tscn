@@ -1,22 +1,33 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxxcr4qor0cj8"]
+[gd_scene load_steps=12 format=3 uid="uid://cxxcr4qor0cj8"]
 
 [ext_resource type="Script" path="res://Scripts/ManagerScripts/GameManager.gd" id="1_6jheb"]
-[ext_resource type="PackedScene" uid="uid://bipgokxl5soxl" path="res://GameScenes/MainMenu.tscn" id="2_wt1ro"]
-[ext_resource type="PackedScene" uid="uid://c8107erpbuw1w" path="res://GameScenes/Gameplay.tscn" id="3_iauc0"]
-[ext_resource type="PackedScene" uid="uid://dign1e8xa20o1" path="res://GameScenes/Main_menuUI.tscn" id="4_ivrp6"]
-[ext_resource type="PackedScene" uid="uid://dw2qk1lmc7pl3" path="res://GameScenes/Game_overUI.tscn" id="5_m0vnt"]
-[ext_resource type="PackedScene" uid="uid://cptl7bbp1paly" path="res://GameScenes/Pause_menuUI.tscn" id="5_o8oxu"]
-[ext_resource type="PackedScene" uid="uid://dpddkxwm3rs3y" path="res://GameScenes/GameplayUI.tscn" id="6_01en3"]
+[ext_resource type="PackedScene" uid="uid://c6q7xvwle6arg" path="res://GameScenes/Scenes/MainMenuScene.tscn" id="2_wt1ro"]
+[ext_resource type="PackedScene" uid="uid://c8107erpbuw1w" path="res://GameScenes/Scenes/Gameplay.tscn" id="3_iauc0"]
+[ext_resource type="Script" path="res://Scripts/ManagerScripts/MenuManager.gd" id="4_f6byu"]
+[ext_resource type="PackedScene" uid="uid://tgygipnesuw3" path="res://GameScenes/UI/MainMenuUI.tscn" id="4_ivrp6"]
+[ext_resource type="PackedScene" uid="uid://dw2qk1lmc7pl3" path="res://GameScenes/UI/Game_overUI.tscn" id="5_m0vnt"]
+[ext_resource type="PackedScene" uid="uid://cptl7bbp1paly" path="res://GameScenes/UI/Pause_menuUI.tscn" id="5_o8oxu"]
+[ext_resource type="PackedScene" uid="uid://dpddkxwm3rs3y" path="res://GameScenes/UI/GameplayUI.tscn" id="6_01en3"]
+[ext_resource type="PackedScene" uid="uid://bbiku7jk48qjq" path="res://GameScenes/UI/Options_menuUI.tscn" id="9_np3a2"]
+[ext_resource type="PackedScene" uid="uid://cull7qmfdcn56" path="res://GameScenes/UI/Credits_menuUI.tscn" id="10_8mtt4"]
+[ext_resource type="PackedScene" uid="uid://dcyhon3smiykn" path="res://GameScenes/UI/Controls_menuUI.tscn" id="11_a8m2i"]
 
-[node name="GameManager" type="Node" node_paths=PackedStringArray("mainMenuUI", "pauseUI", "gameOverUI", "GameplayUI")]
+[node name="GameManager" type="Node" node_paths=PackedStringArray("menuManager")]
 process_mode = 3
 script = ExtResource("1_6jheb")
 mainMenu = ExtResource("2_wt1ro")
 gamePlay = ExtResource("3_iauc0")
-mainMenuUI = NodePath("MainMenu")
-pauseUI = NodePath("PauseMenu")
-gameOverUI = NodePath("GameOver")
-GameplayUI = NodePath("GameplayUI")
+menuManager = NodePath("MenuManager")
+
+[node name="MenuManager" type="Node" parent="." node_paths=PackedStringArray("mainMenuUI", "pauseMenuUI", "gameOverUI", "GameplayUI", "ControlsMenuUI", "CreditsMenuUI", "OptionsMenu")]
+script = ExtResource("4_f6byu")
+mainMenuUI = NodePath("../MainMenu")
+pauseMenuUI = NodePath("../PauseMenu")
+gameOverUI = NodePath("../GameOver")
+GameplayUI = NodePath("../GameplayUI")
+ControlsMenuUI = NodePath("../Controls")
+CreditsMenuUI = NodePath("../Credits")
+OptionsMenu = NodePath("../Options")
 
 [node name="GameplayUI" parent="." instance=ExtResource("6_01en3")]
 process_mode = 4
@@ -31,5 +42,19 @@ process_mode = 4
 visible = false
 
 [node name="MainMenu" parent="." instance=ExtResource("4_ivrp6")]
+process_mode = 4
+visible = false
+
+[node name="Options" parent="." instance=ExtResource("9_np3a2")]
+process_mode = 4
+visible = false
+
+[node name="Credits" parent="." instance=ExtResource("10_8mtt4")]
+process_mode = 4
+visible = false
+offset_left = 5.0
+offset_right = 5.0
+
+[node name="Controls" parent="." instance=ExtResource("11_a8m2i")]
 process_mode = 4
 visible = false

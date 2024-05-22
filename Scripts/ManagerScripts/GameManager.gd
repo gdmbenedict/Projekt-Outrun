@@ -7,12 +7,8 @@ extends Node
 var isInGameplay: bool
 
 #UI varaibles
-@export_category("UI Scenes")
-@export var mainMenuUI: Control
-@export var pauseUI: Control
-@export var gameOverUI: Control
-@export var GameplayUI: Control
-var activeUI: Control
+@export_category("UI")
+@export var menuManager: MenuManager
 
 #Player Variables
 var playerMovement: PlayerMovement
@@ -27,9 +23,6 @@ var healthReady: bool
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	isInGameplay = false
-	activeUI = mainMenuUI
-	activeUI.process_mode = Node.PROCESS_MODE_INHERIT
-	activeUI.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -38,54 +31,108 @@ func _process(delta: float) -> void:
 		ReadyToPlay()
 	
 	if Input.is_action_just_pressed("pause"):
-		Pause()
+		Back()
 
+# function that starts the game
 func StartGame() -> void:
 	isInGameplay = true
 	LoadScene(gamePlay)
 
-func Pause() -> void:
-	
-	if(isInGameplay):
-		if get_tree().paused != true:
-			get_tree().paused = true
-			ChangeUI(pauseUI)
-		else:
-			ChangeUI(GameplayUI)
-			get_tree().paused = false
-
-func EndGame() -> void:
-	
-	isInGameplay = false
-	get_tree().paused = true
-	ChangeUI(gameOverUI)
-
-func ReturnToMainMenu() -> void:
-	isInGameplay = false
-	LoadScene(mainMenu)
-
-func ExitGame() -> void:
-	get_tree().quit()
-
-func LoadScene(sceneToLoad: PackedScene) -> void:
-	get_tree().change_scene_to_packed(sceneToLoad)
-	
-	if(!isInGameplay):
-		ChangeUI(mainMenuUI)
-
-func ChangeUI(newUI: Control) -> void:
-	activeUI.process_mode = Node.PROCESS_MODE_DISABLED
-	activeUI.visible = false
-	
-	activeUI = newUI
-	
-	activeUI.process_mode = Node.PROCESS_MODE_INHERIT
-	activeUI.visible = true
-
+#function that loads elements once gameplay scene is ready
 func ReadyToPlay() -> void:
 	
-	ChangeUI(GameplayUI)
+	menuManager.ChangeUI(SharedEnums.ScreenState.Gameplay)
 	get_tree().paused = false
 	movementReady = false
 	healthReady = false
 	scoreReady = false
+
+#function that pauses or un pauses the game
+func TogglePause() -> void:
+	
+	if(isInGameplay):
+		if get_tree().paused != true:
+			get_tree().paused = true
+			menuManager.ChangeUI(SharedEnums.ScreenState.Pause)
+		else:
+			menuManager.ChangeUI(SharedEnums.ScreenState.Gameplay)
+			get_tree().paused = false
+
+#function that ends the game state
+func EndGame() -> void:
+	
+	isInGameplay = false
+	get_tree().paused = true
+	menuManager.ChangeUI(SharedEnums.ScreenState.GameOver)
+
+#function that returns the game to the main menu
+func ReturnToMainMenu() -> void:
+	isInGameplay = false
+	LoadScene(mainMenu)
+
+#function that closes the application
+func ExitGame() -> void:
+	get_tree().quit()
+
+#function that loads a specified scene
+func LoadScene(sceneToLoad: PackedScene) -> void:
+	get_tree().change_scene_to_packed(sceneToLoad)
+	
+	if(!isInGameplay):
+		menuManager.ChangeUI(SharedEnums.ScreenState.MainMenu)
+
+#function used for "back button" operations
+func Back() -> void:
+	
+	match(menuManager.screenState):
+		
+		SharedEnums.ScreenState.Gameplay:
+			TogglePause()
+		
+		SharedEnums.ScreenState.Pause:
+			TogglePause()
+		
+		SharedEnums.ScreenState.MainMenu:
+			ExitGame()
+		
+		SharedEnums.ScreenState.GameOver:
+			ReturnToMainMenu()
+		
+		SharedEnums.ScreenState.Options:
+			ToggleOptionsMenu()
+		
+		SharedEnums.ScreenState.Credits:
+			ToggleCredits()
+		
+		SharedEnums.ScreenState.Controls:
+			ToggleControls()
+
+#function that toggles the option menu
+func ToggleOptionsMenu() -> void:
+	
+	if(menuManager.screenState != SharedEnums.ScreenState.Options):
+		menuManager.ChangeUI(SharedEnums.ScreenState.Options)
+	else:
+		if(isInGameplay):
+			menuManager.ChangeUI(SharedEnums.ScreenState.Pause)
+		else:
+			menuManager.ChangeUI(SharedEnums.ScreenState.MainMenu)
+
+#function that toggles the credits menu
+func ToggleCredits() -> void:
+	
+	if(menuManager.screenState != SharedEnums.ScreenState.Credits):
+		menuManager.ChangeUI(SharedEnums.ScreenState.Credits)
+	else:
+		menuManager.ChangeUI(SharedEnums.ScreenState.MainMenu)
+
+#function that toggles the controls menu
+func ToggleControls() -> void:
+	
+	if(menuManager.screenState != SharedEnums.ScreenState.Controls):
+		menuManager.ChangeUI(SharedEnums.ScreenState.Controls)
+	else:
+		if(isInGameplay):
+			menuManager.ChangeUI(SharedEnums.ScreenState.Pause)
+		else:
+			menuManager.ChangeUI(SharedEnums.ScreenState.MainMenu)

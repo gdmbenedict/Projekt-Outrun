@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Projekt Outrun"
-run/main_scene="res://GameScenes/New_MainMenuUI.tscn"
+run/main_scene="res://GameScenes/Scenes/MainMenuScene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameManager="*res://Prefabs/Game Assets/GameManager.tscn"
+SharedEnums="*res://Scripts/MiscScripts/SharedEnums.gd"
 
 [display]
 
