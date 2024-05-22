@@ -12,6 +12,8 @@ class_name PlayerMovement
 @export var maxFuel: float = 100
 var fuel: float
 
+@onready var camera_3d = $Camera3D
+
 @export_category("Gears")
 @export var gears: Array[Gear] = []
 var activeGear: int
@@ -86,6 +88,9 @@ func HandleHorizontalMovement(delta: float) -> void:
 	#damp if no input
 	else:
 		StraightenHorizontalMovement(delta)
+		
+	camera_3d.position = lerp(camera_3d.position, Vector3(-input_dir.x,camera_3d.position.y,camera_3d.position.z), delta * 0.45)
+	
  
 # Function that damps horizontal movement towards zero
 func StraightenHorizontalMovement(delta: float) -> void:
