@@ -169,13 +169,20 @@ _data = {
 
 [node name="RootNode" type="Node3D" parent="."]
 
-[node name="Front_Right_Tire3" type="MeshInstance3D" parent="RootNode"]
+[node name="Front_Right_Node" type="Node3D" parent="RootNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.665729, 0.229432, 0.714624)
+
+[node name="Front_Right_Tire3" type="MeshInstance3D" parent="RootNode/Front_Right_Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.665729, -0.229432, -0.714624)
 material_override = SubResource("StandardMaterial3D_vis76")
 mesh = SubResource("ArrayMesh_ram3l")
 skeleton = NodePath("")
 
-[node name="Front_Left_Tire5" type="MeshInstance3D" parent="RootNode"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.11022e-14)
+[node name="Front_Left_Node" type="Node3D" parent="RootNode"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.754897, 0.226804, 0.722257)
+
+[node name="Front_Left_Tire5" type="MeshInstance3D" parent="RootNode/Front_Left_Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.754897, -0.226804, -0.722257)
 material_override = SubResource("StandardMaterial3D_vis76")
 mesh = SubResource("ArrayMesh_2eabw")
 skeleton = NodePath("")
