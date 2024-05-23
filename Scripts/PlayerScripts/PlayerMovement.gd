@@ -14,6 +14,9 @@ var fuel: float
 
 @onready var camera_3d = $Camera3D
 
+@onready var front_left_tire = $CarModels/Front_Left_Tire
+@onready var front_right_tire = $CarModels/Front_Right_Tire
+
 @export_category("Gears")
 @export var gears: Array[Gear] = []
 var activeGear: int
@@ -74,6 +77,9 @@ func HandleHorizontalMovement(delta: float) -> void:
 	#Horizontal Movement
 	var input_dir := Input.get_vector("move_left", "move_right", "ui_up", "ui_down")
 	
+	#front_left_tire.rotation.y = lerp(front_left_tire.rotation_degrees,Vector3(0, lerp(16.0,-16.0, inverse_lerp(-1.0, 1.0, input_dir.x) ),0),delta * 2.35)
+	#front_right_tire.rotation.y = lerp(front_right_tire.rotation_degrees,Vector3(0, lerp(16.0,-16.0, inverse_lerp(-1.0, 1.0, input_dir.x) ),0),delta * 2.35)
+	
 	#check for horizontal input
 	if(input_dir.x != 0):
 		#Apply acceleration
@@ -91,10 +97,10 @@ func HandleHorizontalMovement(delta: float) -> void:
 		
 	camera_3d.position = lerp(camera_3d.position, Vector3(-input_dir.x,camera_3d.position.y,camera_3d.position.z), delta * 0.45)
 	
-	car_models.rotation_degrees = lerp(car_models.rotation_degrees,Vector3(0, lerp(18.0,-18.0, inverse_lerp(-1.0, 1.0, input_dir.x) ),0),delta * 2.35)
-	
-@onready var car_models = %CarModels
- 
+	car_models.rotation_degrees = lerp(car_models.rotation_degrees,Vector3(0, lerp(16.0,-16.0, inverse_lerp(-1.0, 1.0, input_dir.x) ),0),delta * 2.35)
+
+@onready var car_models = $CarModels
+
 # Function that damps horizontal movement towards zero
 func StraightenHorizontalMovement(delta: float) -> void:
 	
@@ -155,3 +161,4 @@ func AddFuel(fuelAdded: float) -> void:
 
 func GetFuelCon() -> float:
 	return fuelConsumption
+

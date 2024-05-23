@@ -171,6 +171,7 @@ _data = {
 
 [node name="Front_Right_Node" type="Node3D" parent="RootNode"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.665729, 0.229432, 0.714624)
+visible = false
 
 [node name="Front_Right_Tire3" type="MeshInstance3D" parent="RootNode/Front_Right_Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.665729, -0.229432, -0.714624)
@@ -180,6 +181,7 @@ skeleton = NodePath("")
 
 [node name="Front_Left_Node" type="Node3D" parent="RootNode"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.754897, 0.226804, 0.722257)
+visible = false
 
 [node name="Front_Left_Tire5" type="MeshInstance3D" parent="RootNode/Front_Left_Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.754897, -0.226804, -0.722257)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c8107erpbuw1w"]
+[gd_scene load_steps=34 format=3 uid="uid://c8107erpbuw1w"]
 
 [ext_resource type="Texture2D" uid="uid://blclc1fu7loa5" path="res://Sprites/kenney_particle_pack/circle_05.png" id="1_5ea0p"]
 [ext_resource type="Script" path="res://Scripts/ManagerScripts/TerrainManager.gd" id="2_15fex"]
@@ -12,8 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://cdg6jjq05c4be" path="res://Models/Cars/Undamaged_Car.tscn" id="10_8p8vr"]
 [ext_resource type="PackedScene" uid="uid://uj0s6088jcfm" path="res://Models/Cars/Lightly_Damaged_Car.tscn" id="11_tykdn"]
 [ext_resource type="PackedScene" uid="uid://cv3sjshm81ms8" path="res://Models/Cars/Heavily_Damaged_Car.tscn" id="12_ne8ik"]
+[ext_resource type="PackedScene" uid="uid://blicib75xjgrx" path="res://Models/Cars/Front_Left_Tire.tscn" id="13_smubu"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/Score.gd" id="13_wagx8"]
 [ext_resource type="Texture2D" uid="uid://bqrj8werlwohr" path="res://Sprites/kenney_particle_pack/smoke_08.png" id="14_1kxpy"]
+[ext_resource type="PackedScene" uid="uid://mxjep0d5hv61" path="res://Models/Cars/Front_Right_Tire.tscn" id="14_t0mr5"]
 [ext_resource type="Shader" path="res://Lighting/Shaders/sunshader.gdshader" id="15_kdap0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r5ish"]
@@ -258,6 +260,12 @@ visible = false
 [node name="Heavily_Damaged_Car" parent="Player/CarModels" instance=ExtResource("12_ne8ik")]
 transform = Transform3D(-1.25, 0, -1.09278e-07, 0, 1.25, 0, 1.09278e-07, 0, -1.25, -0.1, -1.375, -1.678)
 visible = false
+
+[node name="Front_Left_Tire" parent="Player/CarModels" instance=ExtResource("13_smubu")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.86707, -1.36315, -2.66887)
+
+[node name="Front_Right_Tire" parent="Player/CarModels" instance=ExtResource("14_t0mr5")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.965102, -1.38339, -2.59645)
 
 [node name="Score" type="Node" parent="Player"]
 script = ExtResource("13_wagx8")
