@@ -37,6 +37,7 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="Credits" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -46,8 +47,18 @@ theme_override_font_sizes/font_size = 60
 text = "Credits
 "
 
-[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
+[node name="Art Credits" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8yww2")
+theme_override_font_sizes/font_size = 20
+text = "Artwork was done by Aidan Kinnaird
+"
+
+[node name="Programmer Credits" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8yww2")
+theme_override_font_sizes/font_size = 20
+text = "All programming was done by Matthieu Benedict"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
