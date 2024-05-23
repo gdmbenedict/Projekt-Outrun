@@ -172,9 +172,10 @@ _data = {
 [node name="Updated Car" type="Node3D"]
 
 [node name="RootNode" type="Node3D" parent="."]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, -1.94845)
 
 [node name="Front_Left_Node" type="Node3D" parent="RootNode"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.641214, 0.229902, 0.724537)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.641214, 0.229902, 2.2833)
 visible = false
 
 [node name="Front_Left_Tire1" type="MeshInstance3D" parent="RootNode/Front_Left_Node"]
@@ -184,7 +185,7 @@ mesh = SubResource("ArrayMesh_20ngx")
 skeleton = NodePath("")
 
 [node name="Front_Right_Node" type="Node3D" parent="RootNode"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.773115, 0.226999, 0.726205)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.773115, 0.226999, 2.28497)
 visible = false
 
 [node name="Front_Right_Tire1" type="MeshInstance3D" parent="RootNode/Front_Right_Node"]
@@ -194,13 +195,13 @@ mesh = SubResource("ArrayMesh_gofmt")
 skeleton = NodePath("")
 
 [node name="Front_Left_Tire2" type="MeshInstance3D" parent="RootNode"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.133264, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.133264, 0, 1.55876)
 material_override = SubResource("StandardMaterial3D_cy4tp")
 mesh = SubResource("ArrayMesh_de7bb")
 skeleton = NodePath("")
 
 [node name="Car_Body1" type="MeshInstance3D" parent="RootNode"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.133264, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.133264, 0, 1.55876)
 material_override = SubResource("StandardMaterial3D_cy4tp")
 mesh = SubResource("ArrayMesh_s1xyy")
 skeleton = NodePath("")
