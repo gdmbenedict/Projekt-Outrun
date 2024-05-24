@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dtxu84f842xa2"
+path="res://.godot/imported/Wice - Star Fighter (1st Single from Magnatron 2.0).wav-8d2852339250deac0bb2c340a2a386e0.sample"
+
+[deps]
+
+source_file="res://Music/Wice - Star Fighter (1st Single from Magnatron 2.0).wav"
+dest_files=["res://.godot/imported/Wice - Star Fighter (1st Single from Magnatron 2.0).wav-8d2852339250deac0bb2c340a2a386e0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

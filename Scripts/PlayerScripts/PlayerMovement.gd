@@ -8,7 +8,7 @@ class_name PlayerMovement
 @export var decelerationMin: float = 10
 
 @export_category("Fuel")
-@export var fuelConsumption: float = 10 #percent per minute
+@export var fuelConsumption: float = 25 #percent per minute
 @export var maxFuel: float = 100
 var fuel: float
 

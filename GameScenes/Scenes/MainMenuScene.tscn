@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://c6q7xvwle6arg"]
+[gd_scene load_steps=15 format=3 uid="uid://c6q7xvwle6arg"]
 
 [ext_resource type="Texture2D" uid="uid://blclc1fu7loa5" path="res://Sprites/kenney_particle_pack/circle_05.png" id="1_omapc"]
 [ext_resource type="PackedScene" uid="uid://c8jrle8f1jtlf" path="res://Prefabs/Terrain/Tiles/Empty.tscn" id="2_7vant"]
 [ext_resource type="Shader" path="res://Lighting/Shaders/sunshader.gdshader" id="3_l5jal"]
+[ext_resource type="AudioStream" uid="uid://dqwmk2rxid02m" path="res://Music/synthwave-background-music-155701.mp3" id="4_nm2s6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r5ish"]
 sky_top_color = Color(0.176471, 0, 0.258824, 1)
@@ -130,3 +131,8 @@ transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 61.0356, 270.168)
 transform = Transform3D(1200, 0, 0, 0, 1200, 0, 0, 0, 1, 0, 43.5446, 2154.07)
 material_override = SubResource("ShaderMaterial_nv55u")
 mesh = SubResource("SphereMesh_qpv3q")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_nm2s6")
+volume_db = -10.0
+autoplay = true

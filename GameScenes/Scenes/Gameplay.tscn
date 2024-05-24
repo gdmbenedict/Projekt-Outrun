@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://c8107erpbuw1w"]
+[gd_scene load_steps=35 format=3 uid="uid://c8107erpbuw1w"]
 
 [ext_resource type="Texture2D" uid="uid://blclc1fu7loa5" path="res://Sprites/kenney_particle_pack/circle_05.png" id="1_5ea0p"]
 [ext_resource type="Script" path="res://Scripts/ManagerScripts/TerrainManager.gd" id="2_15fex"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://jenac1xrysbx" path="res://Prefabs/Terrain/Tiles/WallsTile1.tscn" id="6_wqjp8"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerMovement.gd" id="7_viyc3"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerHealth.gd" id="8_2u0wb"]
+[ext_resource type="AudioStream" uid="uid://dtxu84f842xa2" path="res://Music/Wice - Star Fighter (1st Single from Magnatron 2.0).wav" id="8_oe5xb"]
 [ext_resource type="Script" path="res://Scripts/MiscScripts/Gear.gd" id="9_6a07t"]
 [ext_resource type="PackedScene" uid="uid://cdg6jjq05c4be" path="res://Models/Cars/Undamaged_Car.tscn" id="10_8p8vr"]
 [ext_resource type="PackedScene" uid="uid://uj0s6088jcfm" path="res://Models/Cars/Lightly_Damaged_Car.tscn" id="11_tykdn"]
@@ -199,6 +200,13 @@ horizontalTimeToMax = 0.5
 horizontalMaxSpeed = 55.0
 gears = [NodePath("Gears/Gear1"), NodePath("Gears/Gear2"), NodePath("Gears/Gear3"), NodePath("Gears/Gear4"), NodePath("Gears/Gear5")]
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -1.4, 0)
+stream = ExtResource("8_oe5xb")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+
 [node name="PlayerCollider" type="CharacterBody3D" parent="Player" node_paths=PackedStringArray("carStates")]
 script = ExtResource("8_2u0wb")
 carStates = [NodePath("../CarModels/Heavily_Damaged_Car"), NodePath("../CarModels/Lightly_Damaged_Car"), NodePath("../CarModels/Undamaged_Car")]
@@ -248,24 +256,24 @@ timeShift = 30.0
 smoothingFactor = 405.0
 
 [node name="CarModels" type="Node3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24908e-07, 0, -3.02265)
 
 [node name="Undamaged_Car" parent="Player/CarModels" instance=ExtResource("10_8p8vr")]
-transform = Transform3D(-1.25, 0, -1.09278e-07, 0, 1.25, 0, 1.09278e-07, 0, -1.25, -0.1, -1.375, -1.75)
+transform = Transform3D(-1.25, 0, -1.09278e-07, 0, 1.25, 0, 1.09278e-07, 0, -1.25, -0.0973912, -1.375, 1.04224)
 
 [node name="Lightly_Damaged_Car" parent="Player/CarModels" instance=ExtResource("11_tykdn")]
-transform = Transform3D(-1.25, 0, -1.09278e-07, 0, 1.25, 0, 1.09278e-07, 0, -1.25, 0.0357141, -1.375, -1.75)
+transform = Transform3D(-1.25, 0, -1.09278e-07, 0, 1.25, 0, 1.09278e-07, 0, -1.25, 0.0357139, -1.375, 0.82265)
 visible = false
 
 [node name="Heavily_Damaged_Car" parent="Player/CarModels" instance=ExtResource("12_ne8ik")]
-transform = Transform3D(-1.25, 0, -1.09278e-07, 0, 1.25, 0, 1.09278e-07, 0, -1.25, -0.1, -1.375, -1.678)
+transform = Transform3D(-1.25, 0, -1.09278e-07, 0, 1.25, 0, 1.09278e-07, 0, -1.25, -0.1, -1.375, 0.89465)
 visible = false
 
 [node name="Front_Left_Tire" parent="Player/CarModels" instance=ExtResource("13_smubu")]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.86707, -1.36315, -2.66887)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.86707, -1.36315, -0.09622)
 
 [node name="Front_Right_Tire" parent="Player/CarModels" instance=ExtResource("14_t0mr5")]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.965102, -1.38339, -2.59645)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.965102, -1.38339, -0.0238001)
 
 [node name="Score" type="Node" parent="Player"]
 script = ExtResource("13_wagx8")
