@@ -16,6 +16,14 @@ var fuel: float
 @export var gears: Array[Gear] = []
 var activeGear: int
 
+@export_category("SFX")
+@export var emitterPosition: Node3D
+@export var engineIdle: EventAsset
+var engineSFXInstance: EventInstance
+var attributes: FMOD_3D_ATTRIBUTES = FMOD_3D_ATTRIBUTES.new()
+var prevSpeed: float = 0
+
+
 var trackedVelocity: Vector3 #variable that stores the velocity of the player
 
 #car variables
@@ -29,6 +37,14 @@ func _init() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	#Setting Engine SFX in scene
+	engineSFXInstance = FMODRuntime.create_instance(engineIdle)
+	FMODRuntime.attach_instance_to_node(engineSFXInstance, emitterPosition)
+	RuntimeUtils.to_3d_attributes(attributes, emitterPosition.global_position)
+	engineSFXInstance.set_3d_attributes(attributes)
+	
+	engineSFXInstance.start()
 	
 	fuel = maxFuel
 	
@@ -44,6 +60,7 @@ func _process(delta: float) -> void:
 	HandleForwardMovement(delta)
 	HandleHorizontalMovement(delta)
 	HandleFuel(delta)
+	HandleSFX(delta)
 	
 	#print statement testing trackedVelocity
 	#print(trackedVelocity)
@@ -99,6 +116,21 @@ func StraightenHorizontalMovement(delta: float) -> void:
 		trackedVelocity.x += horizontalMaxSpeed* (1 / horizontalTimeToMax) * delta
 		if(trackedVelocity.x > 0):
 			trackedVelocity.x = 0
+
+func HandleSFX(delta: float) -> void:
+	
+	#calc load
+	var load: float = (prevSpeed - trackedVelocity.z)/delta
+	if(load > 1):
+		load =1
+	elif(load < -1):
+		load =-1
+	
+	#setting parameters
+	engineSFXInstance.set_parameter_by_name("Load", load, false)
+	engineSFXInstance.set_parameter_by_name("RPM", trackedVelocity.z, false)
+	
+	prevSpeed = trackedVelocity.z
 
 # Function that determines if gear needs to be shifted
 func shiftGear() -> void:

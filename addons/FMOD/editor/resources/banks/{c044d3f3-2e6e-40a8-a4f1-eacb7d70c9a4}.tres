@@ -1,0 +1,8 @@
+[gd_resource type="BankAsset" format=3 uid="uid://bwh14sfm1u6fu"]
+
+[resource]
+file_path = "res://fmod/banks/Desktop/CarSFX.bank"
+modified_time = 1720453819
+path = "bank:/CarSFX"
+guid = "{c044d3f3-2e6e-40a8-a4f1-eacb7d70c9a4}"
+name = "CarSFX"

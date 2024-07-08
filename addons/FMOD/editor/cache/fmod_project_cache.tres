@@ -1,3 +1,130 @@
-[gd_resource type="ProjectCache" format=3 uid="uid://bqt7ooe8uj2ph"]
+[gd_resource type="ProjectCache" load_steps=13 format=3 uid="uid://bqt7ooe8uj2ph"]
+
+[sub_resource type="BankAsset" id="BankAsset_xkl7t"]
+file_path = "res://fmod/banks/Desktop/CarSFX.bank"
+modified_time = 1720453819
+path = "bank:/CarSFX"
+guid = "{c044d3f3-2e6e-40a8-a4f1-eacb7d70c9a4}"
+name = "CarSFX"
+
+[sub_resource type="BankAsset" id="BankAsset_tvgtx"]
+file_path = "res://fmod/banks/Desktop/Master.bank"
+modified_time = 1720453824
+path = "bank:/Master"
+guid = "{2b20a8e6-d3d9-4349-ab4e-e3e01c0b1eda}"
+name = "Master"
+
+[sub_resource type="BankAsset" id="BankAsset_oi0j7"]
+file_path = "res://fmod/banks/Desktop/Master.strings.bank"
+modified_time = 1720453824
+path = "bank:/Master.strings"
+guid = "{b33d8832-a2a2-0f0b-2d07-691eedf81842}"
+name = "Master.strings"
+
+[sub_resource type="BusAsset" id="BusAsset_5ib0e"]
+path = "bus:/Reverb"
+guid = "{914c7c72-6ef6-4325-bf6e-73ee63e3d99d}"
+name = "Reverb"
+
+[sub_resource type="BusAsset" id="BusAsset_jhdpr"]
+path = "bus:/"
+guid = "{1c0dee67-8675-409a-b95d-7937faa6811a}"
+name = "Master"
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_wj81f"]
+data1 = 1479538994
+data2 = 3599210456
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_13imx"]
+name = "Load"
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_wj81f")
+minimum = -1.0
+maximum = 1.0
+guid = "{626809be-bd99-411e-ab33-456fa4a08b06}"
+
+[sub_resource type="ParameterAsset" id="ParameterAsset_r4p5r"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_13imx")
+path = "parameter:/Load"
+guid = "{626809be-bd99-411e-ab33-456fa4a08b06}"
+name = "Load"
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_kxyo6"]
+data1 = 3882596082
+data2 = 3511641552
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_27n8h"]
+name = "RPM"
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_kxyo6")
+maximum = 220.0
+guid = "{be086568-8132-4e0b-ae3e-89f1c6e02d32}"
+
+[sub_resource type="ParameterAsset" id="ParameterAsset_2h8ul"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_27n8h")
+path = "parameter:/RPM"
+guid = "{be086568-8132-4e0b-ae3e-89f1c6e02d32}"
+name = "RPM"
+
+[sub_resource type="EventAsset" id="EventAsset_is8f5"]
+is_3d = true
+min_distance = 1.0
+max_distance = 20.0
+parameters = {
+"{626809be-bd99-411e-ab33-456fa4a08b06}": SubResource("ParameterAsset_r4p5r"),
+"{be086568-8132-4e0b-ae3e-89f1c6e02d32}": SubResource("ParameterAsset_2h8ul")
+}
+path = "event:/EngineIdle"
+guid = "{f714888f-630c-4d1f-949a-944d6879cbf8}"
+name = "EngineIdle"
 
 [resource]
+banks = {
+"{2b20a8e6-d3d9-4349-ab4e-e3e01c0b1eda}": SubResource("BankAsset_tvgtx"),
+"{b33d8832-a2a2-0f0b-2d07-691eedf81842}": SubResource("BankAsset_oi0j7"),
+"{c044d3f3-2e6e-40a8-a4f1-eacb7d70c9a4}": SubResource("BankAsset_xkl7t")
+}
+events = {
+"{f714888f-630c-4d1f-949a-944d6879cbf8}": SubResource("EventAsset_is8f5")
+}
+busses = {
+"{1c0dee67-8675-409a-b95d-7937faa6811a}": SubResource("BusAsset_jhdpr"),
+"{914c7c72-6ef6-4325-bf6e-73ee63e3d99d}": SubResource("BusAsset_5ib0e")
+}
+bank_tree = [{
+"children": [],
+"item_type": 3,
+"node_name": "CarSFX",
+"path": "bank:/CarSFX",
+"resource": SubResource("BankAsset_xkl7t")
+}, {
+"children": [],
+"item_type": 3,
+"node_name": "Master",
+"path": "bank:/Master",
+"resource": SubResource("BankAsset_tvgtx")
+}, {
+"children": [],
+"item_type": 3,
+"node_name": "Master.strings",
+"path": "bank:/Master.strings",
+"resource": SubResource("BankAsset_oi0j7")
+}]
+event_tree = [{
+"children": [],
+"item_type": 1,
+"node_name": "EngineIdle",
+"path": "event:/EngineIdle",
+"resource": SubResource("EventAsset_is8f5")
+}]
+bus_tree = [{
+"children": [{
+"children": [],
+"item_type": 4,
+"node_name": "Reverb",
+"path": "bus:/Reverb",
+"resource": SubResource("BusAsset_5ib0e")
+}],
+"item_type": 4,
+"node_name": "bus:",
+"path": "bus:/",
+"resource": SubResource("BusAsset_jhdpr")
+}]
